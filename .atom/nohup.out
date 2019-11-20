@@ -1,0 +1,3 @@
+shared memfd open() failed: Function not implemented
+libGL error: No matching fbConfigs or visuals found
+libGL error: failed to load driver: swrast
