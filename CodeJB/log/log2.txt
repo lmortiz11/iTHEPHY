@@ -1,0 +1,7 @@
+
+Processing eff.cc++("$dir", "minisample_Dst2D0pi_D02Kpi_2016_Up_GEN")...
+Reconstructed number of pions: 646726, eff.: 0.866106
+Reconstructed number of Kaons: 632112, eff.: 0.846535
+Reconstructed number of soft pions: 572084, eff.: 0.766145
+Reconstructed number of D0: 547525, eff.: 0.733255
+Reconstructed number of D*: 420123, eff.: 0.562636
