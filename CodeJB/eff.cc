@@ -56,12 +56,12 @@ void eff(string dir, string sample)
 
   
   
-  TH1F *h_pT_reco_SPi = new TH1F("h_pT_reco_SPi", ";p_T/MeV; reconstructed Events", 250, 100., 800.);
+  TH1F *h_pT_reco_SPi = new TH1F("h_pT_reco_SPi", ";p_T/MeV; reconstructed Events", 175, 100., 800.);
   TH1F *h_pT_reco_Pi = new TH1F("h_pT_reco_Pi", ";p_T/MeV; reconstructed Events", 250, 700., 5700.);
   TH1F *h_pT_reco_K = new TH1F("h_pT_reco_K", ";p_T/MeV; reconstructed Events", 275, 700., 6200.);
   TH1F *h_pT_reco_D0 = new TH1F("h_pT_reco_D0", ";p_T/MeV; reconstructed Events", 350, 2000., 9000.);
   TH1F *h_pT_reco_Dst = new TH1F("h_pT_reco_Dst", ";p_T/MeV; reconstructed Events", 370, 2200., 9600.);
-  TH1F *h_pT_SPi = new TH1F("h_pT_SPi", ";p_T/MeV;Events", 250, 100., 800.);
+  TH1F *h_pT_SPi = new TH1F("h_pT_SPi", ";p_T/MeV;Events", 175, 100., 800.);
   TH1F *h_pT_Pi = new TH1F("h_pT_Pi", ";p_T/MeV;Events", 250, 700., 5700.);
   TH1F *h_pT_K = new TH1F("h_pT_K", ";p_T/MeV;Events", 275, 700., 6200.);
   TH1F *h_pT_D0 = new TH1F("h_pT_D0", ";p_T/MeV;Events", 350, 2000., 9000.);
@@ -125,8 +125,8 @@ void eff(string dir, string sample)
     {
       nDst_reco+=1.;
       h_pT_reco_Dst->Fill(Dst_pT);
-      h_phi_reco_D0->Fill(Dst_phi);
-      h_eta_reco_D0->Fill(Dst_eta);
+      h_phi_reco_Dst->Fill(Dst_phi);
+      h_eta_reco_Dst->Fill(Dst_eta);
     }
     h_pT_Pi->Fill(Pi_pT);
     h_pT_SPi->Fill(SPi_pT);
