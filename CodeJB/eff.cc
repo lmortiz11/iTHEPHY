@@ -225,4 +225,28 @@ void eff(string dir, string sample)
   cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/nEvents << endl;
   cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/nEvents << endl;
   cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/nEvents << endl;
+  
+  h_pT_reco_Pi->Print();
+  h_pT_reco_K->Print();
+  h_pT_reco_SPi->Print();
+  h_pT_reco_D0->Print();
+  h_pT_reco_Dst->Print();
+  
+  h_phi_reco_Pi->Print();
+  h_phi_reco_K->Print();
+  h_phi_reco_SPi->Print();
+  h_phi_reco_D0->Print();
+  h_phi_reco_Dst->Print();
+ 
+  h_theta_reco_Pi->Print();
+  h_theta_reco_K->Print();
+  h_theta_reco_SPi->Print();
+  h_theta_reco_D0->Print();
+  h_theta_reco_Dst->Print();
+  
+  h_eta_reco_Pi->Print();
+  h_eta_reco_K->Print();
+  h_eta_reco_SPi->Print();
+  h_eta_reco_D0->Print();
+  h_eta_reco_Dst->Print();
 }
