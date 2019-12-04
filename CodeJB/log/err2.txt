@@ -1,21 +1,80 @@
 Info in <TUnixSystem::ACLiC>: creating shared library /home/smjoblan/iTHEPHY/iTHEPHY/CodeJB/./eff_cc.so
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_pT_reco_Pi.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_pT_reco_K.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_pT_reco_SPi.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_pT_reco_D0.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_pT_reco_Dst.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_phi_reco_Pi.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_phi_reco_K.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_phi_reco_SPi.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_phi_reco_D0.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_phi_reco_Dst.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_theta_reco_Pi.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_theta_reco_K.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_theta_reco_SPi.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_theta_reco_D0.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_theta_reco_Dst.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_eta_reco_Pi.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_eta_reco_K.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_eta_reco_SPi.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_eta_reco_D0.pdf has been generated
-Info in <TH1F::SaveAs>: C++ Macro file: output/h_eta_reco_Dst.pdf has been generated
+In file included from input_line_12:9:
+././eff.cc:231:23: error: expected ';' after expression
+  h_pT_reco_Pi->Draw()
+                      ^
+                      ;
+././eff.cc:233:22: error: expected ';' after expression
+  h_pT_reco_K->Draw()
+                     ^
+                     ;
+././eff.cc:235:24: error: expected ';' after expression
+  h_pT_reco_SPi->Draw()
+                       ^
+                       ;
+././eff.cc:237:23: error: expected ';' after expression
+  h_pT_reco_D0->Draw()
+                      ^
+                      ;
+././eff.cc:239:24: error: expected ';' after expression
+  h_pT_reco_Dst->Draw()
+                       ^
+                       ;
+././eff.cc:242:24: error: expected ';' after expression
+  h_phi_reco_Pi->Draw()
+                       ^
+                       ;
+././eff.cc:244:23: error: expected ';' after expression
+  h_phi_reco_K->Draw()
+                      ^
+                      ;
+././eff.cc:246:25: error: expected ';' after expression
+  h_phi_reco_SPi->Draw()
+                        ^
+                        ;
+././eff.cc:248:24: error: expected ';' after expression
+  h_phi_reco_D0->Draw()
+                       ^
+                       ;
+././eff.cc:250:25: error: expected ';' after expression
+  h_phi_reco_Dst->Draw()
+                        ^
+                        ;
+././eff.cc:253:26: error: expected ';' after expression
+  h_theta_reco_Pi->Draw()
+                         ^
+                         ;
+././eff.cc:255:25: error: expected ';' after expression
+  h_theta_reco_K->Draw()
+                        ^
+                        ;
+././eff.cc:257:27: error: expected ';' after expression
+  h_theta_reco_SPi->Draw()
+                          ^
+                          ;
+././eff.cc:259:26: error: expected ';' after expression
+  h_theta_reco_D0->Draw()
+                         ^
+                         ;
+././eff.cc:261:27: error: expected ';' after expression
+  h_theta_reco_Dst->Draw()
+                          ^
+                          ;
+././eff.cc:264:24: error: expected ';' after expression
+  h_eta_reco_Pi->Draw()
+                       ^
+                       ;
+././eff.cc:266:23: error: expected ';' after expression
+  h_eta_reco_K->Draw()
+                      ^
+                      ;
+././eff.cc:268:25: error: expected ';' after expression
+  h_eta_reco_SPi->Draw()
+                        ^
+                        ;
+././eff.cc:270:24: error: expected ';' after expression
+  h_eta_reco_D0->Draw()
+                       ^
+                       ;
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+Error in <ACLiC>: Dictionary generation failed!
