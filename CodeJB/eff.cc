@@ -226,27 +226,27 @@ void eff(string dir, string sample)
   cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/nEvents << endl;
   cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/nEvents << endl;
 
-  h_pT_reco_Pi->Print("output/h_pT_reco_Pi.pdf");
-  h_pT_reco_K->Print("output/h_pT_reco_K.pdf");
-  h_pT_reco_SPi->Print("output/h_pT_reco_SPi.pdf");
-  h_pT_reco_D0->Print("output/h_pT_reco_D0.pdf");
-  h_pT_reco_Dst->Print("output/h_pT_reco_Dst.pdf");
+  h_pT_reco_Pi->SaveAs("output/h_pT_reco_Pi.pdf");
+  h_pT_reco_K->SaveAs("output/h_pT_reco_K.pdf");
+  h_pT_reco_SPi->SaveAs("output/h_pT_reco_SPi.pdf");
+  h_pT_reco_D0->SaveAs("output/h_pT_reco_D0.pdf");
+  h_pT_reco_Dst->SaveAs("output/h_pT_reco_Dst.pdf");
 
-  h_phi_reco_Pi->Print("output/h_phi_reco_Pi.pdf");
-  h_phi_reco_K->Print("output/h_phi_reco_K.pdf");
-  h_phi_reco_SPi->Print("output/h_phi_reco_SPi.pdf");
-  h_phi_reco_D0->Print("output/h_phi_reco_D0.pdf");
-  h_phi_reco_Dst->Print("output/h_phi_reco_Dst.pdf");
+  h_phi_reco_Pi->SaveAs("output/h_phi_reco_Pi.pdf");
+  h_phi_reco_K->SaveAs("output/h_phi_reco_K.pdf");
+  h_phi_reco_SPi->SaveAs("output/h_phi_reco_SPi.pdf");
+  h_phi_reco_D0->SaveAs("output/h_phi_reco_D0.pdf");
+  h_phi_reco_Dst->SaveAs("output/h_phi_reco_Dst.pdf");
 
-  h_theta_reco_Pi->Print("output/h_theta_reco_Pi.pdf");
-  h_theta_reco_K->Print("output/h_theta_reco_K.pdf");
-  h_theta_reco_SPi->Print("output/h_theta_reco_SPi.pdf");
-  h_theta_reco_D0->Print("output/h_theta_reco_D0.pdf");
-  h_theta_reco_Dst->Print("output/h_theta_reco_Dst.pdf");
+  h_theta_reco_Pi->SaveAs("output/h_theta_reco_Pi.pdf");
+  h_theta_reco_K->SaveAs("output/h_theta_reco_K.pdf");
+  h_theta_reco_SPi->SaveAs("output/h_theta_reco_SPi.pdf");
+  h_theta_reco_D0->SaveAs("output/h_theta_reco_D0.pdf");
+  h_theta_reco_Dst->SaveAs("output/h_theta_reco_Dst.pdf");
 
-  h_eta_reco_Pi->Print("output/h_eta_reco_Pi.pdf");
-  h_eta_reco_K->Print("output/h_eta_reco_K.pdf");
-  h_eta_reco_SPi->Print("output/h_eta_reco_SPi.pdf");
-  h_eta_reco_D0->Print("output/h_eta_reco_D0.pdf");
-  h_eta_reco_Dst->Print("output/h_eta_reco_Dst.pdf");
+  h_eta_reco_Pi->SaveAs("output/h_eta_reco_Pi.pdf");
+  h_eta_reco_K->SaveAs("output/h_eta_reco_K.pdf");
+  h_eta_reco_SPi->SaveAs("output/h_eta_reco_SPi.pdf");
+  h_eta_reco_D0->SaveAs("output/h_eta_reco_D0.pdf");
+  h_eta_reco_Dst->SaveAs("output/h_eta_reco_Dst.pdf");
 }
