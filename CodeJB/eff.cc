@@ -230,67 +230,67 @@ void eff(string dir, string sample)
 
   gStyle->SetOptStat(0);
 
-  h_pT_reco_Pi->Sumw2()
+  h_pT_reco_Pi->Sumw2();
   h_pT_reco_Pi->Draw();
   c1->SaveAs("output/h_pT_reco_Pi.pdf");
-  h_pT_reco_K->Sumw2()
+  h_pT_reco_K->Sumw2();
   h_pT_reco_K->Draw();
   c1->SaveAs("output/h_pT_reco_K.pdf");
-  h_pT_reco_SPi->Sumw2()
+  h_pT_reco_SPi->Sumw2();
   h_pT_reco_SPi->Draw();
   c1->SaveAs("output/h_pT_reco_SPi.pdf");
-  h_pT_reco_D0->Sumw2()
+  h_pT_reco_D0->Sumw2();
   h_pT_reco_D0->Draw();
   c1->SaveAs("output/h_pT_reco_D0.pdf");
-  h_pT_reco_Dst->Sumw2()
+  h_pT_reco_Dst->Sumw2();
   h_pT_reco_Dst->Draw();
   c1->SaveAs("output/h_pT_reco_Dst.pdf");
 
-  h_phi_reco_Pi->Sumw2()
+  h_phi_reco_Pi->Sumw2();
   h_phi_reco_Pi->Draw();
   c1->SaveAs("output/h_phi_reco_Pi.pdf");
-  h_phi_reco_K->Sumw2()
+  h_phi_reco_K->Sumw2();
   h_phi_reco_K->Draw();
   c1->SaveAs("output/h_phi_reco_K.pdf");
-  h_phi_reco_SPi->Sumw2()
+  h_phi_reco_SPi->Sumw2();
   h_phi_reco_SPi->Draw();
   c1->SaveAs("output/h_phi_reco_SPi.pdf");
-  h_phi_reco_D0->Sumw2()
+  h_phi_reco_D0->Sumw2();
   h_phi_reco_D0->Draw();
   c1->SaveAs("output/h_phi_reco_D0.pdf");
-  h_phi_reco_Dst->Sumw2()
+  h_phi_reco_Dst->Sumw2();
   h_phi_reco_Dst->Draw();
   c1->SaveAs("output/h_phi_reco_Dst.pdf");
 
-  h_theta_reco_Pi->Sumw2()
+  h_theta_reco_Pi->Sumw2();
   h_theta_reco_Pi->Draw();
   c1->SaveAs("output/h_theta_reco_Pi.pdf");
-  h_theta_reco_K->Sumw2()
+  h_theta_reco_K->Sumw2();
   h_theta_reco_K->Draw();
   c1->SaveAs("output/h_theta_reco_K.pdf");
-  h_theta_reco_SPi->Sumw2()
+  h_theta_reco_SPi->Sumw2();
   h_theta_reco_SPi->Draw();
   c1->SaveAs("output/h_theta_reco_SPi.pdf");
-  h_theta_reco_D0->Sumw2()
+  h_theta_reco_D0->Sumw2();
   h_theta_reco_D0->Draw();
   c1->SaveAs("output/h_theta_reco_D0.pdf");
-  h_theta_reco_Dst->Sumw2()
+  h_theta_reco_Dst->Sumw2();
   h_theta_reco_Dst->Draw();
   c1->SaveAs("output/h_theta_reco_Dst.pdf");
 
-  h_eta_reco_Pi->Sumw2()
+  h_eta_reco_Pi->Sumw2();
   h_eta_reco_Pi->Draw();
   c1->SaveAs("output/h_eta_reco_Pi.pdf");
-  h_eta_reco_K->Sumw2()
+  h_eta_reco_K->Sumw2();
   h_eta_reco_K->Draw();
   c1->SaveAs("output/h_eta_reco_K.pdf");
-  h_eta_reco_SPi->Sumw2()
+  h_eta_reco_SPi->Sumw2();
   h_eta_reco_SPi->Draw();
   c1->SaveAs("output/h_eta_reco_SPi.pdf");
-  h_eta_reco_D0->Sumw2()
+  h_eta_reco_D0->Sumw2();
   h_eta_reco_D0->Draw();
   c1->SaveAs("output/h_eta_reco_D0.pdf");
-  h_eta_reco_Dst->Sumw2()
+  h_eta_reco_Dst->Sumw2();
   h_eta_reco_Dst->Draw();
   c1->SaveAs("output/h_eta_reco_Dst.pdf");
 }
