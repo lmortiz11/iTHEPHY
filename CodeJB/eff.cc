@@ -1,5 +1,20 @@
 #include "eff.h"
 
+
+
+void fill_hist(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v_var, int is_reco)
+{
+  int size = v_hist.size();
+  for(int i = 0; i < size; ++i)
+  {
+    v_hist.at(i)->Fill(v_var.at(i));
+    if(is_reco == 1)
+    {
+      v_hist_reco.at(i)->Fill(v_var.at(i));
+    }
+  }
+}
+
 void eff(string dir, string sample)
 {
   string input_name = dir+"/"+sample+".root";
@@ -22,7 +37,7 @@ void eff(string dir, string sample)
   double nK_reco_pos = 0.;
   double nSPi_reco_pos = 0.;*/
 
-  double Dst_pT,D0_pT, Pi_pT, K_pT, SPi_pT;
+  double Dst_pT, D0_pT, Pi_pT, K_pT, SPi_pT;
 
   double Dst_phi, D0_phi, Pi_phi, K_phi, SPi_phi;
 
@@ -32,7 +47,7 @@ void eff(string dir, string sample)
 
   int Dst_ID, D0_ID, Pi_ID, K_ID, SPi_ID;
 
-  int  isPi_reco, isK_reco, isSPi_reco;
+  int  isPi_reco, isK_reco, isSPi_reco, isD0_reco, isDst_reco;
   ntp->SetBranchStatus("*",0);
   ntp->SetBranchStatus("P1_Reconstructed",1); ntp->SetBranchAddress("P1_Reconstructed", &(isPi_reco));
   ntp->SetBranchStatus("P2_Reconstructed",1); ntp->SetBranchAddress("P2_Reconstructed", &(isK_reco));
@@ -68,7 +83,12 @@ void eff(string dir, string sample)
   ntp->SetBranchStatus("P2_ID",1); ntp->SetBranchAddress("P2_ID", &(K_ID));
   ntp->SetBranchStatus("sPi_ID",1); ntp->SetBranchAddress("sPi_ID", &(SPi_ID));
 
-
+  vector<double> v_Pi_var = {Pi_pT, Pi_phi, Pi_theta, Pi_eta}
+  vector<double> v_K_var = {K_pT, K_phi, K_theta, K_eta}
+  vector<double> v_SPi_var = {SPi_pT, SPi_phi, SPi_theta, SPi_eta}
+  vector<double> v_D0_var = {D0_pT, D0_phi, D0_theta, D0_eta}
+  vector<double> v_Dst_var = {Dst_pT, Dst_phi, Dst_theta, Dst_eta}
+  
 
   TH1F *h_pT_reco_SPi = new TH1F("h_pT_reco_SPi", ";p_{T}/MeV; reconstructed Events", 35, 100., 800.);
   TH1F *h_pT_reco_Pi = new TH1F("h_pT_reco_Pi", ";p_{T}/MeV; reconstructed Events", 50, 700., 5700.);
@@ -133,81 +153,29 @@ void eff(string dir, string sample)
   h_eta_reco_SPi->Sumw2();
   h_eta_reco_D0->Sumw2();
   h_eta_reco_Dst->Sumw2();
-
-
+    
+  vector<TH1F*> v_Pi_hist_reco = {h_pT_reco_Pi, h_phi_reco_Pi, h_theta_reco_Pi, h_eta_reco_Pi}
+  vector<TH1F*> v_SPi_hist_reco = {h_pT_reco_SPi, h_phi_reco_SPi, h_theta_reco_SPi, h_eta_reco_SPi}
+  vector<TH1F*> v_K_hist_reco = {h_pT_reco_K, h_phi_reco_K, h_theta_reco_K, h_eta_reco_K}
+  vector<TH1F*> v_D0_hist_reco = {h_pT_reco_D0, h_phi_reco_D0, h_theta_reco_D0, h_eta_reco_D0}
+  vector<TH1F*> v_Dst_hist_reco = {h_pT_reco_Dst, h_phi_reco_Dst, h_theta_reco_Dst, h_eta_reco_Dst}
+  
+  vector<TH1F*> v_Pi_hist = {h_pT_Pi, h_phi_Pi, h_theta_Pi, h_eta_Pi}
+  vector<TH1F*> v_SPi_hist = {h_pT_SPi, h_phi_SPi, h_theta_SPi, h_eta_SPi}
+  vector<TH1F*> v_K_hist = {h_pT_K, h_phi_K, h_theta_K, h_eta_K}
+  vector<TH1F*> v_D0_hist = {h_pT_D0, h_phi_D0, h_theta_D0, h_eta_D0}
+  vector<TH1F*> v_Dst_hist = {h_pT_Dst, h_phi_Dst, h_theta_Dst, h_eta_Dst}
+  
   for(int i = 0; i < nEvents; ++i)
   {
     ntp->GetEvent(i);
     if (i % (nEvents/10) == 0)cout << "=== Event " << i/(nEvents/10) * 10 << "%" << endl;
-    if(isPi_reco == 1 && Pi_ID > 0)
-    {
-      nPi_reco+=1.;
-      h_pT_reco_Pi->Fill(Pi_pT);
-      h_phi_reco_Pi->Fill(Pi_phi);
-      h_theta_reco_Pi->Fill(Pi_theta);
-      h_eta_reco_Pi->Fill(Pi_eta);
-    }
-    if(isK_reco == 1 && K_ID > 0)
-    {
-      nK_reco+=1.;
-      h_pT_reco_K->Fill(K_pT);
-      h_phi_reco_K->Fill(K_phi);
-      h_theta_reco_K->Fill(K_theta);
-      h_eta_reco_K->Fill(K_eta);
-    }
-    if(isSPi_reco == 1 && SPi_ID > 0)
-    {
-      nSPi_reco+=1.;
-      h_pT_reco_SPi->Fill(SPi_pT);
-      h_phi_reco_SPi->Fill(SPi_phi);
-      h_theta_reco_SPi->Fill(SPi_theta);
-      h_eta_reco_SPi->Fill(SPi_eta);
-    }
-    if((isPi_reco == 1 && isK_reco == 1) && D0_ID > 0)
-    {
-      nD0_reco+=1.;
-      h_pT_reco_D0->Fill(D0_pT);
-      h_phi_reco_D0->Fill(D0_phi);
-      h_theta_reco_D0->Fill(D0_theta);
-      h_eta_reco_D0->Fill(D0_eta);
-    }
-    if((isPi_reco == 1 && isK_reco == 1) && (isSPi_reco == 1 && Dst_ID > 0))
-    {
-      nDst_reco+=1.;
-      h_pT_reco_Dst->Fill(Dst_pT);
-      h_phi_reco_Dst->Fill(Dst_phi);
-      h_theta_reco_Dst->Fill(Dst_theta);
-      h_eta_reco_Dst->Fill(Dst_eta);
-    }
-    (Dst_ID > 0)? n_pos+=1.: n_neg+=1;
-    if((Dst_ID > 0 && D0_ID > 0) && (Pi_ID > 0 && K_ID > 0) && SPi_ID > 0)
-    {
-      h_pT_Pi->Fill(Pi_pT);
-      h_pT_SPi->Fill(SPi_pT);
-      h_pT_K->Fill(K_pT);
-      h_pT_D0->Fill(D0_pT);
-      h_pT_Dst->Fill(Dst_pT);
-
-      h_phi_Pi->Fill(Pi_phi);
-      h_phi_SPi->Fill(SPi_phi);
-      h_phi_K->Fill(K_phi);
-      h_phi_D0->Fill(D0_phi);
-      h_phi_Dst->Fill(Dst_phi);
-
-      h_theta_Pi->Fill(Pi_theta);
-      h_theta_SPi->Fill(SPi_theta);
-      h_theta_K->Fill(K_theta);
-      h_theta_D0->Fill(D0_theta);
-      h_theta_Dst->Fill(Dst_theta);
-
-      h_eta_Pi->Fill(Pi_eta);
-      h_eta_SPi->Fill(SPi_eta);
-      h_eta_K->Fill(K_eta);
-      h_eta_D0->Fill(D0_eta);
-      h_eta_Dst->Fill(Dst_eta);
-  
-    }
-  }
+    hist_fill(v_Pi_hist, v_Pi_hist_reco, v_Pi_var, isPi_reco);
+    hist_fill(v_K_hist, v_K_hist_reco, v_K_var, isK_reco);
+    hist_fill(v_SPi_hist, v_SPi_hist_reco, v_SPi_var, isSPi_reco);
+    hist_fill(v_D0_hist, v_D0_hist_reco, v_D0_var, isD0_reco);
+    hist_fill(v_Dst_hist, v_Dst_hist_reco, v_Dst_var, isDst_reco);
+}
   h_pT_reco_Pi->Divide(h_pT_Pi);
   h_pT_reco_K->Divide(h_pT_K);
   h_pT_reco_SPi->Divide(h_pT_SPi);
