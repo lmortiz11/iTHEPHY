@@ -3,8 +3,6 @@
 #include <TH2.h>
 #include <TStyle.h>
 #include <TCanvas.h>
-#include <TH1F.h>
-#include <cmath>
 
 void ntp::Loop()
 {
@@ -14,8 +12,6 @@ void ntp::Loop()
     Double_t D0_rec=0;
     Double_t Dst_rec=0;
     Double_t c=0;
-    
-
     
 //   In a ROOT session, you can do:
 //      root> .L ntp.C
@@ -41,7 +37,7 @@ void ntp::Loop()
 //    fChain->GetEntry(jentry);       //read all branches
 //by  b_branchname->GetEntry(ientry); //read only this branch
    if (fChain == 0) return;
- 
+
    Long64_t nentries = fChain->GetEntriesFast();
 
    Long64_t nbytes = 0, nb = 0;
@@ -49,10 +45,8 @@ void ntp::Loop()
       Long64_t ientry = LoadTree(jentry);
       if (ientry < 0) break;
       nb = fChain->GetEntry(jentry);   nbytes += nb;
-    
-       
-// here starts what i've done: just counting the number of events reconstructed for each particle;
-       
+      // if (Cut(ientry) < 0) continue;
+              
        if (P1_Reconstructed==1)
        {
         p1_rec++;
@@ -82,6 +76,7 @@ void ntp::Loop()
        
      c++;  
        
+   
    }
     Double_t eff_p1=p1_rec/c;
     Double_t eff_p2=p2_rec/c;
@@ -90,15 +85,22 @@ void ntp::Loop()
     Double_t eff_Dst=Dst_rec/c;
     // print the number of recontructed events for each particle;
     
-    cout << "pions: "<<p1_rec <<'\n'<<"kaons: "<<p2_rec<<'\n'<<"soft pions: "<<spi_rec<<'\n'<<"D0: "<<D0_rec<<'\n'<<"D*+: "<<Dst_rec<<endl;
+    Double_t p1_err=(1/c)*sqrt(p1_rec*(c-p1_rec)/c);
+    Double_t p2_err=(1/c)*sqrt(p2_rec*(c-p2_rec)/c);
+    Double_t spi_err=(1/c)*sqrt(spi_rec*(c-spi_rec)/c);
+    Double_t D0_err=(1/c)*sqrt(D0_rec*(c-D0_rec)/c);
+    Double_t Dst_err=(1/c)*sqrt(Dst_rec*(c-Dst_rec)/c);
+    // print the number of recontructed events for each particle;
+    
+    cout << "pions: "<<p1_rec<<'\n'<<"kaons: "<<p2_rec<<'\n'<<"soft pions: "<<spi_rec<<'\n'<<"D0: "<<D0_rec<<'\n'<<"D*+: "<<Dst_rec<<endl;
     
     
-    cout<<"Pions efficiency: "<< eff_p1 <<'\n';
-    cout<<"Kaons efficiency: "<<eff_p2 <<'\n';
-    cout<<"Soft Pions efficiency: "<<eff_spi<<'\n';
+    cout<<"Pions efficiency: "<< eff_p1<<" +- "<< p1_err  <<'\n';
+    cout<<"Kaons efficiency: "<<eff_p2 <<" +- "<< p2_err<<'\n';
+    cout<<"Soft Pions efficiency: "<<eff_spi<<" +- "<< spi_err<<'\n';
+    cout<<"D0 efficiency: "<<eff_D0 <<" +- "<< D0_err<<'\n';
     cout<<"D0 efficiency: "<<eff_D0 <<'\n';
-    cout<<"D*+ efficiency: "<<eff_Dst <<'\n';
-
+    cout<<"D*+ efficiency: "<<eff_Dst <<" +- "<< Dst_err<<'\n';
     
         
 }
