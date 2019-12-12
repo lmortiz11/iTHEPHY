@@ -13,6 +13,12 @@ void eff(string dir, string sample)
   double nPi_reco = 0.;
   double nK_reco = 0.;
   double nSPi_reco = 0.;
+/*
+  double nDst_reco_pos = 0.;
+  double nD0_reco_pos = 0.;
+  double nPi_reco_pos = 0.;
+  double nK_reco_pos = 0.;
+  double nSPi_reco_pos = 0.;*/
 
   double Dst_pT,D0_pT, Pi_pT, K_pT, SPi_pT;
 
@@ -21,6 +27,8 @@ void eff(string dir, string sample)
   double Dst_theta, D0_theta, Pi_theta, K_theta, SPi_theta;
 
   double Dst_eta, D0_eta, Pi_eta, K_eta, SPi_eta;
+
+  double Dst_ID, D0_ID, Pi_ID, K_ID, SPi_ID;
 
   int  isPi_reco, isK_reco, isSPi_reco;
   ntp->SetBranchStatus("*",0);
@@ -51,6 +59,12 @@ void eff(string dir, string sample)
   ntp->SetBranchStatus("P1_ETA",1); ntp->SetBranchAddress("P1_ETA", &(Pi_eta));
   ntp->SetBranchStatus("P2_ETA",1); ntp->SetBranchAddress("P2_ETA", &(K_eta));
   ntp->SetBranchStatus("sPi_ETA",1); ntp->SetBranchAddress("sPi_ETA", &(SPi_eta));
+
+  ntp->SetBranchStatus("Dst_ID",1); ntp->SetBranchAddress("Dst_ID", &(Dst_ID));
+  ntp->SetBranchStatus("D0_ID",1); ntp->SetBranchAddress("D0_ID", &(D0_ID));
+  ntp->SetBranchStatus("P1_ID",1); ntp->SetBranchAddress("P1_ID", &(Pi_ID));
+  ntp->SetBranchStatus("P2_ID",1); ntp->SetBranchAddress("P2_ID", &(K_ID));
+  ntp->SetBranchStatus("sPi_ID",1); ntp->SetBranchAddress("sPi_ID", &(SPi_ID));
 
 
 
@@ -123,7 +137,7 @@ void eff(string dir, string sample)
   {
     ntp->GetEvent(i);
     if (i % (nEvents/10) == 0)cout << "=== Event " << i/(nEvents/10) * 10 << "%" << endl;
-    if(isPi_reco == 1)
+    if(isPi_reco == 1 && Pi_ID > 0.)
     {
       nPi_reco+=1.;
       h_pT_reco_Pi->Fill(Pi_pT);
@@ -131,7 +145,7 @@ void eff(string dir, string sample)
       h_theta_reco_Pi->Fill(Pi_theta);
       h_eta_reco_Pi->Fill(Pi_eta);
     }
-    if(isK_reco == 1)
+    if(isK_reco == 1 && K_ID > 0.)
     {
       nK_reco+=1.;
       h_pT_reco_K->Fill(K_pT);
@@ -139,7 +153,7 @@ void eff(string dir, string sample)
       h_theta_reco_K->Fill(K_theta);
       h_eta_reco_K->Fill(K_eta);
     }
-    if(isSPi_reco == 1)
+    if(isSPi_reco == 1 && sPi_ID > 0.)
     {
       nSPi_reco+=1.;
       h_pT_reco_SPi->Fill(SPi_pT);
@@ -147,7 +161,7 @@ void eff(string dir, string sample)
       h_theta_reco_SPi->Fill(SPi_theta);
       h_eta_reco_SPi->Fill(SPi_eta);
     }
-    if(isPi_reco == 1 && isK_reco == 1)
+    if((isPi_reco == 1 && isK_reco == 1) && D0_ID > 0.)
     {
       nD0_reco+=1.;
       h_pT_reco_D0->Fill(D0_pT);
@@ -155,7 +169,7 @@ void eff(string dir, string sample)
       h_theta_reco_D0->Fill(D0_theta);
       h_eta_reco_D0->Fill(D0_eta);
     }
-    if((isPi_reco == 1 && isK_reco == 1) && isSPi_reco == 1)
+    if((isPi_reco == 1 && isK_reco == 1) && (isSPi_reco == 1 && Dst_ID > 0.))
     {
       nDst_reco+=1.;
       h_pT_reco_Dst->Fill(Dst_pT);
@@ -241,11 +255,11 @@ void eff(string dir, string sample)
   out_hist_fi->Write();
   out_hist_fi->Close();
 
-  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/nEvents << " +/- " << sqrt(nPi_reco/nEvents) << endl;
-  cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/nEvents << " +/- " << sqrt(nK_reco/nEvents) << endl;
-  cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/nEvents << " +/- " << sqrt(nSPi_reco/nEvents) << endl;
-  cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/nEvents << " +/- " << sqrt(nD0_reco/nEvents) << endl;
-  cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/nEvents << " +/- " << sqrt(nDst_reco/nEvents) << endl;
+  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/nEvents << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / nEvents)/nEvents << endl;
+  cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/nEvents << " +/- " << sqrt( nK_reco + pow(nK_reco, 2.) / nEvents)/nEvents << endl;
+  cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/nEvents << " +/- " << sqrt( nSPi_reco + pow(nSPi_reco, 2.) / nEvents)/nEvents  << endl;
+  cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/nEvents << " +/- " << sqrt( nD0_reco + pow(nD0_reco, 2.) / nEvents)/nEvents << endl;
+  cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/nEvents << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / nEvents)/nEvents  << endl;
 
   TCanvas *c1 = new TCanvas();
 
