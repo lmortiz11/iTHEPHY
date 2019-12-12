@@ -1,5 +1,5 @@
 #define ntp_cxx
-#include "ntp.h"
+#include "eff.h"
 #include <TH2.h>
 #include <TStyle.h>
 #include <TCanvas.h>
