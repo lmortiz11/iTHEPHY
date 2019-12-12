@@ -180,29 +180,33 @@ void eff(string dir, string sample)
       h_eta_reco_Dst->Fill(Dst_eta);
     }
     (Dst_ID > 0)? n_pos+=1.: n_neg+=1;
-    h_pT_Pi->Fill(Pi_pT);
-    h_pT_SPi->Fill(SPi_pT);
-    h_pT_K->Fill(K_pT);
-    h_pT_D0->Fill(D0_pT);
-    h_pT_Dst->Fill(Dst_pT);
+    if((Dst_ID > 0 && D0_ID > 0) && (Pi_ID > 0 && K_ID > 0) && SPi_ID > 0)
+    {
+      h_pT_Pi->Fill(Pi_pT);
+      h_pT_SPi->Fill(SPi_pT);
+      h_pT_K->Fill(K_pT);
+      h_pT_D0->Fill(D0_pT);
+      h_pT_Dst->Fill(Dst_pT);
 
-    h_phi_Pi->Fill(Pi_phi);
-    h_phi_SPi->Fill(SPi_phi);
-    h_phi_K->Fill(K_phi);
-    h_phi_D0->Fill(D0_phi);
-    h_phi_Dst->Fill(Dst_phi);
+      h_phi_Pi->Fill(Pi_phi);
+      h_phi_SPi->Fill(SPi_phi);
+      h_phi_K->Fill(K_phi);
+      h_phi_D0->Fill(D0_phi);
+      h_phi_Dst->Fill(Dst_phi);
 
-    h_theta_Pi->Fill(Pi_theta);
-    h_theta_SPi->Fill(SPi_theta);
-    h_theta_K->Fill(K_theta);
-    h_theta_D0->Fill(D0_theta);
-    h_theta_Dst->Fill(Dst_theta);
+      h_theta_Pi->Fill(Pi_theta);
+      h_theta_SPi->Fill(SPi_theta);
+      h_theta_K->Fill(K_theta);
+      h_theta_D0->Fill(D0_theta);
+      h_theta_Dst->Fill(Dst_theta);
 
-    h_eta_Pi->Fill(Pi_eta);
-    h_eta_SPi->Fill(SPi_eta);
-    h_eta_K->Fill(K_eta);
-    h_eta_D0->Fill(D0_eta);
-    h_eta_Dst->Fill(Dst_eta);
+      h_eta_Pi->Fill(Pi_eta);
+      h_eta_SPi->Fill(SPi_eta);
+      h_eta_K->Fill(K_eta);
+      h_eta_D0->Fill(D0_eta);
+      h_eta_Dst->Fill(Dst_eta);
+  
+    }
   }
   h_pT_reco_Pi->Divide(h_pT_Pi);
   h_pT_reco_K->Divide(h_pT_K);
