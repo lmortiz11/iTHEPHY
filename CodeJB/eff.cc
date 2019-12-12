@@ -28,7 +28,7 @@ void eff(string dir, string sample)
 
   double Dst_eta, D0_eta, Pi_eta, K_eta, SPi_eta;
 
-  double Dst_ID, D0_ID, Pi_ID, K_ID, SPi_ID;
+  int Dst_ID, D0_ID, Pi_ID, K_ID, SPi_ID;
 
   int  isPi_reco, isK_reco, isSPi_reco;
   ntp->SetBranchStatus("*",0);
@@ -137,7 +137,7 @@ void eff(string dir, string sample)
   {
     ntp->GetEvent(i);
     if (i % (nEvents/10) == 0)cout << "=== Event " << i/(nEvents/10) * 10 << "%" << endl;
-    if(isPi_reco == 1 && Pi_ID > 0.)
+    if(isPi_reco == 1 && Pi_ID > 0)
     {
       nPi_reco+=1.;
       h_pT_reco_Pi->Fill(Pi_pT);
@@ -145,7 +145,7 @@ void eff(string dir, string sample)
       h_theta_reco_Pi->Fill(Pi_theta);
       h_eta_reco_Pi->Fill(Pi_eta);
     }
-    if(isK_reco == 1 && K_ID > 0.)
+    if(isK_reco == 1 && K_ID > 0)
     {
       nK_reco+=1.;
       h_pT_reco_K->Fill(K_pT);
@@ -153,7 +153,7 @@ void eff(string dir, string sample)
       h_theta_reco_K->Fill(K_theta);
       h_eta_reco_K->Fill(K_eta);
     }
-    if(isSPi_reco == 1 && sPi_ID > 0.)
+    if(isSPi_reco == 1 && SPi_ID > 0)
     {
       nSPi_reco+=1.;
       h_pT_reco_SPi->Fill(SPi_pT);
@@ -161,7 +161,7 @@ void eff(string dir, string sample)
       h_theta_reco_SPi->Fill(SPi_theta);
       h_eta_reco_SPi->Fill(SPi_eta);
     }
-    if((isPi_reco == 1 && isK_reco == 1) && D0_ID > 0.)
+    if((isPi_reco == 1 && isK_reco == 1) && D0_ID > 0)
     {
       nD0_reco+=1.;
       h_pT_reco_D0->Fill(D0_pT);
@@ -169,7 +169,7 @@ void eff(string dir, string sample)
       h_theta_reco_D0->Fill(D0_theta);
       h_eta_reco_D0->Fill(D0_eta);
     }
-    if((isPi_reco == 1 && isK_reco == 1) && (isSPi_reco == 1 && Dst_ID > 0.))
+    if((isPi_reco == 1 && isK_reco == 1) && (isSPi_reco == 1 && Dst_ID > 0))
     {
       nDst_reco+=1.;
       h_pT_reco_Dst->Fill(Dst_pT);
