@@ -11,8 +11,8 @@ Processing eff.cc++("$dir", "minisample_Dst2D0pi_D02Kpi_2016_Up_GEN")...
 === Event 80%
 === Event 90%
 === Event 100%
-Reconstructed number of pions: 323475, eff.: 0.866166 +/- 0.00208044
-Reconstructed number of Kaons: 317441, eff.: 0.850009 +/- 0.00205201
-Reconstructed number of soft pions: 284753, eff.: 0.762481 +/- 0.00189695
-Reconstructed number of D0: 272602, eff.: 0.729944 +/- 0.00183883
-Reconstructed number of D*: 208042, eff.: 0.557072 +/- 0.00152402
+Reconstructed number of pions: 0, eff.: -nan +/- -nan
+Reconstructed number of Kaons: 0, eff.: -nan +/- -nan
+Reconstructed number of soft pions: 0, eff.: -nan +/- -nan
+Reconstructed number of D0: 0, eff.: -nan +/- -nan
+Reconstructed number of D*: 0, eff.: -nan +/- -nan

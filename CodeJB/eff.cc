@@ -2,7 +2,7 @@
 
 
 
-void fill_hist(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v_var, int is_reco)
+void hist_fill(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v_var, int is_reco)
 {
   int size = v_hist.size();
   for(int i = 0; i < size; ++i)
@@ -83,11 +83,11 @@ void eff(string dir, string sample)
   ntp->SetBranchStatus("P2_ID",1); ntp->SetBranchAddress("P2_ID", &(K_ID));
   ntp->SetBranchStatus("sPi_ID",1); ntp->SetBranchAddress("sPi_ID", &(SPi_ID));
 
-  vector<double> v_Pi_var = {Pi_pT, Pi_phi, Pi_theta, Pi_eta}
-  vector<double> v_K_var = {K_pT, K_phi, K_theta, K_eta}
-  vector<double> v_SPi_var = {SPi_pT, SPi_phi, SPi_theta, SPi_eta}
-  vector<double> v_D0_var = {D0_pT, D0_phi, D0_theta, D0_eta}
-  vector<double> v_Dst_var = {Dst_pT, Dst_phi, Dst_theta, Dst_eta}
+  vector<double> v_Pi_var = {Pi_pT, Pi_phi, Pi_theta, Pi_eta};
+  vector<double> v_K_var = {K_pT, K_phi, K_theta, K_eta};
+  vector<double> v_SPi_var = {SPi_pT, SPi_phi, SPi_theta, SPi_eta};
+  vector<double> v_D0_var = {D0_pT, D0_phi, D0_theta, D0_eta};
+  vector<double> v_Dst_var = {Dst_pT, Dst_phi, Dst_theta, Dst_eta};
   
 
   TH1F *h_pT_reco_SPi = new TH1F("h_pT_reco_SPi", ";p_{T}/MeV; reconstructed Events", 35, 100., 800.);
@@ -154,17 +154,17 @@ void eff(string dir, string sample)
   h_eta_reco_D0->Sumw2();
   h_eta_reco_Dst->Sumw2();
     
-  vector<TH1F*> v_Pi_hist_reco = {h_pT_reco_Pi, h_phi_reco_Pi, h_theta_reco_Pi, h_eta_reco_Pi}
-  vector<TH1F*> v_SPi_hist_reco = {h_pT_reco_SPi, h_phi_reco_SPi, h_theta_reco_SPi, h_eta_reco_SPi}
-  vector<TH1F*> v_K_hist_reco = {h_pT_reco_K, h_phi_reco_K, h_theta_reco_K, h_eta_reco_K}
-  vector<TH1F*> v_D0_hist_reco = {h_pT_reco_D0, h_phi_reco_D0, h_theta_reco_D0, h_eta_reco_D0}
-  vector<TH1F*> v_Dst_hist_reco = {h_pT_reco_Dst, h_phi_reco_Dst, h_theta_reco_Dst, h_eta_reco_Dst}
+  vector<TH1F*> v_Pi_hist_reco = {h_pT_reco_Pi, h_phi_reco_Pi, h_theta_reco_Pi, h_eta_reco_Pi};
+  vector<TH1F*> v_SPi_hist_reco = {h_pT_reco_SPi, h_phi_reco_SPi, h_theta_reco_SPi, h_eta_reco_SPi};
+  vector<TH1F*> v_K_hist_reco = {h_pT_reco_K, h_phi_reco_K, h_theta_reco_K, h_eta_reco_K};
+  vector<TH1F*> v_D0_hist_reco = {h_pT_reco_D0, h_phi_reco_D0, h_theta_reco_D0, h_eta_reco_D0};
+  vector<TH1F*> v_Dst_hist_reco = {h_pT_reco_Dst, h_phi_reco_Dst, h_theta_reco_Dst, h_eta_reco_Dst};
   
-  vector<TH1F*> v_Pi_hist = {h_pT_Pi, h_phi_Pi, h_theta_Pi, h_eta_Pi}
-  vector<TH1F*> v_SPi_hist = {h_pT_SPi, h_phi_SPi, h_theta_SPi, h_eta_SPi}
-  vector<TH1F*> v_K_hist = {h_pT_K, h_phi_K, h_theta_K, h_eta_K}
-  vector<TH1F*> v_D0_hist = {h_pT_D0, h_phi_D0, h_theta_D0, h_eta_D0}
-  vector<TH1F*> v_Dst_hist = {h_pT_Dst, h_phi_Dst, h_theta_Dst, h_eta_Dst}
+  vector<TH1F*> v_Pi_hist = {h_pT_Pi, h_phi_Pi, h_theta_Pi, h_eta_Pi};
+  vector<TH1F*> v_SPi_hist = {h_pT_SPi, h_phi_SPi, h_theta_SPi, h_eta_SPi};
+  vector<TH1F*> v_K_hist = {h_pT_K, h_phi_K, h_theta_K, h_eta_K};
+  vector<TH1F*> v_D0_hist = {h_pT_D0, h_phi_D0, h_theta_D0, h_eta_D0};
+  vector<TH1F*> v_Dst_hist = {h_pT_Dst, h_phi_Dst, h_theta_Dst, h_eta_Dst};
   
   for(int i = 0; i < nEvents; ++i)
   {
@@ -173,6 +173,8 @@ void eff(string dir, string sample)
     hist_fill(v_Pi_hist, v_Pi_hist_reco, v_Pi_var, isPi_reco);
     hist_fill(v_K_hist, v_K_hist_reco, v_K_var, isK_reco);
     hist_fill(v_SPi_hist, v_SPi_hist_reco, v_SPi_var, isSPi_reco);
+    (isPi_reco == 1 && isK_reco == 1)? isD0_reco = 1 : isD0_reco = 0;
+    (isSPi_reco == 1 && isD0_reco == 1)? isDst_reco = 1 : isDst_reco = 0;
     hist_fill(v_D0_hist, v_D0_hist_reco, v_D0_var, isD0_reco);
     hist_fill(v_Dst_hist, v_Dst_hist_reco, v_Dst_var, isDst_reco);
 }
