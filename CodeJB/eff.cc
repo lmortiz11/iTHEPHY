@@ -7,7 +7,9 @@ void eff(string dir, string sample)
   ntp->Add(input_name.c_str());
 
   int nEvents = ntp->GetEntries();
-
+  double n_pos = 0.;
+  double n_neg = 0.;
+  
   double nDst_reco = 0.;
   double nD0_reco = 0.;
   double nPi_reco = 0.;
@@ -177,6 +179,7 @@ void eff(string dir, string sample)
       h_theta_reco_Dst->Fill(Dst_theta);
       h_eta_reco_Dst->Fill(Dst_eta);
     }
+    (Dst_ID > 0)? n_pos+=1.: n_neg+=1;
     h_pT_Pi->Fill(Pi_pT);
     h_pT_SPi->Fill(SPi_pT);
     h_pT_K->Fill(K_pT);
@@ -255,11 +258,18 @@ void eff(string dir, string sample)
   out_hist_fi->Write();
   out_hist_fi->Close();
 
-  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/nEvents << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / nEvents)/nEvents << endl;
+/*  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/nEvents << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/nEvents << " +/- " << sqrt( nK_reco + pow(nK_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/nEvents << " +/- " << sqrt( nSPi_reco + pow(nSPi_reco, 2.) / nEvents)/nEvents  << endl;
   cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/nEvents << " +/- " << sqrt( nD0_reco + pow(nD0_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/nEvents << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / nEvents)/nEvents  << endl;
+*/
+  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/n_pos << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / n_pos)/n_pos << endl;
+  cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/n_pos << " +/- " << sqrt( nK_reco + pow(nK_reco, 2.) / n_pos)/n_pos << endl;
+  cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/n_pos << " +/- " << sqrt( nSPi_reco + pow(nSPi_reco, 2.) / n_pos)/n_pos  << endl;
+  cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/n_pos << " +/- " << sqrt( nD0_reco + pow(nD0_reco, 2.) / n_pos)/n_pos << endl;
+  cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/n_pos << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / n_pos)/n_pos  << endl;
+
 
   TCanvas *c1 = new TCanvas();
 
