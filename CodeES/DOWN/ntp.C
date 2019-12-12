@@ -89,16 +89,21 @@ void ntp::Loop()
     Double_t eff_D0=D0_rec/c;
     Double_t eff_Dst=Dst_rec/c;
     // print the number of recontructed events for each particle;
+    Double_t p1_err=(1/c)*sqrt(p1_rec*(c-p1_rec)/c);
+    Double_t p2_err=(1/c)*sqrt(p2_rec*(c-p2_rec)/c);
+    Double_t spi_err=(1/c)*sqrt(spi_rec*(c-spi_rec)/c);
+    Double_t D0_err=(1/c)*sqrt(D0_rec*(c-D0_rec)/c);
+    Double_t Dst_err=(1/c)*sqrt(Dst_rec*(c-Dst_rec)/c);
+    // print the number of recontructed events for each particle;
     
-    cout << "pions: "<<p1_rec <<'\n'<<"kaons: "<<p2_rec<<'\n'<<"soft pions: "<<spi_rec<<'\n'<<"D0: "<<D0_rec<<'\n'<<"D*+: "<<Dst_rec<<endl;
+    cout << "pions: "<<p1_rec<<'\n'<<"kaons: "<<p2_rec<<'\n'<<"soft pions: "<<spi_rec<<'\n'<<"D0: "<<D0_rec<<'\n'<<"D*+: "<<Dst_rec<<endl;
     
     
-    cout<<"Pions efficiency: "<< eff_p1 <<'\n';
-    cout<<"Kaons efficiency: "<<eff_p2 <<'\n';
-    cout<<"Soft Pions efficiency: "<<eff_spi<<'\n';
+    cout<<"Pions efficiency: "<< eff_p1<<" +- "<< p1_err  <<'\n';
+    cout<<"Kaons efficiency: "<<eff_p2 <<" +- "<< p2_err<<'\n';
+    cout<<"Soft Pions efficiency: "<<eff_spi<<" +- "<< spi_err<<'\n';
+    cout<<"D0 efficiency: "<<eff_D0 <<" +- "<< D0_err<<'\n';
     cout<<"D0 efficiency: "<<eff_D0 <<'\n';
-    cout<<"D*+ efficiency: "<<eff_Dst <<'\n';
-
-    
+    cout<<"D*+ efficiency: "<<eff_Dst <<" +- "<< Dst_err<<'\n';
         
 }
