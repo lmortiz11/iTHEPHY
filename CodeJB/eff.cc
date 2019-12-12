@@ -2,7 +2,7 @@
 
 
 
-void hist_fill(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v_var, int is_reco)
+void hist_fill(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v_var, int is_reco, double &n_reco)
 {
   int size = v_hist.size();
   for(int i = 0; i < size; ++i)
@@ -11,6 +11,7 @@ void hist_fill(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v
     if(is_reco == 1)
     {
       v_hist_reco.at(i)->Fill(v_var.at(i));
+      n_reco+=1./double(size);
     }
   }
 }
@@ -170,13 +171,13 @@ void eff(string dir, string sample)
   {
     ntp->GetEvent(i);
     if (i % (nEvents/10) == 0)cout << "=== Event " << i/(nEvents/10) * 10 << "%" << endl;
-    hist_fill(v_Pi_hist, v_Pi_hist_reco, v_Pi_var, isPi_reco);
-    hist_fill(v_K_hist, v_K_hist_reco, v_K_var, isK_reco);
-    hist_fill(v_SPi_hist, v_SPi_hist_reco, v_SPi_var, isSPi_reco);
+    hist_fill(v_Pi_hist, v_Pi_hist_reco, v_Pi_var, isPi_reco, nPi_reco);
+    hist_fill(v_K_hist, v_K_hist_reco, v_K_var, isK_reco, nK_reco);
+    hist_fill(v_SPi_hist, v_SPi_hist_reco, v_SPi_var, isSPi_reco, nSPi_reco);
     (isPi_reco == 1 && isK_reco == 1)? isD0_reco = 1 : isD0_reco = 0;
     (isSPi_reco == 1 && isD0_reco == 1)? isDst_reco = 1 : isDst_reco = 0;
-    hist_fill(v_D0_hist, v_D0_hist_reco, v_D0_var, isD0_reco);
-    hist_fill(v_Dst_hist, v_Dst_hist_reco, v_Dst_var, isDst_reco);
+    hist_fill(v_D0_hist, v_D0_hist_reco, v_D0_var, isD0_reco, nD0_reco);
+    hist_fill(v_Dst_hist, v_Dst_hist_reco, v_Dst_var, isDst_reco, nDst_reco);
 }
   h_pT_reco_Pi->Divide(h_pT_Pi);
   h_pT_reco_K->Divide(h_pT_K);
@@ -232,17 +233,17 @@ void eff(string dir, string sample)
   out_hist_fi->Write();
   out_hist_fi->Close();
 
-/*  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/nEvents << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / nEvents)/nEvents << endl;
+  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/nEvents << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/nEvents << " +/- " << sqrt( nK_reco + pow(nK_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/nEvents << " +/- " << sqrt( nSPi_reco + pow(nSPi_reco, 2.) / nEvents)/nEvents  << endl;
   cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/nEvents << " +/- " << sqrt( nD0_reco + pow(nD0_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/nEvents << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / nEvents)/nEvents  << endl;
-*/
-  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/n_pos << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / n_pos)/n_pos << endl;
+
+  /*cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/n_pos << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / n_pos)/n_pos << endl;
   cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/n_pos << " +/- " << sqrt( nK_reco + pow(nK_reco, 2.) / n_pos)/n_pos << endl;
   cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/n_pos << " +/- " << sqrt( nSPi_reco + pow(nSPi_reco, 2.) / n_pos)/n_pos  << endl;
   cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/n_pos << " +/- " << sqrt( nD0_reco + pow(nD0_reco, 2.) / n_pos)/n_pos << endl;
-  cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/n_pos << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / n_pos)/n_pos  << endl;
+  cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/n_pos << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / n_pos)/n_pos  << endl;*/
 
 
   TCanvas *c1 = new TCanvas();
