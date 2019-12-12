@@ -2,12 +2,16 @@
 
 
 
-void hist_fill(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v_var, int is_reco, double &n_reco)
+void hist_fill(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v_var, int is_reco, double &n_reco, double &n_pos, double &n_reco_pos, int ID)
 {
   int size = v_hist.size();
   for(int i = 0; i < size; ++i)
   {
     v_hist.at(i)->Fill(v_var.at(i));
+  }
+  if(ID > 0)
+  {
+    n_pos+=1./5.;
   }
   if(is_reco == 1)
     {
@@ -15,7 +19,11 @@ void hist_fill(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<double> v
     {
       v_hist_reco.at(i)->Fill(v_var.at(i));
     }  
-    n_reco+=1;
+    n_reco+=1.;
+    if(ID > 0)
+    {
+      n_reco_pos+=1.;
+    }
     }
 }
 void hist_divide(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco)
@@ -42,12 +50,18 @@ void eff(string dir, string sample)
   double nPi_reco = 0.;
   double nK_reco = 0.;
   double nSPi_reco = 0.;
-/*
+
   double nDst_reco_pos = 0.;
   double nD0_reco_pos = 0.;
   double nPi_reco_pos = 0.;
   double nK_reco_pos = 0.;
-  double nSPi_reco_pos = 0.;*/
+  double nSPi_reco_pos = 0.;
+  
+  double nDst_reco_neg = 0.;
+  double nD0_reco_neg = 0.;
+  double nPi_reco_neg = 0.;
+  double nK_reco_neg = 0.;
+  double nSPi_reco_neg = 0.;
 
   double Dst_pT, D0_pT, Pi_pT, K_pT, SPi_pT;
 
@@ -187,11 +201,11 @@ void eff(string dir, string sample)
     (isPi_reco == 1 && isK_reco == 1)? isD0_reco = 1 : isD0_reco = 0;
     (isSPi_reco == 1 && isD0_reco == 1)? isDst_reco = 1 : isDst_reco = 0;
     
-    hist_fill(v_Pi_hist, v_Pi_hist_reco, v_Pi_var, isPi_reco, nPi_reco);
-    hist_fill(v_K_hist, v_K_hist_reco, v_K_var, isK_reco, nK_reco);
-    hist_fill(v_SPi_hist, v_SPi_hist_reco, v_SPi_var, isSPi_reco, nSPi_reco);
-    hist_fill(v_D0_hist, v_D0_hist_reco, v_D0_var, isD0_reco, nD0_reco);
-    hist_fill(v_Dst_hist, v_Dst_hist_reco, v_Dst_var, isDst_reco, nDst_reco);
+    hist_fill(v_Pi_hist, v_Pi_hist_reco, v_Pi_var, isPi_reco, nPi_reco, n_pos, nPi_reco_pos, Pi_ID);
+    hist_fill(v_K_hist, v_K_hist_reco, v_K_var, isK_reco, nK_reco, n_pos, nK_reco_pos, K_ID);
+    hist_fill(v_SPi_hist, v_SPi_hist_reco, v_SPi_var, isSPi_reco, nSPi_reco, n_pos, nSPi_reco_pos, SPi_ID);
+    hist_fill(v_D0_hist, v_D0_hist_reco, v_D0_var, isD0_reco, nD0_reco, n_pos, nD0_reco_pos, D0_ID);
+    hist_fill(v_Dst_hist, v_Dst_hist_reco, v_Dst_var, isDst_reco, nDst_reco, n_pos, nDst_reco_pos, Dst_ID);
     
     v_Pi_var.clear();
     v_K_var.clear();
@@ -199,6 +213,12 @@ void eff(string dir, string sample)
     v_D0_var.clear();
     v_Dst_var.clear();
   }
+  n_neg = nEvents - n_pos;
+  nPi_reco_neg = nPi_reco - nPi_reco_pos;
+  nK_reco_neg = nK_reco - nK_reco_pos;
+  nSPi_reco_neg = nSPi_reco - nSPi_reco_pos;
+  nD0_reco_neg = nD0_reco - nD0_reco_pos;
+  nDst_reco_neg = nDst_reco - nDst_reco_pos;
   
   hist_divide(v_Pi_hist,v_Pi_hist_reco);
   hist_divide(v_K_hist,v_K_hist_reco);
@@ -236,18 +256,28 @@ void eff(string dir, string sample)
 
   out_hist_fi->Write();
   out_hist_fi->Close();
-
+  
+  
+  cout << "Total: " << endl;
   cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/nEvents << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/nEvents << " +/- " << sqrt( nK_reco + pow(nK_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/nEvents << " +/- " << sqrt( nSPi_reco + pow(nSPi_reco, 2.) / nEvents)/nEvents  << endl;
   cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/nEvents << " +/- " << sqrt( nD0_reco + pow(nD0_reco, 2.) / nEvents)/nEvents << endl;
   cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/nEvents << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / nEvents)/nEvents  << endl;
 
-  /*cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/n_pos << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / n_pos)/n_pos << endl;
-  cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/n_pos << " +/- " << sqrt( nK_reco + pow(nK_reco, 2.) / n_pos)/n_pos << endl;
-  cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/n_pos << " +/- " << sqrt( nSPi_reco + pow(nSPi_reco, 2.) / n_pos)/n_pos  << endl;
-  cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/n_pos << " +/- " << sqrt( nD0_reco + pow(nD0_reco, 2.) / n_pos)/n_pos << endl;
-  cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/n_pos << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / n_pos)/n_pos  << endl;*/
+  cout << "Charge: +" << endl;
+  cout << "Reconstructed number of pions: " << nPi_reco_pos << ", eff.: " << nPi_reco_pos/n_pos << " +/- " << sqrt( nPi_reco_pos + pow(nPi_reco_pos, 2.) / n_pos)/n_pos << endl;
+  cout << "Reconstructed number of Kaons: " << nK_reco_pos << ", eff.: " << nK_reco_pos/n_pos << " +/- " << sqrt( nK_reco_pos + pow(nK_reco_pos, 2.) / n_pos)/n_pos << endl;
+  cout << "Reconstructed number of soft pions: " << nSPi_reco_pos << ", eff.: " << nSPi_reco_pos/n_pos << " +/- " << sqrt( nSPi_reco_pos + pow(nSPi_reco_pos, 2.) / n_pos)/n_pos  << endl;
+  cout << "Reconstructed number of D0: " << nD0_reco_pos << ", eff.: " << nD0_reco_pos/n_pos << " +/- " << sqrt( nD0_reco_pos + pow(nD0_reco_pos, 2.) / n_pos)/n_pos << endl;
+  cout << "Reconstructed number of D*: " << nDst_reco_pos << ", eff.: " << nDst_reco_pos/n_pos << " +/- " << sqrt( nDst_reco_pos + pow(nDst_reco_pos, 2.) / n_pos)/n_pos  << endl;
+
+  cout << "Charge: -" << endl;
+  cout << "Reconstructed number of pions: " << nPi_reco_neg << ", eff.: " << nPi_reco_neg/n_neg << " +/- " << sqrt( nPi_reco_neg + pow(nPi_reco_neg, 2.) / n_neg)/n_neg << endl;
+  cout << "Reconstructed number of Kaons: " << nK_reco_neg << ", eff.: " << nK_reco_neg/n_neg << " +/- " << sqrt( nK_reco_neg + pow(nK_reco_neg, 2.) / n_neg)/n_neg << endl;
+  cout << "Reconstructed number of soft pions: " << nSPi_reco_neg << ", eff.: " << nSPi_reco_neg/n_neg << " +/- " << sqrt( nSPi_reco_neg + pow(nSPi_reco_neg, 2.) / n_neg)/n_neg  << endl;
+  cout << "Reconstructed number of D0: " << nD0_reco_neg << ", eff.: " << nD0_reco_neg/n_neg << " +/- " << sqrt( nD0_reco_neg + pow(nD0_reco_neg, 2.) / n_neg)/n_neg << endl;
+  cout << "Reconstructed number of D*: " << nDst_reco_neg << ", eff.: " << nDst_reco_neg/n_neg << " +/- " << sqrt( nDst_reco_neg + pow(nDst_reco_neg, 2.) / n_neg)/n_neg  << endl;
 
 
   TCanvas *c1 = new TCanvas();
