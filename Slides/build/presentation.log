@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.23)  13 DEC 2019 00:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.23)  13 DEC 2019 01:44
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -1234,132 +1234,448 @@ thkerncmss.
 [3
 
 ]
-<up_pdf/h_pt_reco_Pi.pdf, id=103, 569.12625pt x 385.44pt>
-File: up_pdf/h_pt_reco_Pi.pdf Graphic file (type pdf)
-<use up_pdf/h_pt_reco_Pi.pdf>
-Package pdftex.def Info: up_pdf/h_pt_reco_Pi.pdf  used on input line 62.
+<up_pdf/tot/h_pt_reco_Pi.pdf, id=103, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_pt_reco_Pi.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_pt_reco_Pi.pdf>
+Package pdftex.def Info: up_pdf/tot/h_pt_reco_Pi.pdf  used on input line 62.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_phi_reco_Pi.pdf, id=104, 569.12625pt x 385.44pt>
-File: up_pdf/h_phi_reco_Pi.pdf Graphic file (type pdf)
-<use up_pdf/h_phi_reco_Pi.pdf>
-Package pdftex.def Info: up_pdf/h_phi_reco_Pi.pdf  used on input line 62.
+<up_pdf/tot/h_phi_reco_Pi.pdf, id=104, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_phi_reco_Pi.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_phi_reco_Pi.pdf>
+Package pdftex.def Info: up_pdf/tot/h_phi_reco_Pi.pdf  used on input line 62.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_theta_reco_Pi.pdf, id=105, 569.12625pt x 385.44pt>
-File: up_pdf/h_theta_reco_Pi.pdf Graphic file (type pdf)
-<use up_pdf/h_theta_reco_Pi.pdf>
-Package pdftex.def Info: up_pdf/h_theta_reco_Pi.pdf  used on input line 62.
+<up_pdf/tot/h_theta_reco_Pi.pdf, id=105, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_theta_reco_Pi.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_theta_reco_Pi.pdf>
+Package pdftex.def Info: up_pdf/tot/h_theta_reco_Pi.pdf  used on input line 62.
+
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_eta_reco_Pi.pdf, id=106, 569.12625pt x 385.44pt>
-File: up_pdf/h_eta_reco_Pi.pdf Graphic file (type pdf)
-<use up_pdf/h_eta_reco_Pi.pdf>
-Package pdftex.def Info: up_pdf/h_eta_reco_Pi.pdf  used on input line 62.
+<up_pdf/tot/h_eta_reco_Pi.pdf, id=106, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_eta_reco_Pi.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_eta_reco_Pi.pdf>
+Package pdftex.def Info: up_pdf/tot/h_eta_reco_Pi.pdf  used on input line 62.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
  [4
 
- <./up_pdf/h_pt_reco_Pi.pdf, page is rotated 90 degrees> <./up_pdf/h_phi_reco_P
-i.pdf, page is rotated 90 degrees> <./up_pdf/h_theta_reco_Pi.pdf, page is rotat
-ed 90 degrees> <./up_pdf/h_eta_reco_Pi.pdf, page is rotated 90 degrees>]
-<up_pdf/h_pt_reco_K.pdf, id=306, 569.12625pt x 385.44pt>
-File: up_pdf/h_pt_reco_K.pdf Graphic file (type pdf)
-<use up_pdf/h_pt_reco_K.pdf>
-Package pdftex.def Info: up_pdf/h_pt_reco_K.pdf  used on input line 78.
+ <./up_pdf/tot/h_pt_reco_Pi.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_ph
+i_reco_Pi.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_theta_reco_Pi.pdf, p
+age is rotated 90 degrees> <./up_pdf/tot/h_eta_reco_Pi.pdf, page is rotated 90 
+degrees>]
+<up_pdf/tot/h_pt_reco_K.pdf, id=306, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_pt_reco_K.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_pt_reco_K.pdf>
+Package pdftex.def Info: up_pdf/tot/h_pt_reco_K.pdf  used on input line 78.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_phi_reco_K.pdf, id=307, 569.12625pt x 385.44pt>
-File: up_pdf/h_phi_reco_K.pdf Graphic file (type pdf)
-<use up_pdf/h_phi_reco_K.pdf>
-Package pdftex.def Info: up_pdf/h_phi_reco_K.pdf  used on input line 78.
+<up_pdf/tot/h_phi_reco_K.pdf, id=307, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_phi_reco_K.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_phi_reco_K.pdf>
+Package pdftex.def Info: up_pdf/tot/h_phi_reco_K.pdf  used on input line 78.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_theta_reco_K.pdf, id=308, 569.12625pt x 385.44pt>
-File: up_pdf/h_theta_reco_K.pdf Graphic file (type pdf)
-<use up_pdf/h_theta_reco_K.pdf>
-Package pdftex.def Info: up_pdf/h_theta_reco_K.pdf  used on input line 78.
+<up_pdf/tot/h_theta_reco_K.pdf, id=308, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_theta_reco_K.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_theta_reco_K.pdf>
+Package pdftex.def Info: up_pdf/tot/h_theta_reco_K.pdf  used on input line 78.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_eta_reco_K.pdf, id=309, 569.12625pt x 385.44pt>
-File: up_pdf/h_eta_reco_K.pdf Graphic file (type pdf)
-<use up_pdf/h_eta_reco_K.pdf>
-Package pdftex.def Info: up_pdf/h_eta_reco_K.pdf  used on input line 78.
+<up_pdf/tot/h_eta_reco_K.pdf, id=309, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_eta_reco_K.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_eta_reco_K.pdf>
+Package pdftex.def Info: up_pdf/tot/h_eta_reco_K.pdf  used on input line 78.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [5
 
-[5
-
- <./up_pdf/h_pt_reco_K.pdf, page is rotated 90 degrees> <./up_pdf/h_phi_reco_K.
-pdf, page is rotated 90 degrees> <./up_pdf/h_theta_reco_K.pdf, page is rotated 
-90 degrees> <./up_pdf/h_eta_reco_K.pdf, page is rotated 90 degrees>]
-<up_pdf/h_pt_reco_SPi.pdf, id=509, 569.12625pt x 385.44pt>
-File: up_pdf/h_pt_reco_SPi.pdf Graphic file (type pdf)
-<use up_pdf/h_pt_reco_SPi.pdf>
-Package pdftex.def Info: up_pdf/h_pt_reco_SPi.pdf  used on input line 94.
+ <./up_pdf/tot/h_pt_reco_K.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_phi
+_reco_K.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_theta_reco_K.pdf, page
+ is rotated 90 degrees> <./up_pdf/tot/h_eta_reco_K.pdf, page is rotated 90 degr
+ees>]
+<up_pdf/tot/h_pt_reco_SPi.pdf, id=509, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_pt_reco_SPi.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_pt_reco_SPi.pdf>
+Package pdftex.def Info: up_pdf/tot/h_pt_reco_SPi.pdf  used on input line 94.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_phi_reco_SPi.pdf, id=510, 569.12625pt x 385.44pt>
-File: up_pdf/h_phi_reco_SPi.pdf Graphic file (type pdf)
-<use up_pdf/h_phi_reco_SPi.pdf>
-Package pdftex.def Info: up_pdf/h_phi_reco_SPi.pdf  used on input line 94.
+<up_pdf/tot/h_phi_reco_SPi.pdf, id=510, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_phi_reco_SPi.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_phi_reco_SPi.pdf>
+Package pdftex.def Info: up_pdf/tot/h_phi_reco_SPi.pdf  used on input line 94.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_theta_reco_SPi.pdf, id=511, 569.12625pt x 385.44pt>
-File: up_pdf/h_theta_reco_SPi.pdf Graphic file (type pdf)
-<use up_pdf/h_theta_reco_SPi.pdf>
-Package pdftex.def Info: up_pdf/h_theta_reco_SPi.pdf  used on input line 94.
+<up_pdf/tot/h_theta_reco_SPi.pdf, id=511, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_theta_reco_SPi.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_theta_reco_SPi.pdf>
+Package pdftex.def Info: up_pdf/tot/h_theta_reco_SPi.pdf  used on input line 94
+.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_eta_reco_SPi.pdf, id=512, 569.12625pt x 385.44pt>
-File: up_pdf/h_eta_reco_SPi.pdf Graphic file (type pdf)
-<use up_pdf/h_eta_reco_SPi.pdf>
-Package pdftex.def Info: up_pdf/h_eta_reco_SPi.pdf  used on input line 94.
+<up_pdf/tot/h_eta_reco_SPi.pdf, id=512, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_eta_reco_SPi.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_eta_reco_SPi.pdf>
+Package pdftex.def Info: up_pdf/tot/h_eta_reco_SPi.pdf  used on input line 94.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
  [6
 
- <./up_pdf/h_pt_reco_SPi.pdf, page is rotated 90 degrees> <./up_pdf/h_phi_reco_
-SPi.pdf, page is rotated 90 degrees> <./up_pdf/h_theta_reco_SPi.pdf, page is ro
-tated 90 degrees> <./up_pdf/h_eta_reco_SPi.pdf, page is rotated 90 degrees>]
-<up_pdf/h_pt_reco_D0.pdf, id=711, 569.12625pt x 385.44pt>
-File: up_pdf/h_pt_reco_D0.pdf Graphic file (type pdf)
-<use up_pdf/h_pt_reco_D0.pdf>
-Package pdftex.def Info: up_pdf/h_pt_reco_D0.pdf  used on input line 110.
+ <./up_pdf/tot/h_pt_reco_SPi.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_p
+hi_reco_SPi.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_theta_reco_SPi.pdf
+, page is rotated 90 degrees> <./up_pdf/tot/h_eta_reco_SPi.pdf, page is rotated
+ 90 degrees>]
+<up_pdf/tot/h_pt_reco_D0.pdf, id=711, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_pt_reco_D0.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_pt_reco_D0.pdf>
+Package pdftex.def Info: up_pdf/tot/h_pt_reco_D0.pdf  used on input line 110.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_phi_reco_D0.pdf, id=712, 569.12625pt x 385.44pt>
-File: up_pdf/h_phi_reco_D0.pdf Graphic file (type pdf)
-<use up_pdf/h_phi_reco_D0.pdf>
-Package pdftex.def Info: up_pdf/h_phi_reco_D0.pdf  used on input line 110.
+<up_pdf/tot/h_phi_reco_D0.pdf, id=712, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_phi_reco_D0.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_phi_reco_D0.pdf>
+Package pdftex.def Info: up_pdf/tot/h_phi_reco_D0.pdf  used on input line 110.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_theta_reco_D0.pdf, id=713, 569.12625pt x 385.44pt>
-File: up_pdf/h_theta_reco_D0.pdf Graphic file (type pdf)
-<use up_pdf/h_theta_reco_D0.pdf>
-Package pdftex.def Info: up_pdf/h_theta_reco_D0.pdf  used on input line 110.
+<up_pdf/tot/h_theta_reco_D0.pdf, id=713, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_theta_reco_D0.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_theta_reco_D0.pdf>
+Package pdftex.def Info: up_pdf/tot/h_theta_reco_D0.pdf  used on input line 110
+.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_eta_reco_D0.pdf, id=714, 569.12625pt x 385.44pt>
-File: up_pdf/h_eta_reco_D0.pdf Graphic file (type pdf)
-<use up_pdf/h_eta_reco_D0.pdf>
-Package pdftex.def Info: up_pdf/h_eta_reco_D0.pdf  used on input line 110.
+<up_pdf/tot/h_eta_reco_D0.pdf, id=714, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_eta_reco_D0.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_eta_reco_D0.pdf>
+Package pdftex.def Info: up_pdf/tot/h_eta_reco_D0.pdf  used on input line 110.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
  [7
 
- <./up_pdf/h_pt_reco_D0.pdf, page is rotated 90 degrees> <./up_pdf/h_phi_reco_D
-0.pdf, page is rotated 90 degrees> <./up_pdf/h_theta_reco_D0.pdf, page is rotat
-ed 90 degrees> <./up_pdf/h_eta_reco_D0.pdf, page is rotated 90 degrees>]
-<up_pdf/h_pt_reco_Dst.pdf, id=913, 569.12625pt x 385.44pt>
-File: up_pdf/h_pt_reco_Dst.pdf Graphic file (type pdf)
-<use up_pdf/h_pt_reco_Dst.pdf>
-Package pdftex.def Info: up_pdf/h_pt_reco_Dst.pdf  used on input line 126.
+ <./up_pdf/tot/h_pt_reco_D0.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_ph
+i_reco_D0.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_theta_reco_D0.pdf, p
+age is rotated 90 degrees> <./up_pdf/tot/h_eta_reco_D0.pdf, page is rotated 90 
+degrees>]
+<up_pdf/tot/h_pt_reco_Dst.pdf, id=913, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_pt_reco_Dst.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_pt_reco_Dst.pdf>
+Package pdftex.def Info: up_pdf/tot/h_pt_reco_Dst.pdf  used on input line 126.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_phi_reco_Dst.pdf, id=914, 569.12625pt x 385.44pt>
-File: up_pdf/h_phi_reco_Dst.pdf Graphic file (type pdf)
-<use up_pdf/h_phi_reco_Dst.pdf>
-Package pdftex.def Info: up_pdf/h_phi_reco_Dst.pdf  used on input line 126.
+<up_pdf/tot/h_phi_reco_Dst.pdf, id=914, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_phi_reco_Dst.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_phi_reco_Dst.pdf>
+Package pdftex.def Info: up_pdf/tot/h_phi_reco_Dst.pdf  used on input line 126.
+
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_theta_reco_Dst.pdf, id=915, 569.12625pt x 385.44pt>
-File: up_pdf/h_theta_reco_Dst.pdf Graphic file (type pdf)
-<use up_pdf/h_theta_reco_Dst.pdf>
-Package pdftex.def Info: up_pdf/h_theta_reco_Dst.pdf  used on input line 126.
+<up_pdf/tot/h_theta_reco_Dst.pdf, id=915, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_theta_reco_Dst.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_theta_reco_Dst.pdf>
+Package pdftex.def Info: up_pdf/tot/h_theta_reco_Dst.pdf  used on input line 12
+6.
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
-<up_pdf/h_eta_reco_Dst.pdf, id=916, 569.12625pt x 385.44pt>
-File: up_pdf/h_eta_reco_Dst.pdf Graphic file (type pdf)
-<use up_pdf/h_eta_reco_Dst.pdf>
-Package pdftex.def Info: up_pdf/h_eta_reco_Dst.pdf  used on input line 126.
+<up_pdf/tot/h_eta_reco_Dst.pdf, id=916, 569.12625pt x 385.44pt>
+File: up_pdf/tot/h_eta_reco_Dst.pdf Graphic file (type pdf)
+<use up_pdf/tot/h_eta_reco_Dst.pdf>
+Package pdftex.def Info: up_pdf/tot/h_eta_reco_Dst.pdf  used on input line 126.
+
 (pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
  [8
 
- <./up_pdf/h_pt_reco_Dst.pdf, page is rotated 90 degrees> <./up_pdf/h_phi_reco_
-Dst.pdf, page is rotated 90 degrees> <./up_pdf/h_theta_reco_Dst.pdf, page is ro
-tated 90 degrees> <./up_pdf/h_eta_reco_Dst.pdf, page is rotated 90 degrees>]
+ <./up_pdf/tot/h_pt_reco_Dst.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_p
+hi_reco_Dst.pdf, page is rotated 90 degrees> <./up_pdf/tot/h_theta_reco_Dst.pdf
+, page is rotated 90 degrees> <./up_pdf/tot/h_eta_reco_Dst.pdf, page is rotated
+ 90 degrees>] [9
+
+]
+<up_pdf/pos/h_pt_reco_Pi_pos.pdf, id=1142, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_pt_reco_Pi_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_pt_reco_Pi_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_pt_reco_Pi_pos.pdf  used on input line 14
+7.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_phi_reco_Pi_pos.pdf, id=1143, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_phi_reco_Pi_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_phi_reco_Pi_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_phi_reco_Pi_pos.pdf  used on input line 1
+47.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_theta_reco_Pi_pos.pdf, id=1144, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_theta_reco_Pi_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_theta_reco_Pi_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_theta_reco_Pi_pos.pdf  used on input line
+ 147.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_eta_reco_Pi_pos.pdf, id=1145, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_eta_reco_Pi_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_eta_reco_Pi_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_eta_reco_Pi_pos.pdf  used on input line 1
+47.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+
+[10
+
+ <./up_pdf/pos/h_pt_reco_Pi_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/
+h_phi_reco_Pi_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_theta_reco_P
+i_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_eta_reco_Pi_pos.pdf, pag
+e is rotated 90 degrees>]
+<up_pdf/pos/h_pt_reco_K_pos.pdf, id=1344, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_pt_reco_K_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_pt_reco_K_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_pt_reco_K_pos.pdf  used on input line 163
+.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_phi_reco_K_pos.pdf, id=1345, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_phi_reco_K_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_phi_reco_K_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_phi_reco_K_pos.pdf  used on input line 16
+3.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_theta_reco_K_pos.pdf, id=1346, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_theta_reco_K_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_theta_reco_K_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_theta_reco_K_pos.pdf  used on input line 
+163.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_eta_reco_K_pos.pdf, id=1347, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_eta_reco_K_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_eta_reco_K_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_eta_reco_K_pos.pdf  used on input line 16
+3.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [11
+
+ <./up_pdf/pos/h_pt_reco_K_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h
+_phi_reco_K_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_theta_reco_K_p
+os.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_eta_reco_K_pos.pdf, page is
+ rotated 90 degrees>]
+<up_pdf/pos/h_pt_reco_SPi_pos.pdf, id=1546, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_pt_reco_SPi_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_pt_reco_SPi_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_pt_reco_SPi_pos.pdf  used on input line 1
+79.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_phi_reco_SPi_pos.pdf, id=1547, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_phi_reco_SPi_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_phi_reco_SPi_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_phi_reco_SPi_pos.pdf  used on input line 
+179.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_theta_reco_SPi_pos.pdf, id=1548, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_theta_reco_SPi_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_theta_reco_SPi_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_theta_reco_SPi_pos.pdf  used on input lin
+e 179.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_eta_reco_SPi_pos.pdf, id=1549, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_eta_reco_SPi_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_eta_reco_SPi_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_eta_reco_SPi_pos.pdf  used on input line 
+179.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [12
+
+ <./up_pdf/pos/h_pt_reco_SPi_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos
+/h_phi_reco_SPi_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_theta_reco
+_SPi_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_eta_reco_SPi_pos.pdf,
+ page is rotated 90 degrees>]
+<up_pdf/pos/h_pt_reco_D0_pos.pdf, id=1748, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_pt_reco_D0_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_pt_reco_D0_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_pt_reco_D0_pos.pdf  used on input line 19
+5.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_phi_reco_D0_pos.pdf, id=1749, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_phi_reco_D0_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_phi_reco_D0_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_phi_reco_D0_pos.pdf  used on input line 1
+95.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_theta_reco_D0_pos.pdf, id=1750, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_theta_reco_D0_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_theta_reco_D0_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_theta_reco_D0_pos.pdf  used on input line
+ 195.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_eta_reco_D0_pos.pdf, id=1751, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_eta_reco_D0_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_eta_reco_D0_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_eta_reco_D0_pos.pdf  used on input line 1
+95.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [13
+
+ <./up_pdf/pos/h_pt_reco_D0_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/
+h_phi_reco_D0_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_theta_reco_D
+0_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_eta_reco_D0_pos.pdf, pag
+e is rotated 90 degrees>]
+<up_pdf/pos/h_pt_reco_Dst_pos.pdf, id=1951, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_pt_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_pt_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_pt_reco_Dst_pos.pdf  used on input line 2
+11.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_phi_reco_Dst_pos.pdf, id=1952, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_phi_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_phi_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_phi_reco_Dst_pos.pdf  used on input line 
+211.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_theta_reco_Dst_pos.pdf, id=1953, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_theta_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_theta_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_theta_reco_Dst_pos.pdf  used on input lin
+e 211.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/pos/h_eta_reco_Dst_pos.pdf, id=1954, 569.12625pt x 385.44pt>
+File: up_pdf/pos/h_eta_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/pos/h_eta_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/pos/h_eta_reco_Dst_pos.pdf  used on input line 
+211.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [14
+
+ <./up_pdf/pos/h_pt_reco_Dst_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos
+/h_phi_reco_Dst_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_theta_reco
+_Dst_pos.pdf, page is rotated 90 degrees> <./up_pdf/pos/h_eta_reco_Dst_pos.pdf,
+ page is rotated 90 degrees>] [15
+
+]
+<up_pdf/neg/h_pt_reco_Pi_neg.pdf, id=2179, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_pt_reco_Pi_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_pt_reco_Pi_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_pt_reco_Pi_neg.pdf  used on input line 23
+2.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_phi_reco_Pi_neg.pdf, id=2180, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_phi_reco_Pi_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_phi_reco_Pi_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_phi_reco_Pi_neg.pdf  used on input line 2
+32.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_theta_reco_Pi_neg.pdf, id=2181, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_theta_reco_Pi_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_theta_reco_Pi_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_theta_reco_Pi_neg.pdf  used on input line
+ 232.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_eta_reco_Pi_neg.pdf, id=2182, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_eta_reco_Pi_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_eta_reco_Pi_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_eta_reco_Pi_neg.pdf  used on input line 2
+32.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+
+[16
+
+ <./up_pdf/neg/h_pt_reco_Pi_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/
+h_phi_reco_Pi_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_theta_reco_P
+i_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_eta_reco_Pi_neg.pdf, pag
+e is rotated 90 degrees>]
+<up_pdf/neg/h_pt_reco_K_neg.pdf, id=2381, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_pt_reco_K_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_pt_reco_K_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_pt_reco_K_neg.pdf  used on input line 248
+.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_phi_reco_K_neg.pdf, id=2382, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_phi_reco_K_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_phi_reco_K_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_phi_reco_K_neg.pdf  used on input line 24
+8.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_theta_reco_K_neg.pdf, id=2383, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_theta_reco_K_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_theta_reco_K_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_theta_reco_K_neg.pdf  used on input line 
+248.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_eta_reco_K_neg.pdf, id=2384, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_eta_reco_K_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_eta_reco_K_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_eta_reco_K_neg.pdf  used on input line 24
+8.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [17
+
+ <./up_pdf/neg/h_pt_reco_K_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h
+_phi_reco_K_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_theta_reco_K_n
+eg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_eta_reco_K_neg.pdf, page is
+ rotated 90 degrees>]
+<up_pdf/neg/h_pt_reco_SPi_neg.pdf, id=2583, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_pt_reco_SPi_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_pt_reco_SPi_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_pt_reco_SPi_neg.pdf  used on input line 2
+64.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_phi_reco_SPi_neg.pdf, id=2584, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_phi_reco_SPi_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_phi_reco_SPi_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_phi_reco_SPi_neg.pdf  used on input line 
+264.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_theta_reco_SPi_neg.pdf, id=2585, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_theta_reco_SPi_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_theta_reco_SPi_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_theta_reco_SPi_neg.pdf  used on input lin
+e 264.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_eta_reco_SPi_neg.pdf, id=2586, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_eta_reco_SPi_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_eta_reco_SPi_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_eta_reco_SPi_neg.pdf  used on input line 
+264.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [18
+
+ <./up_pdf/neg/h_pt_reco_SPi_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg
+/h_phi_reco_SPi_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_theta_reco
+_SPi_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_eta_reco_SPi_neg.pdf,
+ page is rotated 90 degrees>]
+<up_pdf/neg/h_pt_reco_D0_neg.pdf, id=2785, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_pt_reco_D0_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_pt_reco_D0_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_pt_reco_D0_neg.pdf  used on input line 28
+0.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_phi_reco_D0_neg.pdf, id=2786, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_phi_reco_D0_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_phi_reco_D0_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_phi_reco_D0_neg.pdf  used on input line 2
+80.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_theta_reco_D0_neg.pdf, id=2787, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_theta_reco_D0_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_theta_reco_D0_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_theta_reco_D0_neg.pdf  used on input line
+ 280.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_eta_reco_D0_neg.pdf, id=2788, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_eta_reco_D0_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_eta_reco_D0_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_eta_reco_D0_neg.pdf  used on input line 2
+80.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [19
+
+ <./up_pdf/neg/h_pt_reco_D0_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/
+h_phi_reco_D0_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_theta_reco_D
+0_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_eta_reco_D0_neg.pdf, pag
+e is rotated 90 degrees>]
+<up_pdf/neg/h_pt_reco_Dst_neg.pdf, id=2988, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_pt_reco_Dst_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_pt_reco_Dst_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_pt_reco_Dst_neg.pdf  used on input line 2
+96.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_phi_reco_Dst_neg.pdf, id=2989, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_phi_reco_Dst_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_phi_reco_Dst_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_phi_reco_Dst_neg.pdf  used on input line 
+296.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_theta_reco_Dst_neg.pdf, id=2990, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_theta_reco_Dst_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_theta_reco_Dst_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_theta_reco_Dst_neg.pdf  used on input lin
+e 296.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/neg/h_eta_reco_Dst_neg.pdf, id=2991, 569.12625pt x 385.44pt>
+File: up_pdf/neg/h_eta_reco_Dst_neg.pdf Graphic file (type pdf)
+<use up_pdf/neg/h_eta_reco_Dst_neg.pdf>
+Package pdftex.def Info: up_pdf/neg/h_eta_reco_Dst_neg.pdf  used on input line 
+296.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [20
+
+ <./up_pdf/neg/h_pt_reco_Dst_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg
+/h_phi_reco_Dst_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_theta_reco
+_Dst_neg.pdf, page is rotated 90 degrees> <./up_pdf/neg/h_eta_reco_Dst_neg.pdf,
+ page is rotated 90 degrees>]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -1369,21 +1685,21 @@ tated 90 degrees> <./up_pdf/h_eta_reco_Dst.pdf, page is rotated 90 degrees>]
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 297.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 297.
 
 (C:\Users\Jonah\Desktop\Projekte\iTHEPHY\Slides\build\presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 297.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 297.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30682 strings out of 492902
- 610109 string characters out of 3133550
- 653524 words of memory out of 3000000
- 34085 multiletter control sequences out of 15000+200000
- 544507 words of font info for 70 fonts, out of 3000000 for 9000
+ 30910 strings out of 492902
+ 618478 string characters out of 3133550
+ 653525 words of memory out of 3000000
+ 34246 multiletter control sequences out of 15000+200000
+ 544801 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,70p,799b,729s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
@@ -1393,14 +1709,15 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-si12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi12.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
 Output written on C:\Users\Jonah\Desktop\Projekte\iTHEPHY\Slides\build\presenta
-tion.pdf (8 pages, 466121 bytes).
+tion.pdf (20 pages, 1172862 bytes).
 PDF statistics:
- 1158 PDF objects out of 1200 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3242 PDF objects out of 3580 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
+ 343 words of extra memory for PDF output out of 10000 (max. 10000000)
 
