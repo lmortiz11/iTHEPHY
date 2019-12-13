@@ -184,7 +184,7 @@ void eff(string dir, string sample)
   TH1F *h_pT_reco_D0_pos = new TH1F("h_pT_reco_D0_pos", ";p_{T}/MeV; reconstructed Events", 70, 2000., 9000.);
   TH1F *h_pT_reco_Dst_pos = new TH1F("h_pT_reco_Dst_pos", ";p_{T}/MeV; reconstructed Events", 74, 2200., 9600.);
   TH1F *h_pT_SPi_pos = new TH1F("h_pT_SPi_pos", ";p_{T}/MeV;Events", 35, 100., 800.);
-  TH1F *h_pT_P_posi = new TH1F("h_pT_Pi_pos", ";p_{T}/MeV;Events", 50, 700., 5700.);
+  TH1F *h_pT_Pi_pos = new TH1F("h_pT_Pi_pos", ";p_{T}/MeV;Events", 50, 700., 5700.);
   TH1F *h_pT_K_pos = new TH1F("h_pT_K_pos", ";p_{T}/MeV;Events", 57, 700., 6200.);
   TH1F *h_pT_D0_pos = new TH1F("h_pT_D0_pos", ";p_{T}/MeV;Events", 70, 2000., 9000.);
   TH1F *h_pT_Dst_pos = new TH1F("h_pT_Dst_pos", ";p_{T}/MeV;Events", 74, 2200., 9600.);
@@ -359,13 +359,13 @@ void eff(string dir, string sample)
 
 
   vector<TH1F*> v_Pi_hist_reco_neg = {h_pT_reco_Pi_neg, h_phi_reco_Pi_neg, h_theta_reco_Pi_neg, h_eta_reco_Pi_neg};
-  vector<TH1F*> v_SPi_hist_reco_neg = {h_pT_reco_SPi_neg, h_phi_reco_SPi_neg, h_theta_reco_SP_negi, h_eta_reco_SPi_neg};
+  vector<TH1F*> v_SPi_hist_reco_neg = {h_pT_reco_SPi_neg, h_phi_reco_SPi_neg, h_theta_reco_SPi_neg, h_eta_reco_SPi_neg};
   vector<TH1F*> v_K_hist_reco_neg = {h_pT_reco_K_neg, h_phi_reco_K_neg, h_theta_reco_K_neg, h_eta_reco_K_neg};
   vector<TH1F*> v_D0_hist_reco_neg = {h_pT_reco_D0_neg, h_phi_reco_D0_neg, h_theta_reco_D0_neg, h_eta_reco_D0_neg};
   vector<TH1F*> v_Dst_hist_reco_neg = {h_pT_reco_Dst_neg, h_phi_reco_Dst_neg, h_theta_reco_Dst_neg, h_eta_reco_Dst_neg};
 
   vector<TH1F*> v_Pi_hist_neg = {h_pT_Pi_neg, h_phi_Pi_neg, h_theta_Pi_neg, h_eta_Pi_neg};
-  vector<TH1F*> v_SPi_hist_neg = {h_pT_SPi_neg, h_phi_SPi_neg, h_theta_SPi_neg, h_eta_SP_negi};
+  vector<TH1F*> v_SPi_hist_neg = {h_pT_SPi_neg, h_phi_SPi_neg, h_theta_SPi_neg, h_eta_SPi_neg};
   vector<TH1F*> v_K_hist_neg = {h_pT_K_neg, h_phi_K_neg, h_theta_K_neg, h_eta_K_neg};
   vector<TH1F*> v_D0_hist_neg = {h_pT_D0_neg, h_phi_D0_neg, h_theta_D0_neg, h_eta_D0_neg};
   vector<TH1F*> v_Dst_hist_neg = {h_pT_Dst_neg, h_phi_Dst_neg, h_theta_Dst_neg, h_eta_Dst_neg};
