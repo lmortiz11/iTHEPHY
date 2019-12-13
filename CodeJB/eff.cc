@@ -409,11 +409,11 @@ void eff(string dir, string sample)
   hist_divide(v_D0_hist,v_D0_hist_reco);
   hist_divide(v_Dst_hist,v_Dst_hist_reco);
 
-  hist_divide(v_Pi_hist_pos,v_Pi_hist_reco_neg);
-  hist_divide(v_K_hist_pos,v_K_hist_reco_neg);
-  hist_divide(v_SPi_hist_pos,v_SPi_hist_reco_neg);
-  hist_divide(v_D0_hist_pos,v_D0_hist_reco_neg);
-  hist_divide(v_Dst_hist_pos,v_Dst_hist_reco_neg);
+  hist_divide(v_Pi_hist_pos,v_Pi_hist_reco_pos);
+  hist_divide(v_K_hist_pos,v_K_hist_reco_pos);
+  hist_divide(v_SPi_hist_pos,v_SPi_hist_reco_pos);
+  hist_divide(v_D0_hist_pos,v_D0_hist_reco_pos);
+  hist_divide(v_Dst_hist_pos,v_Dst_hist_reco_pos);
 
   hist_divide(v_Pi_hist_neg,v_Pi_hist_reco_neg);
   hist_divide(v_K_hist_neg,v_K_hist_reco_neg);
