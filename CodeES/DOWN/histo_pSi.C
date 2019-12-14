@@ -10,17 +10,17 @@ void ntp::Loop()
     
 
     
-    TH1* h1_phi_rec=new TH1D("h1", "sPi_PHI_reco", 50,-4,4);
-    TH1* h2_phi=new TH1D("h2", "sPi_PHI", 50,-4,4);
+    TH1F* h1_phi_rec=new TH1F("h1", "sPi_PHI_reco", 50,-4,4);
+    TH1F* h2_phi=new TH1F("h2", "sPi_PHI", 50,-4,4);
     
-    TH1* h1_eta_rec=new TH1D("h1", "sPi_eta_reco", 50,0,5);
-    TH1* h2_eta=new TH1D("h2", "sPi_eta", 50,0,5);
+    TH1F* h1_eta_rec=new TH1F("h1", "sPi_eta_reco", 50,0,5);
+    TH1* h2_eta=new TH1F("h2", "sPi_eta", 50,0,5);
     
-    TH1* h1_pt_rec=new TH1D("h1", "sPi_PT_reco", 50,0,900);
-    TH1* h2_pt=new TH1D("h1", "sPi_PT_reco", 50,0,900);
+    TH1F* h1_pt_rec=new TH1F("h1", "sPi_PT_reco", 50,0,900);
+    TH1* h2_pt=new TH1F("h1", "sPi_PT_reco", 50,0,900);
     
-    TH1* h1_theta_rec=new TH1D("h1", "sPi_THETA_reco", 50,0,0.2);
-    TH1* h2_theta=new TH1D("h1", "sPi_THETA_reco", 50,0,0.2);
+    TH1F* h1_theta_rec=new TH1F("h1", "sPi_THETA_reco", 50,0,0.2);
+    TH1F* h2_theta=new TH1F("h1", "sPi_THETA_reco", 50,0,0.2);
     
     
     
@@ -74,23 +74,38 @@ void ntp::Loop()
     }
        
    }
+h1_phi_rec->Sumw2();
+h2_phi->Sumw2();
     
+h1_eta_rec->Sumw2();
+h2_eta->Sumw2();
     
-TH1 *h3_phi = (TH1*)h1_phi_rec->Clone("h3_phi"); h3_phi->Divide(h1_phi_rec,h2_phi);
-TH1 *h3_eta = (TH1*)h1_eta_rec->Clone("h3_eta"); h3_eta->Divide(h1_eta_rec,h2_eta);
-TH1 *h3_pt = (TH1*)h1_pt_rec->Clone("h3_pt"); h3_pt->Divide(h1_pt_rec,h2_pt);
-TH1 *h3_theta = (TH1*)h1_theta_rec->Clone("h3_theta"); h3_theta->Divide(h1_theta_rec,h2_theta);
+h1_pt_rec->Sumw2();
+h2_pt->Sumw2();
+    
+h1_theta_rec->Sumw2();
+h2_theta->Sumw2();
+   
+    
+TH1F *h3_phi = (TH1F*)h1_phi_rec->Clone("h3_phi"); h3_phi->Divide(h1_phi_rec,h2_phi);
+TH1F *h3_eta = (TH1F*)h1_eta_rec->Clone("h3_eta"); h3_eta->Divide(h1_eta_rec,h2_eta);
+TH1F *h3_pt = (TH1F*)h1_pt_rec->Clone("h3_pt"); h3_pt->Divide(h1_pt_rec,h2_pt);
+TH1F *h3_theta = (TH1F*)h1_theta_rec->Clone("h3_theta"); h3_theta->Divide(h1_theta_rec,h2_theta);
 
+
+
+    
+    
 TCanvas * c1= new TCanvas("c1","c1",400,10,600,400);
 c1->Divide(2,2);
 c1->cd(1);
-h3_phi->Draw();
+h3_phi->Draw("AE");
 c1->cd(2);
-h3_eta->Draw(); 
+h3_eta->Draw("AE"); 
 c1->cd(3);
-h3_pt->Draw(); 
+h3_pt->Draw("AE"); 
 c1->cd(4);
-h3_theta->Draw(); 
+h3_theta->Draw("AE"); 
     
     
     
