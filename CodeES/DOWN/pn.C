@@ -70,8 +70,7 @@ Double_t D0_rec=0;
       Long64_t ientry = LoadTree(jentry);
       if (ientry < 0) break;
       nb = fChain->GetEntry(jentry);   nbytes += nb;
-       
-   cout << D0_ID << " " << Dst_ID << endl;    
+
        
 if (P1_Reconstructed==1 && P2_Reconstructed==1 && sPi_Reconstructed==1)
 {
@@ -249,7 +248,7 @@ if (sPi_ID<0)
         
  
  
- cout << D0_pos_rec<< " " << D0_rec<<endl;
+ cout << P1_pos_rec<< " " << P1_pos<<endl;
  
  
  
