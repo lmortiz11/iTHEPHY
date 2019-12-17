@@ -29,3 +29,9 @@ Reconstructed number of Kaons: 314671, eff.: 0.842966 +/- 0.00204005
 Reconstructed number of soft pions: 287331, eff.: 0.769725 +/- 0.00191028
 Reconstructed number of D0: 274923, eff.: 0.736486 +/- 0.00185095
 Reconstructed number of D*: 212081, eff.: 0.568139 +/- 0.00154489
+Deviation:
+Pions: 0.000180029 +/- 0.00294245 , in sigmas: 0.0611834
+Kaons: 0.00421581 +/- 0.00289368 , in sigmas: 1.4569
+soft Pions: -0.00467266 +/- 0.00269226 , in sigmas: 1.73559
+D0: -0.0044054 +/- 0.00260921 , in sigmas: 1.68841
+Dst: -0.00978017 +/- 0.00217005 , in sigmas: 4.50688
