@@ -6,7 +6,7 @@ vector<double> get_eff(double n_ges, vector<double> v_n_reco)
   int size = v_n_reco.size();
   for(int i = 0; i < size; ++i)
   {
-    v_eff.add(v_n_reco.at(i)/n_ges);
+    v_eff.push_back(v_n_reco.at(i)/n_ges);
   }
   return v_eff;
 }
@@ -17,7 +17,7 @@ vector<double> get_err(vector<double> v_eff, double n_ges)
   int size = v_eff.size();
   for(int i = 0; i < size; ++i)
   {
-    v_err.add(n_ges * v_eff.at(i) * (1 - v_eff.at(i)));
+    v_err.push_back(n_ges * v_eff.at(i) * (1 - v_eff.at(i)));
   }
   return v_err;
 }
@@ -29,7 +29,7 @@ vector<double> deviation(vector<double> v_eff_pos, vector<double> v_eff_neg)
   int size = v_eff_pos.size();
   for(int i = 0; i < size; ++i)
   {
-  v_dev.add((v_eff_pos.at(i) - v_eff_neg.at(i)) / (v_eff_pos.at(i) + v_eff_neg.at(i)));
+  v_dev.push_back((v_eff_pos.at(i) - v_eff_neg.at(i)) / (v_eff_pos.at(i) + v_eff_neg.at(i)));
   }
   return v_dev;
 }
@@ -40,7 +40,7 @@ vector<double> deviation_err(vector<double> v_eff_pos, vector<double> v_err_pos,
   int size = v_eff_pos.size();
   for(int i = 0; i < size; ++i)
   {
-    v_dev_err.add(4 * (pow(v_err_pos.at(i) * v_eff_neg.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.) + pow(v_err_neg.at(i) * v_eff_pos.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.)))
+    v_dev_err.push_back(4 * (pow(v_err_pos.at(i) * v_eff_neg.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.) + pow(v_err_neg.at(i) * v_eff_pos.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.)))
   }
   return v_dev_err;
 
@@ -105,7 +105,7 @@ void eff(string dir, string sample)
 {
   string input_name = dir+"/"+sample+".root";
   TChain *ntp = new TChain("ntp");
-  ntp->Add(input_name.c_str());
+  ntp->push_back(input_name.c_str());
 
   int nEvents = ntp->GetEntries();
   double n_pos = 0.;
@@ -141,39 +141,39 @@ void eff(string dir, string sample)
 
   int  isPi_reco, isK_reco, isSPi_reco, isD0_reco, isDst_reco;
   ntp->SetBranchStatus("*",0);
-  ntp->SetBranchStatus("P1_Reconstructed",1); ntp->SetBranchAddress("P1_Reconstructed", &(isPi_reco));
-  ntp->SetBranchStatus("P2_Reconstructed",1); ntp->SetBranchAddress("P2_Reconstructed", &(isK_reco));
-  ntp->SetBranchStatus("sPi_Reconstructed",1); ntp->SetBranchAddress("sPi_Reconstructed", &(isSPi_reco));
+  ntp->SetBranchStatus("P1_Reconstructed",1); ntp->SetBranchpush_backress("P1_Reconstructed", &(isPi_reco));
+  ntp->SetBranchStatus("P2_Reconstructed",1); ntp->SetBranchpush_backress("P2_Reconstructed", &(isK_reco));
+  ntp->SetBranchStatus("sPi_Reconstructed",1); ntp->SetBranchpush_backress("sPi_Reconstructed", &(isSPi_reco));
 
-  ntp->SetBranchStatus("Dst_PT",1); ntp->SetBranchAddress("Dst_PT", &(Dst_pT));
-  ntp->SetBranchStatus("D0_PT",1); ntp->SetBranchAddress("D0_PT", &(D0_pT));
-  ntp->SetBranchStatus("P1_PT",1); ntp->SetBranchAddress("P1_PT", &(Pi_pT));
-  ntp->SetBranchStatus("P2_PT",1); ntp->SetBranchAddress("P2_PT", &(K_pT));
-  ntp->SetBranchStatus("sPi_PT",1); ntp->SetBranchAddress("sPi_PT", &(SPi_pT));
+  ntp->SetBranchStatus("Dst_PT",1); ntp->SetBranchpush_backress("Dst_PT", &(Dst_pT));
+  ntp->SetBranchStatus("D0_PT",1); ntp->SetBranchpush_backress("D0_PT", &(D0_pT));
+  ntp->SetBranchStatus("P1_PT",1); ntp->SetBranchpush_backress("P1_PT", &(Pi_pT));
+  ntp->SetBranchStatus("P2_PT",1); ntp->SetBranchpush_backress("P2_PT", &(K_pT));
+  ntp->SetBranchStatus("sPi_PT",1); ntp->SetBranchpush_backress("sPi_PT", &(SPi_pT));
 
-  ntp->SetBranchStatus("Dst_PHI",1); ntp->SetBranchAddress("Dst_PHI", &(Dst_phi));
-  ntp->SetBranchStatus("D0_PHI",1); ntp->SetBranchAddress("D0_PHI", &(D0_phi));
-  ntp->SetBranchStatus("P1_PHI",1); ntp->SetBranchAddress("P1_PHI", &(Pi_phi));
-  ntp->SetBranchStatus("P2_PHI",1); ntp->SetBranchAddress("P2_PHI", &(K_phi));
-  ntp->SetBranchStatus("sPi_PHI",1); ntp->SetBranchAddress("sPi_PHI", &(SPi_phi));
+  ntp->SetBranchStatus("Dst_PHI",1); ntp->SetBranchpush_backress("Dst_PHI", &(Dst_phi));
+  ntp->SetBranchStatus("D0_PHI",1); ntp->SetBranchpush_backress("D0_PHI", &(D0_phi));
+  ntp->SetBranchStatus("P1_PHI",1); ntp->SetBranchpush_backress("P1_PHI", &(Pi_phi));
+  ntp->SetBranchStatus("P2_PHI",1); ntp->SetBranchpush_backress("P2_PHI", &(K_phi));
+  ntp->SetBranchStatus("sPi_PHI",1); ntp->SetBranchpush_backress("sPi_PHI", &(SPi_phi));
 
-  ntp->SetBranchStatus("Dst_THETA",1); ntp->SetBranchAddress("Dst_THETA", &(Dst_theta));
-  ntp->SetBranchStatus("D0_THETA",1); ntp->SetBranchAddress("D0_THETA", &(D0_theta));
-  ntp->SetBranchStatus("P1_THETA",1); ntp->SetBranchAddress("P1_THETA", &(Pi_theta));
-  ntp->SetBranchStatus("P2_THETA",1); ntp->SetBranchAddress("P2_THETA", &(K_theta));
-  ntp->SetBranchStatus("sPi_THETA",1); ntp->SetBranchAddress("sPi_THETA", &(SPi_theta));
+  ntp->SetBranchStatus("Dst_THETA",1); ntp->SetBranchpush_backress("Dst_THETA", &(Dst_theta));
+  ntp->SetBranchStatus("D0_THETA",1); ntp->SetBranchpush_backress("D0_THETA", &(D0_theta));
+  ntp->SetBranchStatus("P1_THETA",1); ntp->SetBranchpush_backress("P1_THETA", &(Pi_theta));
+  ntp->SetBranchStatus("P2_THETA",1); ntp->SetBranchpush_backress("P2_THETA", &(K_theta));
+  ntp->SetBranchStatus("sPi_THETA",1); ntp->SetBranchpush_backress("sPi_THETA", &(SPi_theta));
 
-  ntp->SetBranchStatus("Dst_ETA",1); ntp->SetBranchAddress("Dst_ETA", &(Dst_eta));
-  ntp->SetBranchStatus("D0_ETA",1); ntp->SetBranchAddress("D0_ETA", &(D0_eta));
-  ntp->SetBranchStatus("P1_ETA",1); ntp->SetBranchAddress("P1_ETA", &(Pi_eta));
-  ntp->SetBranchStatus("P2_ETA",1); ntp->SetBranchAddress("P2_ETA", &(K_eta));
-  ntp->SetBranchStatus("sPi_ETA",1); ntp->SetBranchAddress("sPi_ETA", &(SPi_eta));
+  ntp->SetBranchStatus("Dst_ETA",1); ntp->SetBranchpush_backress("Dst_ETA", &(Dst_eta));
+  ntp->SetBranchStatus("D0_ETA",1); ntp->SetBranchpush_backress("D0_ETA", &(D0_eta));
+  ntp->SetBranchStatus("P1_ETA",1); ntp->SetBranchpush_backress("P1_ETA", &(Pi_eta));
+  ntp->SetBranchStatus("P2_ETA",1); ntp->SetBranchpush_backress("P2_ETA", &(K_eta));
+  ntp->SetBranchStatus("sPi_ETA",1); ntp->SetBranchpush_backress("sPi_ETA", &(SPi_eta));
 
-  ntp->SetBranchStatus("Dst_ID",1); ntp->SetBranchAddress("Dst_ID", &(Dst_ID));
-  ntp->SetBranchStatus("D0_ID",1); ntp->SetBranchAddress("D0_ID", &(D0_ID));
-  ntp->SetBranchStatus("P1_ID",1); ntp->SetBranchAddress("P1_ID", &(Pi_ID));
-  ntp->SetBranchStatus("P2_ID",1); ntp->SetBranchAddress("P2_ID", &(K_ID));
-  ntp->SetBranchStatus("sPi_ID",1); ntp->SetBranchAddress("sPi_ID", &(SPi_ID));
+  ntp->SetBranchStatus("Dst_ID",1); ntp->SetBranchpush_backress("Dst_ID", &(Dst_ID));
+  ntp->SetBranchStatus("D0_ID",1); ntp->SetBranchpush_backress("D0_ID", &(D0_ID));
+  ntp->SetBranchStatus("P1_ID",1); ntp->SetBranchpush_backress("P1_ID", &(Pi_ID));
+  ntp->SetBranchStatus("P2_ID",1); ntp->SetBranchpush_backress("P2_ID", &(K_ID));
+  ntp->SetBranchStatus("sPi_ID",1); ntp->SetBranchpush_backress("sPi_ID", &(SPi_ID));
 
 
 
