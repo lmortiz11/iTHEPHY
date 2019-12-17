@@ -40,7 +40,7 @@ vector<double> deviation_err(vector<double> v_eff_pos, vector<double> v_err_pos,
   int size = v_eff_pos.size();
   for(int i = 0; i < size; ++i)
   {
-    v_dev_err.push_back(4 * (pow(v_err_pos.at(i) * v_eff_neg.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.) + pow(v_err_neg.at(i) * v_eff_pos.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.)))
+    v_dev_err.push_back(4 * (pow(v_err_pos.at(i) * v_eff_neg.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.) + pow(v_err_neg.at(i) * v_eff_pos.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.)));
   }
   return v_dev_err;
 
@@ -105,7 +105,7 @@ void eff(string dir, string sample)
 {
   string input_name = dir+"/"+sample+".root";
   TChain *ntp = new TChain("ntp");
-  ntp->push_back(input_name.c_str());
+  ntp->Add(input_name.c_str());
 
   int nEvents = ntp->GetEntries();
   double n_pos = 0.;
@@ -454,7 +454,7 @@ void eff(string dir, string sample)
 
   vector<double> v_eff_ges = get_eff(nEvents,v_n_reco_ges);
   vector<double> v_eff_pos = get_eff(n_pos,v_n_reco_pos);
-  vector<double> v_eff_neg = get_eff(n_ges,v_n_reco_neg);
+  vector<double> v_eff_neg = get_eff(n_neg,v_n_reco_neg);
 
   vector<double> v_err_ges = get_err(v_eff_ges,nEvents);
   vector<double> v_err_pos = get_err(v_eff_pos,n_pos);
