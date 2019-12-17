@@ -458,7 +458,7 @@ void eff(string dir, string sample)
 
   vector<double> v_err_ges = get_err(v_eff_ges,nEvents);
   vector<double> v_err_pos = get_err(v_eff_pos,n_pos);
-  vector<double> v_err_neg = get_err(v_eff_negn_neg);
+  vector<double> v_err_neg = get_err(v_eff_neg,n_neg);
 
   vector<double> v_dev = deviation(v_eff_pos,v_eff_neg);
   vector<double> v_dev_err = deviation_err(v_eff_pos,v_err_pos,v_eff_neg,v_err_neg);
