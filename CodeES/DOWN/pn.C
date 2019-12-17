@@ -74,10 +74,10 @@ TH1F* P1pt_rec_pos=new TH1F("h1", "P1_PT_reco_pos", 50,0,6000);
  TH1F* P1pt_rec_neg=new TH1F("h1", "P1_PT_reco_neg", 50,0,6000);
     TH1* P1pt_neg=new TH1F("h2", "sPi_PT_reco_neg", 50,0,6000);
     
-TH1* P1theta_rec_pos=new TH1F("h1", "P1_THETA_reco_pos", 50,0,0.2);
-    TH1F* P1theta_pos=new TH1F("h2", "P1_THETA_reco_pos", 50,0,0.2);
-TH1* P1theta_rec_neg=new TH1F("h1", "P1_THETA_reco_neg", 50,0,0.2);
-    TH1F* P1theta_neg=new TH1F("h2", "P1_THETA_reco_neg", 50,0,0.2);
+TH1* P1theta_rec_pos=new TH1F("h1", "P1_THETA_reco_pos", 50,0,0.5);
+    TH1F* P1theta_pos=new TH1F("h2", "P1_THETA_reco_pos", 50,0,0.5);
+TH1* P1theta_rec_neg=new TH1F("h1", "P1_THETA_reco_neg", 50,0,0.5);
+    TH1F* P1theta_neg=new TH1F("h2", "P1_THETA_reco_neg", 50,0,0.5);
 //-----------------------------
  
  TH1F* P2phi_rec_pos=new TH1F("h1", "P2_PHI_reco_pos", 50,-4,4);
@@ -95,10 +95,10 @@ TH1F* P2eta_rec_pos=new TH1F("h1", "P2_eta_reco_pos", 50,0,5);
  TH1F* P2pt_rec_neg=new TH1F("h1", "P2_PT_reco_neg", 50,0,9000);
     TH1* P2pt_neg=new TH1F("h2", "P2_PT_reco_neg", 50,0,9000);
     
-TH1F* P2theta_rec_pos=new TH1F("h1", "P2_THETA_reco_pos", 50,0,0.2);
-    TH1F* P2theta_pos=new TH1F("h2", "P2_THETA_reco_pos", 50,0,0.2);
- TH1F* P2theta_rec_neg=new TH1F("h1", "P2_THETA_reco_neg", 50,0,0.2);
-    TH1F* P2theta_neg=new TH1F("h2", "P2_THETA_reco_neg", 50,0,0.2);
+TH1F* P2theta_rec_pos=new TH1F("h1", "P2_THETA_reco_pos", 50,0,0.5);
+    TH1F* P2theta_pos=new TH1F("h2", "P2_THETA_reco_pos", 50,0,0.5);
+ TH1F* P2theta_rec_neg=new TH1F("h1", "P2_THETA_reco_neg", 50,0,0.5);
+    TH1F* P2theta_neg=new TH1F("h2", "P2_THETA_reco_neg", 50,0,0.5);
  
  //---------------------------
  
@@ -419,7 +419,7 @@ if (sPi_ID<0)
     Double_t eff_Dst_neg=Dst_neg_rec/Dst_neg;
  
     //Binomial
-    Double_t P1_pos_err=sqrt((eff_P1_pos*(1-eff_P1_pos))/P1_pos);
+    Double_t P1_pos_err=(1/P1_pos)sqrt((P1_pos_rec*(1-P1_pos_rec))/P1_pos);
 
     Double_t P1_neg_err=sqrt((eff_P1_neg*(1-eff_P1_neg))/P1_neg);
  
