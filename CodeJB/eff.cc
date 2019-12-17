@@ -40,7 +40,7 @@ vector<double> deviation_err(vector<double> v_eff_pos, vector<double> v_err_pos,
   int size = v_eff_pos.size();
   for(int i = 0; i < size; ++i)
   {
-    v_dev_err.push_back(4 * (pow(v_err_pos.at(i) * v_eff_neg.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.) + pow(v_err_neg.at(i) * v_eff_pos.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.)));
+    v_dev_err.push_back(sqrt(4 * (pow(v_err_pos.at(i) * v_eff_neg.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.) + pow(v_err_neg.at(i) * v_eff_pos.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.))));
   }
   return v_dev_err;
 
