@@ -11,13 +11,13 @@ vector<double> get_eff(double n_ges, vector<double> v_n_reco)
   return v_eff;
 }
 
-vector<double> get_err(vector<double> v_eff, double n_ges)
+vector<double> get_err(vector<double> v_eff)
 {
   vector<double> v_err = {};
   int size = v_eff.size();
   for(int i = 0; i < size; ++i)
   {
-    v_err.push_back(n_ges * v_eff.at(i) * (1 - v_eff.at(i)));
+    v_err.push_back(v_eff.at(i) * (1 - v_eff.at(i)));
   }
   return v_err;
 }
@@ -456,9 +456,9 @@ void eff(string dir, string sample)
   vector<double> v_eff_pos = get_eff(n_pos,v_n_reco_pos);
   vector<double> v_eff_neg = get_eff(n_neg,v_n_reco_neg);
 
-  vector<double> v_err_ges = get_err(v_eff_ges,nEvents);
-  vector<double> v_err_pos = get_err(v_eff_pos,n_pos);
-  vector<double> v_err_neg = get_err(v_eff_neg,n_neg);
+  vector<double> v_err_ges = get_err(v_eff_ges);
+  vector<double> v_err_pos = get_err(v_eff_pos);
+  vector<double> v_err_neg = get_err(v_eff_neg);
 
   vector<double> v_dev = deviation(v_eff_pos,v_eff_neg);
   vector<double> v_dev_err = deviation_err(v_eff_pos,v_err_pos,v_eff_neg,v_err_neg);
