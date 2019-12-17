@@ -52,9 +52,9 @@ TH1F* sPipt_rec_neg=new TH1F("h1", "sPi_PT_reco_neg", 50,0,900);
     TH1* sPipt_neg=new TH1F("h1", "sPi_PT_reco_neg", 50,0,900);
     
 TH1F* sPitheta_rec_pos=new TH1F("h1", "sPi_THETA_reco_pos", 50,0,0.2);
-    TH1F* sPitheta_pos=new TH1F("h1", "sPi_THETA_reco_pos", 50,0,0.2);
+    TH1F* sPitheta_pos=new TH1F("h2", "sPi_THETA_reco_pos", 50,0,0.2);
 TH1F* sPitheta_rec_neg=new TH1F("h1", "sPi_THETA_reco_neg", 50,0,0.2);
-    TH1F* sPitheta_neg=new TH1F("h1", "sPi_THETA_reco_neg", 50,0,0.2);
+    TH1F* sPitheta_neg=new TH1F("h2", "sPi_THETA_reco_neg", 50,0,0.2);
 
 //---------------------------- 
  
@@ -69,15 +69,15 @@ TH1F* P1eta_rec_pos=new TH1F("h1", "P1_eta_reco_pos", 50,0,5);
 TH1F* P1eta_rec_neg=new TH1F("h1", "P1_eta_reco_neg", 50,0,5);
     TH1* P1eta_neg=new TH1F("h2", "P1_eta_neg", 50,0,5);
     
-TH1F* P1pt_rec_pos=new TH1F("h1", "P1_PT_reco_pos", 50,0,900);
-    TH1* P1pt_pos=new TH1F("h1", "sPi_PT_reco_pos", 50,0,900);
- TH1F* P1pt_rec_neg=new TH1F("h1", "P1_PT_reco_neg", 50,0,900);
-    TH1* P1pt_neg=new TH1F("h1", "sPi_PT_reco_neg", 50,0,900);
+TH1F* P1pt_rec_pos=new TH1F("h1", "P1_PT_reco_pos", 50,0,6000);
+    TH1* P1pt_pos=new TH1F("h2", "sPi_PT_reco_pos", 50,0,6000);
+ TH1F* P1pt_rec_neg=new TH1F("h1", "P1_PT_reco_neg", 50,0,6000);
+    TH1* P1pt_neg=new TH1F("h2", "sPi_PT_reco_neg", 50,0,6000);
     
 TH1* P1theta_rec_pos=new TH1F("h1", "P1_THETA_reco_pos", 50,0,0.2);
-    TH1F* P1theta_pos=new TH1F("h1", "P1_THETA_reco_pos", 50,0,0.2);
+    TH1F* P1theta_pos=new TH1F("h2", "P1_THETA_reco_pos", 50,0,0.2);
 TH1* P1theta_rec_neg=new TH1F("h1", "P1_THETA_reco_neg", 50,0,0.2);
-    TH1F* P1theta_neg=new TH1F("h1", "P1_THETA_reco_neg", 50,0,0.2);
+    TH1F* P1theta_neg=new TH1F("h2", "P1_THETA_reco_neg", 50,0,0.2);
 //-----------------------------
  
  TH1F* P2phi_rec_pos=new TH1F("h1", "P2_PHI_reco_pos", 50,-4,4);
@@ -90,15 +90,15 @@ TH1F* P2eta_rec_pos=new TH1F("h1", "P2_eta_reco_pos", 50,0,5);
  TH1F* P2eta_rec_neg=new TH1F("h1", "P2_eta_reco_neg", 50,0,5);
     TH1* P2eta_neg=new TH1F("h2", "P2_eta_neg", 50,0,5);
     
- TH1F* P2pt_rec_pos=new TH1F("h1", "P2_PT_reco_pos", 50,0,900);
-    TH1* P2pt_pos=new TH1F("h1", "P2_PT_reco_pos", 50,0,900);
- TH1F* P2pt_rec_neg=new TH1F("h1", "P2_PT_reco_neg", 50,0,900);
-    TH1* P2pt_neg=new TH1F("h1", "P2_PT_reco_neg", 50,0,900);
+ TH1F* P2pt_rec_pos=new TH1F("h1", "P2_PT_reco_pos", 50,0,9000);
+    TH1* P2pt_pos=new TH1F("h2", "P2_PT_reco_pos", 50,0,9000);
+ TH1F* P2pt_rec_neg=new TH1F("h1", "P2_PT_reco_neg", 50,0,9000);
+    TH1* P2pt_neg=new TH1F("h2", "P2_PT_reco_neg", 50,0,9000);
     
 TH1F* P2theta_rec_pos=new TH1F("h1", "P2_THETA_reco_pos", 50,0,0.2);
-    TH1F* P2theta_pos=new TH1F("h1", "P2_THETA_reco_pos", 50,0,0.2);
+    TH1F* P2theta_pos=new TH1F("h2", "P2_THETA_reco_pos", 50,0,0.2);
  TH1F* P2theta_rec_neg=new TH1F("h1", "P2_THETA_reco_neg", 50,0,0.2);
-    TH1F* P2theta_neg=new TH1F("h1", "P2_THETA_reco_neg", 50,0,0.2);
+    TH1F* P2theta_neg=new TH1F("h2", "P2_THETA_reco_neg", 50,0,0.2);
  
  //---------------------------
  
@@ -112,16 +112,16 @@ TH1F* D0eta_rec_pos=new TH1F("h1", "DO_eta_reco_pos", 50,0,5);
 TH1F* D0eta_rec_neg=new TH1F("h1", "DO_eta_reco_neg", 50,0,5);
     TH1* D0eta_neg=new TH1F("h2", "D0_eta_neg", 50,0,5);
     
-TH1F* D0pt_rec_pos=new TH1F("h1", "D0_PT_reco_pos", 50,0,900);
-    TH1* D0pt_pos=new TH1F("h1", "D0_PT_reco_pos", 50,0,900);
- TH1F* D0pt_rec_neg=new TH1F("h1", "D0_PT_reco_pos_neg", 50,0,900);
-    TH1* D0pt_neg=new TH1F("h1", "D0_PT_reco_neg", 50,0,900);
+TH1F* D0pt_rec_pos=new TH1F("h1", "D0_PT_reco_pos", 50,0,9000);
+    TH1* D0pt_pos=new TH1F("h2", "D0_PT_reco_pos", 50,0,9000);
+ TH1F* D0pt_rec_neg=new TH1F("h1", "D0_PT_reco_pos_neg", 50,0,9000);
+    TH1* D0pt_neg=new TH1F("h2", "D0_PT_reco_neg", 50,0,9000);
     
     
  TH1F* D0theta_rec_pos=new TH1F("h1", "D0_THETA_reco_pos", 50,0,0.2);
-    TH1F* D0theta_pos=new TH1F("h1", "D0_THETA_reco_pos", 50,0,0.2);
+    TH1F* D0theta_pos=new TH1F("h2", "D0_THETA_reco_pos", 50,0,0.2);
  TH1F* D0theta_rec_neg=new TH1F("h1", "D0_THETA_reco_neg", 50,0,0.2);
-    TH1F* D0theta_neg=new TH1F("h1", "D0_THETA_reco_neg", 50,0,0.2);
+    TH1F* D0theta_neg=new TH1F("h2", "D0_THETA_reco_neg", 50,0,0.2);
  
  //----------------------------
  
@@ -135,16 +135,16 @@ TH1F* Dsteta_rec_pos=new TH1F("h1", "Dst_eta_reco_pos", 50,0,5);
  TH1F* Dsteta_rec_neg=new TH1F("h1", "Dst_eta_reco_neg", 50,0,5);
     TH1* Dsteta_neg=new TH1F("h2", "Dst_eta_neg", 50,0,5);
     
-TH1F* Dstpt_rec_pos=new TH1F("h1", "Dst_PT_reco_pos", 50,0,900);
-    TH1* Dstpt_pos=new TH1F("h1", "Dst_PT_reco_pos", 50,0,900);
- TH1F* Dstpt_rec_neg=new TH1F("h1", "Dst_PT_reco_neg", 50,0,900);
-    TH1* Dstpt_neg=new TH1F("h1", "Dst_PT_reco_neg", 50,0,900);
+TH1F* Dstpt_rec_pos=new TH1F("h1", "Dst_PT_reco_pos", 50,0,10000);
+    TH1* Dstpt_pos=new TH1F("h2", "Dst_PT_reco_pos", 50,0,10000);
+ TH1F* Dstpt_rec_neg=new TH1F("h1", "Dst_PT_reco_neg", 50,0,10000);
+    TH1* Dstpt_neg=new TH1F("h2", "Dst_PT_reco_neg", 50,0,10000);
  
     
 TH1F* Dsttheta_rec_pos=new TH1F("h1", "Dst_THETA_reco_pos", 50,0,0.2);
-    TH1F* Dsttheta_pos=new TH1F("h1", "Dst_THETA_reco_pos", 50,0,0.2);
+    TH1F* Dsttheta_pos=new TH1F("h2", "Dst_THETA_reco_pos", 50,0,0.2);
  TH1F* Dsttheta_rec_neg=new TH1F("h1", "Dst_THETA_reco_neg", 50,0,0.2);
-    TH1F* Dsttheta_neg=new TH1F("h1", "Dst_THETA_reco_neg", 50,0,0.2);
+    TH1F* Dsttheta_neg=new TH1F("h2", "Dst_THETA_reco_neg", 50,0,0.2);
  
  
  
@@ -453,6 +453,27 @@ if (sPi_ID<0)
     cout<<"D*+ pos efficiency: "<<eff_Dst_pos<<" +- "<< Dst_pos_err<<'\n';
     cout<<"D*+ neg efficiency: "<<eff_Dst_neg <<" +- "<< Dst_neg_err<<'\n';
 
+ Double_t prod_effP_D0=eff_P1_pos*eff_P2_pos;
+ Double_t err_prod_effP_D0= sqrt(P1_pos_err*P1_pos_err+P2_pos_err*P2_pos_err);
+Double_t prod_effN_D0=eff_P1_neg*eff_P2_neg;
+ Double_t err_prod_effN_D0= sqrt(P1_neg_err*P1_neg_err+P2_neg_err*P2_neg_err);
+ 
+    cout << "effD0 = " << eff_D0_pos <<" +- "<< D0_pos_err<<" = " << prod_effP_D0 << " +- " << err_prod_effP_D0 << endl;
+ 
+    cout << "effD0 = " << eff_D0_pos <<" +- "<< D0_pos_err<<" = " << prod_effN_D0 << " +- " << err_prod_effN_D0 << endl;
+ 
+ 
+ Double_t prod_effP_Dst=eff_P1_pos*eff_P2_pos;
+ 
+ Double_t err_prod_effP_Dst= sqrt(pow(eff_P2_pos*P1_pos_err,2)+pow(eff_P1_pos*P2_pos_err,2));
+
+ Double_t prod_effN_Dst=eff_P1_neg*eff_P2_neg;
+ 
+ Double_t err_prod_effN_Dst= sqrt(P1_neg_err*P1_neg_err+P2_neg_err*P2_neg_err);
+ 
+    cout << "effDst = " << eff_Dst_pos <<" +- "<< Dst_pos_err<<" = " << prod_effP_Dst << " +- " << err_prod_effP_Dst << endl;
+ 
+    cout << "effDst = " << eff_Dst_pos <<" +- "<< Dst_pos_err<<" = " << prod_effN_Dst << " +- " << err_prod_effN_Dst << endl;
  
 sPiphi_rec_pos->Sumw2();
 sPiphi_pos->Sumw2();
@@ -574,7 +595,7 @@ TH1F *h3_sPiphi_pos = (TH1F*)sPiphi_rec_pos->Clone("h3_phi_pos"); h3_sPiphi_pos-
  TH1F *h3_P1eta_pos = (TH1F*)P1eta_rec_pos->Clone("h3_P1eta_pos"); h3_P1eta_pos->Divide(P1eta_rec_pos,P1eta_pos);
  TH1F *h3_P1eta_neg = (TH1F*)P1eta_rec_neg->Clone("h3_P1eta_neg"); h3_P1eta_neg->Divide(P1eta_rec_neg,P1eta_neg);
 
- TH1F *h3_P1pt_pos = (TH1F*)P1pt_rec_pos->Clone("h3_P1pt_pos"); h3_P1pt_pos->Divide(P1pt_rec_pos,P1pt_pos);
+  TH1F *h3_P1pt_pos = (TH1F*)P1pt_rec_pos->Clone("h3_P1pt_pos"); h3_P1pt_pos->Divide(P1pt_rec_pos,P1pt_pos);
   TH1F *h3_P1pt_neg = (TH1F*)P1pt_rec_neg->Clone("h3_P1pt_neg"); h3_P1pt_neg->Divide(P1pt_rec_neg,P1pt_neg);
 
  TH1F *h3_P1theta_pos = (TH1F*)P1theta_rec_pos->Clone("h3_P1theta_pos"); h3_P1theta_pos->Divide(P1theta_rec_pos,P1theta_pos);
@@ -624,118 +645,196 @@ TH1F *h3_sPiphi_pos = (TH1F*)sPiphi_rec_pos->Clone("h3_phi_pos"); h3_sPiphi_pos-
  TCanvas * c1a= new TCanvas("c1a","c1a",400,10,600,400);
 c1a->Divide(2,2);
 c1a->cd(1);
-h3_sPiphi_pos->Draw("AE");
+h3_sPiphi_pos->Draw("E");
+h3_sPiphi_pos->Draw("hist same");
+ 
 c1a->cd(2);
-h3_sPieta_pos->Draw("AE"); 
+h3_sPieta_pos->Draw("E"); 
+h3_sPieta_pos->Draw("hist same"); 
+ 
 c1a->cd(3);
-h3_sPipt_pos->Draw("AE"); 
+h3_sPipt_pos->Draw("E"); 
+h3_sPipt_pos->Draw("hist same"); 
+ 
 c1a->cd(4);
-h3_sPitheta_pos->Draw("AE"); 
+h3_sPitheta_pos->Draw("E"); 
+h3_sPitheta_pos->Draw("hist same"); 
+ 
  
 TCanvas * c2a= new TCanvas("c2a","c2a",400,10,600,400);
 c2a->Divide(2,2);
 c2a->cd(1);
-h3_sPiphi_neg->Draw("AE");
+h3_sPiphi_neg->Draw("E");
+h3_sPiphi_neg->Draw("hist same"); 
 c2a->cd(2);
-h3_sPieta_neg->Draw("AE"); 
+h3_sPieta_neg->Draw("E"); 
+h3_sPieta_neg->Draw("hist same"); 
+ 
 c2a->cd(3);
-h3_sPipt_neg->Draw("AE"); 
+h3_sPipt_neg->Draw("E"); 
+h3_sPipt_neg->Draw("hist same"); 
+ 
 c2a->cd(4);
-h3_sPitheta_neg->Draw("AE"); 
+h3_sPitheta_neg->Draw("E"); 
+h3_sPitheta_neg->Draw("hist same"); 
+ 
  
  //--------
  
   TCanvas * c1b= new TCanvas("c1b","c1b",400,10,600,400);
 c1b->Divide(2,2);
 c1b->cd(1);
-h3_P1phi_pos->Draw("AE");
+h3_P1phi_pos->Draw("E");
+h3_P1phi_pos->Draw("hist same");
+ 
 c1b->cd(2);
-h3_P1eta_pos->Draw("AE"); 
+h3_P1eta_pos->Draw("E"); 
+h3_P1eta_pos->Draw("hist same"); 
+ 
 c1b->cd(3);
-h3_P1pt_pos->Draw("AE"); 
+h3_P1pt_pos->Draw("E"); 
+h3_P1pt_pos->Draw("hist same"); 
+ 
 c1b->cd(4);
-h3_P1theta_pos->Draw("AE"); 
+h3_P1theta_pos->Draw("E"); 
+h3_P1theta_pos->Draw("hist same"); 
+ 
  
 TCanvas * c2b= new TCanvas("c2b","c2b",400,10,600,400);
 c2b->Divide(2,2);
 c2b->cd(1);
-h3_P1phi_neg->Draw("AE");
+h3_P1phi_neg->Draw("A");
+h3_P1phi_neg->Draw("hist same");
+ 
 c2b->cd(2);
-h3_P1eta_neg->Draw("AE"); 
+h3_P1eta_neg->Draw("E"); 
+h3_P1eta_neg->Draw("hist same"); 
+ 
 c2b->cd(3);
-h3_P1pt_neg->Draw("AE"); 
+h3_P1pt_neg->Draw("E"); 
+h3_P1pt_neg->Draw("hist same"); 
+ 
 c2b->cd(4);
-h3_P1theta_neg->Draw("AE"); 
+h3_P1theta_neg->Draw("E"); 
+h3_P1theta_neg->Draw("hist same"); 
  
  //-------
    TCanvas * c1c= new TCanvas("c1c","c1c",400,10,600,400);
 c1c->Divide(2,2);
 c1c->cd(1);
-h3_P2phi_pos->Draw("AE");
+h3_P2phi_pos->Draw("E");
+h3_P2phi_pos->Draw("hist same");
+ 
 c1c->cd(2);
-h3_P2eta_pos->Draw("AE"); 
+h3_P2eta_pos->Draw("E"); 
+h3_P2eta_pos->Draw("hist same"); 
+ 
 c1c->cd(3);
-h3_P2pt_pos->Draw("AE"); 
+h3_P2pt_pos->Draw("E");
+h3_P2pt_pos->Draw("hist same"); 
+ 
 c1c->cd(4);
-h3_P2theta_pos->Draw("AE"); 
+h3_P2theta_pos->Draw("E"); 
+h3_P2theta_pos->Draw("hist same"); 
  
 TCanvas * c2c= new TCanvas("c2c","c2c",400,10,600,400);
 c2c->Divide(2,2);
 c2c->cd(1);
-h3_P2phi_neg->Draw("AE");
+h3_P2phi_neg->Draw("E");
+h3_P2phi_neg->Draw("hist same");
+ 
 c2c->cd(2);
-h3_P2eta_neg->Draw("AE"); 
+h3_P2eta_neg->Draw("E"); 
+h3_P2eta_neg->Draw("hist same"); 
+ 
 c2c->cd(3);
-h3_P2pt_neg->Draw("AE"); 
+h3_P2pt_neg->Draw("E"); 
+h3_P2pt_neg->Draw("hist same"); 
+ 
 c2c->cd(4);
-h3_P2theta_neg->Draw("AE"); 
+h3_P2theta_neg->Draw("E"); 
+h3_P2theta_neg->Draw("hist same"); 
+ 
  
  //-----
  
 TCanvas * c1d= new TCanvas("c1d","c1d",400,10,600,400);
 c1d->Divide(2,2);
 c1d->cd(1);
-h3_D0phi_pos->Draw("AE");
+h3_D0phi_pos->Draw("E");
+h3_D0phi_pos->Draw("hist same");
+ 
 c1d->cd(2);
-h3_D0eta_pos->Draw("AE"); 
+h3_D0eta_pos->Draw("E"); 
+h3_D0eta_pos->Draw("hist same"); 
+ 
 c1d->cd(3);
-h3_D0pt_pos->Draw("AE"); 
+h3_D0pt_pos->Draw("E"); 
+h3_D0pt_pos->Draw("hist same"); 
+ 
 c1d->cd(4);
-h3_D0theta_pos->Draw("AE"); 
+h3_D0theta_pos->Draw("E"); 
+h3_D0theta_pos->Draw("hist same"); 
+ 
  
 TCanvas * c2d= new TCanvas("c2d","c2d",400,10,600,400);
 c2d->Divide(2,2);
 c2d->cd(1);
-h3_D0phi_neg->Draw("AE");
+h3_D0phi_neg->Draw("E");
+h3_D0phi_neg->Draw("hist same");
+ 
 c2d->cd(2);
-h3_D0eta_neg->Draw("AE"); 
+h3_D0eta_neg->Draw("E"); 
+h3_D0eta_neg->Draw("hist same"); 
+ 
 c2d->cd(3);
-h3_D0pt_neg->Draw("AE"); 
+h3_D0pt_neg->Draw("E"); 
+h3_D0pt_neg->Draw("hist same");
+
+ 
 c2d->cd(4);
-h3_D0theta_neg->Draw("AE"); 
+h3_D0theta_neg->Draw("E"); 
+h3_D0theta_neg->Draw("hist same"); 
+ 
  
  //------
     TCanvas * c1e= new TCanvas("c1e","c1e",400,10,600,400);
 c1e->Divide(2,2);
 c1e->cd(1);
-h3_Dstphi_pos->Draw("AE");
+h3_Dstphi_pos->Draw("E");
+h3_Dstphi_pos->Draw("hist same");
+ 
 c1e->cd(2);
-h3_Dsteta_pos->Draw("AE"); 
+h3_Dsteta_pos->Draw("E"); 
+h3_Dsteta_pos->Draw("hist same"); 
+ 
 c1e->cd(3);
-h3_Dstpt_pos->Draw("AE"); 
+h3_Dstpt_pos->Draw("E"); 
+h3_Dstpt_pos->Draw("hist same"); 
+ 
 c1e->cd(4);
-h3_Dsttheta_pos->Draw("AE"); 
+h3_Dsttheta_pos->Draw("E"); 
+h3_Dsttheta_pos->Draw("hist same"); 
+ 
  
 TCanvas * c2e= new TCanvas("c2e","c2e",400,10,600,400);
 c2e->Divide(2,2);
 c2e->cd(1);
-h3_Dstphi_neg->Draw("AE");
+h3_Dstphi_neg->Draw("E");
+h3_Dstphi_neg->Draw("hist same");
+ 
 c2e->cd(2);
-h3_Dsteta_neg->Draw("AE"); 
+h3_Dsteta_neg->Draw("E"); 
+h3_Dsteta_neg->Draw("hist same"); 
+
 c2e->cd(3);
-h3_Dstpt_neg->Draw("AE"); 
+h3_Dstpt_neg->Draw("E"); 
+h3_Dstpt_neg->Draw("hist same"); 
+ 
 c2e->cd(4);
-h3_Dsttheta_neg->Draw("AE"); 
+h3_Dsttheta_neg->Draw("E"); 
+h3_Dsttheta_neg->Draw("hist same"); 
+ 
  
  
  
