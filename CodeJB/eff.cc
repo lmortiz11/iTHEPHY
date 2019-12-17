@@ -1,6 +1,50 @@
 #include "eff.h"
 
+vector<double> get_eff(double n_ges, vector<double> v_n_reco)
+{
+  vector<double> v_eff = {};
+  int size = v_n_reco.size();
+  for(int i = 0; i < size; ++i)
+  {
+    v_eff.add(v_n_reco.at(i)/n_ges);
+  }
+  return v_eff;
+}
 
+vector<double> get_err(vector<double> v_eff, double n_ges)
+{
+  vector<double> v_err = {};
+  int size = v_eff.size();
+  for(int i = 0; i < size; ++i)
+  {
+    v_err.add(n_ges * v_eff.at(i) * (1 - v_eff.at(i)));
+  }
+  return v_err;
+}
+
+
+vector<double> deviation(vector<double> v_eff_pos, vector<double> v_eff_neg)
+{
+  vector<double> v_dev = {};
+  int size = v_eff_pos.size();
+  for(int i = 0; i < size; ++i)
+  {
+  v_dev.add((v_eff_pos.at(i) - v_eff_neg.at(i)) / (v_eff_pos.at(i) + v_eff_neg.at(i)));
+  }
+  return v_dev;
+}
+
+vector<double> deviation_err(vector<double> v_eff_pos, vector<double> v_err_pos, vector<double> v_eff_neg, vector<double> v_err_neg)
+{
+  vector<double> v_dev_err ={};
+  int size = v_eff_pos.size();
+  for(int i = 0; i < size; ++i)
+  {
+    v_dev_err.add(4 * (pow(v_err_pos.at(i) * v_eff_neg.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.) + pow(v_err_neg.at(i) * v_eff_pos.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.)))
+  }
+  return v_dev_err;
+
+}
 
 void hist_fill(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco, vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_reco_pos, vector<TH1F*> v_hist_neg, vector<TH1F*> v_hist_reco_neg, vector<double> v_var, int is_reco, double &n_reco, double &n_pos, double &n_reco_pos, int ID)
 {
@@ -403,6 +447,60 @@ void eff(string dir, string sample)
   nD0_reco_neg = nD0_reco - nD0_reco_pos;
   nDst_reco_neg = nDst_reco - nDst_reco_pos;
 
+
+  vector<double> v_n_reco_ges = {nPi_reco,nK_reco,nSPi_reco,nD0_reco,nDst_reco};
+  vector<double> v_n_reco_pos = {nPi_reco_pos,nK_reco_pos,nSPi_reco_pos,nD0_reco_pos,nDst_reco_pos};
+  vector<double> v_n_reco_neg = {nPi_reco_neg,nK_reco_neg,nSPi_reco_neg,nD0_reco_neg,nDst_reco_neg};
+
+  vector<double> v_eff_ges = get_eff(nEvents,v_n_reco_ges);
+  vector<double> v_eff_pos = get_eff(n_pos,v_n_reco_pos);
+  vector<double> v_eff_neg = get_eff(n_ges,v_n_reco_neg);
+
+  vector<double> v_err_ges = get_err(v_eff_ges,nEvents);
+  vector<double> v_err_pos = get_err(v_eff_pos,n_pos);
+  vector<double> v_err_neg = get_err(v_eff_neg,n_neg);
+
+  vector<double> v_dev = deviation(v_eff_pos,v_eff_neg);
+  vector<double> v_dev_err = deviation_err(v_eff_pos,v_err_pos,v_eff_neg,v_err_neg);
+
+
+  /*double eff_Pi_ges = nPi_reco/nEvents;
+  double eff_K_ges = nK_reco/nEvents;
+  double eff_Spi_ges = nSPi_reco/nEvents;
+  double eff_D0_ges = nD0_reco/nEvents;
+  double eff_Dst_ges = nDst_reco/nEvents;
+
+  double err_Pi_ges = nEvents*eff_Pi_ges*(1-eff_Pi_ges);
+  double err_K_ges = nEvents*eff_K_ges*(1-eff_K_ges);
+  double err_SPi_ges = nEvents*eff_SPi_ges*(1-eff_SPi_ges);
+  double err_D0_ges = nEvents*eff_D0_ges*(1-eff_D0_ges);
+  double err_Dst_ges = nEvents*eff_Dst_ges*(1-eff_Dst_ges);
+
+  double eff_Pi_pos = nPi_reco_pos/nEvents;
+  double eff_K_pos = nK_reco_pos/nEvents;
+  double eff_Spi_pos = nSPi_reco_pos/nEvents;
+  double eff_D0_pos = nD0_reco_pos/nEvents;
+  double eff_Dst_pos = nDst_reco_pos/nEvents;
+
+  double err_Pi_pos = nEvents*eff_Pi_pos*(1-eff_Pi_pos);
+  double err_K_pos = nEvents*eff_K_pos*(1-eff_K_pos);
+  double err_SPi_pos = nEvents*eff_SPi_pos*(1-eff_SPi_pos);
+  double err_D0_pos = nEvents*eff_D0_pos*(1-eff_D0_pos);
+  double err_Dst_pos = nEvents*eff_Dst_pos*(1-eff_Dst_pos);
+
+  double eff_Pi_neg = nPi_reco_neg/nEvents;
+  double eff_K_neg = nK_reco_neg/nEvents;
+  double eff_Spi_neg = nSPi_reco_neg/nEvents;
+  double eff_D0_neg = nD0_reco_neg/nEvents;
+  double eff_Dst_neg = nDst_reco_neg/nEvents;
+
+  double err_Pi_neg = nEvents*eff_Pi_neg*(1-eff_Pi_neg);
+  double err_K_neg = nEvents*eff_K_neg*(1-eff_K_neg);
+  double err_SPi_neg = nEvents*eff_SPi_neg*(1-eff_SPi_neg);
+  double err_D0_neg = nEvents*eff_D0_neg*(1-eff_D0_neg);
+  double err_Dst_neg = nEvents*eff_Dst_neg*(1-eff_Dst_neg);*/
+
+
   hist_divide(v_Pi_hist,v_Pi_hist_reco);
   hist_divide(v_K_hist,v_K_hist_reco);
   hist_divide(v_SPi_hist,v_SPi_hist_reco);
@@ -508,26 +606,32 @@ void eff(string dir, string sample)
 
 
   cout << "Total: " << endl;
-  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << nPi_reco/nEvents << " +/- " << sqrt( nPi_reco + pow(nPi_reco, 2.) / nEvents)/nEvents << endl;
-  cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << nK_reco/nEvents << " +/- " << sqrt( nK_reco + pow(nK_reco, 2.) / nEvents)/nEvents << endl;
-  cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << nSPi_reco/nEvents << " +/- " << sqrt( nSPi_reco + pow(nSPi_reco, 2.) / nEvents)/nEvents  << endl;
-  cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << nD0_reco/nEvents << " +/- " << sqrt( nD0_reco + pow(nD0_reco, 2.) / nEvents)/nEvents << endl;
-  cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << nDst_reco/nEvents << " +/- " << sqrt( nDst_reco + pow(nDst_reco, 2.) / nEvents)/nEvents  << endl;
+  cout << "Reconstructed number of pions: " << nPi_reco << ", eff.: " << v_eff_ges.at(0) << " +/- " << v_err_ges.at(0) << endl;
+  cout << "Reconstructed number of Kaons: " << nK_reco << ", eff.: " << v_eff_ges.at(1) << " +/- " << v_err_ges.at(1) << endl;
+  cout << "Reconstructed number of soft pions: " << nSPi_reco << ", eff.: " << v_eff_ges.at(2) << " +/- " << v_err_ges.at(2)  << endl;
+  cout << "Reconstructed number of D0: " << nD0_reco << ", eff.: " << v_eff_ges.at(3) << " +/- " << v_err_ges.at(3) << endl;
+  cout << "Reconstructed number of D*: " << nDst_reco << ", eff.: " << v_eff_ges.at(4) << " +/- " << v_err_ges.at(4)  << endl;
 
   cout << "Charge: +" << endl;
-  cout << "Reconstructed number of pions: " << nPi_reco_pos << ", eff.: " << nPi_reco_pos/n_pos << " +/- " << sqrt( nPi_reco_pos + pow(nPi_reco_pos, 2.) / n_pos)/n_pos << endl;
-  cout << "Reconstructed number of Kaons: " << nK_reco_pos << ", eff.: " << nK_reco_pos/n_pos << " +/- " << sqrt( nK_reco_pos + pow(nK_reco_pos, 2.) / n_pos)/n_pos << endl;
-  cout << "Reconstructed number of soft pions: " << nSPi_reco_pos << ", eff.: " << nSPi_reco_pos/n_pos << " +/- " << sqrt( nSPi_reco_pos + pow(nSPi_reco_pos, 2.) / n_pos)/n_pos  << endl;
-  cout << "Reconstructed number of D0: " << nD0_reco_pos << ", eff.: " << nD0_reco_pos/n_pos << " +/- " << sqrt( nD0_reco_pos + pow(nD0_reco_pos, 2.) / n_pos)/n_pos << endl;
-  cout << "Reconstructed number of D*: " << nDst_reco_pos << ", eff.: " << nDst_reco_pos/n_pos << " +/- " << sqrt( nDst_reco_pos + pow(nDst_reco_pos, 2.) / n_pos)/n_pos  << endl;
+  cout << "Reconstructed number of pions: " << nPi_reco_pos << ", eff.: " << v_eff_pos.at(0) << " +/- " << v_err_pos.at(0) << endl;
+  cout << "Reconstructed number of Kaons: " << nK_reco_pos << ", eff.: " << v_eff_pos.at(1) << " +/- " << v_err_pos.at(1) << endl;
+  cout << "Reconstructed number of soft pions: " << nSPi_reco_pos << ", eff.: " << v_eff_pos.at(2) << " +/- " << v_err_pos.at(2)  << endl;
+  cout << "Reconstructed number of D0: " << nD0_reco_pos << ", eff.: " << v_eff_pos.at(3) << " +/- " << v_err_pos.at(3) << endl;
+  cout << "Reconstructed number of D*: " << nDst_reco_pos << ", eff.: " << v_eff_pos.at(4) << " +/- " << v_err_pos.at(4)  << endl;
 
   cout << "Charge: -" << endl;
-  cout << "Reconstructed number of pions: " << nPi_reco_neg << ", eff.: " << nPi_reco_neg/n_neg << " +/- " << sqrt( nPi_reco_neg + pow(nPi_reco_neg, 2.) / n_neg)/n_neg << endl;
-  cout << "Reconstructed number of Kaons: " << nK_reco_neg << ", eff.: " << nK_reco_neg/n_neg << " +/- " << sqrt( nK_reco_neg + pow(nK_reco_neg, 2.) / n_neg)/n_neg << endl;
-  cout << "Reconstructed number of soft pions: " << nSPi_reco_neg << ", eff.: " << nSPi_reco_neg/n_neg << " +/- " << sqrt( nSPi_reco_neg + pow(nSPi_reco_neg, 2.) / n_neg)/n_neg  << endl;
-  cout << "Reconstructed number of D0: " << nD0_reco_neg << ", eff.: " << nD0_reco_neg/n_neg << " +/- " << sqrt( nD0_reco_neg + pow(nD0_reco_neg, 2.) / n_neg)/n_neg << endl;
-  cout << "Reconstructed number of D*: " << nDst_reco_neg << ", eff.: " << nDst_reco_neg/n_neg << " +/- " << sqrt( nDst_reco_neg + pow(nDst_reco_neg, 2.) / n_neg)/n_neg  << endl;
+  cout << "Reconstructed number of pions: " << nPi_reco_neg << ", eff.: " << v_eff_neg.at(0) << " +/- " << v_err_neg.at(0) << endl;
+  cout << "Reconstructed number of Kaons: " << nK_reco_neg << ", eff.: " << v_eff_neg.at(1) << " +/- " << v_err_neg.at(1) << endl;
+  cout << "Reconstructed number of soft pions: " << nSPi_reco_neg << ", eff.: " << v_eff_neg.at(2) << " +/- " << v_err_neg.at(2)  << endl;
+  cout << "Reconstructed number of D0: " << nD0_reco_neg << ", eff.: " << v_eff_neg.at(3) << " +/- " << v_err_neg.at(3) << endl;
+  cout << "Reconstructed number of D*: " << nDst_reco_neg << ", eff.: " << v_eff_neg.at(4) << " +/- " << v_err_neg.at(4)  << endl;
 
+  cout << "Deviation:" << endl;
+  cout << "Pions: " << v_dev.at(0) << " +/- " << v_dev_err.at(0) << " , in sigmas: " << abs(v_dev.at(0)/v_dev_err.at(0)) << endl;
+  cout << "Kaons: " << v_dev.at(1) << " +/- " << v_dev_err.at(1) << " , in sigmas: " << abs(v_dev.at(1)/v_dev_err.at(1)) << endl;
+  cout << "soft Pions: " << v_dev.at(2) << " +/- " << v_dev_err.at(2) << " , in sigmas: " << abs(v_dev.at(2)/v_dev_err.at(2)) << endl;
+  cout << "D0: " << v_dev.at(3) << " +/- " << v_dev_err.at(3) << " , in sigmas: " << abs(v_dev.at(3)/v_dev_err.at(3)) << endl;
+  cout << "Dst: " << v_dev.at(4) << " +/- " << v_dev_err.at(4) << " , in sigmas: " << abs(v_dev.at(4)/v_dev_err.at(4)) << endl;
 
   TCanvas *c1 = new TCanvas();
 
