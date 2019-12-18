@@ -39,9 +39,10 @@ vector<double> deviation_err(vector<double> v_eff_pos, vector<double> v_err_pos,
 {
   vector<double> v_dev_err ={};
   int size = v_eff_pos.size();
-  for(int i = 0; i < size; ++i)
+  for(int j = 0; j < size; ++j)
   {
-    v_dev_err.push_back(sqrt(4 * (pow(v_err_pos.at(i) * v_eff_neg.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.) + pow(v_err_neg.at(i) * v_eff_pos.at(i) / (v_eff_pos.at(i) + v_eff_neg.at(i)),2.))));
+    double dev_err = 2 * sqrt((pow(v_err_pos.at(j)*v_eff_neg.at(j),2.)+pow(v_err_neg.at(j)*v_eff_pos.at(j),2.))/pow(v_eff_pos.at(j) + v_eff_neg.at(j), 2.))
+    v_dev_err.push_back(dev_err);
   }
   return v_dev_err;
 
