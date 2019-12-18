@@ -17,8 +17,8 @@ vector<double> get_err(vector<double> v_eff, double n_ges)
   int size = v_eff.size();
   for(int i = 0; i < size; ++i)
   {
-    //v_err.push_back(sqrt(v_eff.at(i) * (1 - v_eff.at(i))/n_ges));
-    v_err.push_back((sqrt(v_eff.at(i)/n_ges + pow(v_eff.at(i),2.)/n_ges)));
+    v_err.push_back(sqrt(v_eff.at(i) * (1 - v_eff.at(i))/n_ges));
+    //v_err.push_back((sqrt(v_eff.at(i)/n_ges + pow(v_eff.at(i),2.)/n_ges)));
   }
   return v_err;
 }
