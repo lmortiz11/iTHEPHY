@@ -637,6 +637,83 @@ void eff(string dir, string sample)
 
   TCanvas *c1 = new TCanvas();
 
+  h_pT_reco_Pi->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_K->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_SPi->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_D0->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_Dst->SetAxisRange(0.,1.,"Y");
+
+  h_phi_reco_Pi->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_K->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_SPi->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_D0->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_Dst->SetAxisRange(0.,1.,"Y");
+
+  h_theta_reco_Pi->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_K->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_SPi->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_D0->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_Dst->SetAxisRange(0.,1.,"Y");
+
+  h_eta_reco_Pi->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_K->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_SPi->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_D0->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_Dst->SetAxisRange(0.,1.,"Y");
+
+
+  h_pT_reco_Pi_pos->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_K_pos->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_SPi_pos->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_D0_pos->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_Dst_pos->SetAxisRange(0.,1.,"Y");
+
+  h_phi_reco_Pi_pos->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_K_pos->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_SPi_pos->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_D0_pos->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_Dst_pos->SetAxisRange(0.,1.,"Y");
+
+  h_theta_reco_Pi_pos->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_K_pos->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_SPi_pos->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_D0_pos->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_Dst_pos->SetAxisRange(0.,1.,"Y");
+
+  h_eta_reco_Pi_pos->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_K_pos->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_SPi_pos->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_D0_pos->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_Dst_pos->SetAxisRange(0.,1.,"Y");
+
+
+
+  h_pT_reco_Pi_neg->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_K_neg->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_SPi_neg->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_D0_neg->SetAxisRange(0.,1.,"Y");
+  h_pT_reco_Dst_neg->SetAxisRange(0.,1.,"Y");
+
+  h_phi_reco_Pi_neg->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_K_neg->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_SPi_neg->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_D0_neg->SetAxisRange(0.,1.,"Y");
+  h_phi_reco_Dst_neg->SetAxisRange(0.,1.,"Y");
+
+  h_theta_reco_Pi_neg->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_K_neg->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_SPi_neg->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_D0_neg->SetAxisRange(0.,1.,"Y");
+  h_theta_reco_Dst_neg->SetAxisRange(0.,1.,"Y");
+
+  h_eta_reco_Pi_neg->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_K_neg->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_SPi_neg->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_D0_neg->SetAxisRange(0.,1.,"Y");
+  h_eta_reco_Dst_neg->SetAxisRange(0.,1.,"Y");
+
+
+
   gStyle->SetOptStat(0);
 
   h_pT_reco_Pi->Draw();
