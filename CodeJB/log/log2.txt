@@ -1,5 +1,5 @@
 
-Processing eff.cc++("$dir", "minisample_Dst2D0pi_D02Kpi_2016_Up_GEN")...
+Processing eff.cc++("$dir", "minisample_Dst2D0pi_D02Kpi_2016_Up_GEN", "UP")...
 === Event 0%
 === Event 10%
 === Event 20%

@@ -48,29 +48,34 @@ void printhists(vector<TH1F*> v_hist, vector<TH1F*> v_hist_pos, vector<TH1F*> v_
   int size = v_hist_pos.size();
   bool up_down = (polarisation == "UP")? true : false;
   string directory = (up_down == true)? "up_pdf" : "down_pdf";
-  TCanvas *c;
+  TCanvas *c = new TCanvas();
   string title_name;
+  string save_name;
   for(int i = 0; i < size; ++i)
   {
     v_hist.at(i)->Draw();
     v_hist.at(i)->Draw("hist same");
     title_name = v_hist.at(i)->GetName();
-    c->SaveAs("output/"+directory+"/single/tot/"+title_name+".pdf");
+    save_name = "output/"+directory+"/single/tot/"+title_name+".pdf";
+    c->SaveAs(save_name.c_str());
     v_hist_pos.at(i)->Draw();
     v_hist_pos.at(i)->Draw("hist same");
     title_name = v_hist_pos.at(i)->GetName();
-    c->SaveAs("output/"+directory+"/single/pos/"+title_name+".pdf");
+    save_name = "output/"+directory+"/single/pos/"+title_name+".pdf";
+    c->SaveAs(save_name.c_str());
     v_hist_neg.at(i)->Draw();
     v_hist_neg.at(i)->Draw("hist same");
     title_name = v_hist_neg.at(i)->GetName();
-    c->SaveAs("output/"+directory+"/single/neg/"+title_name+".pdf");
+    save_name = "output/"+directory+"/single/neg/"+title_name+".pdf";
+    c->SaveAs(save_name.c_str());
 
     v_hist_pos.at(i)->Draw();
     v_hist_pos.at(i)->Draw("hist same");
     v_hist_neg.at(i)->Draw("same");
     v_hist_neg.at(i)->Draw("hist same");
     title_name = v_hist.at(i)->GetName();
-    c->SaveAs("output/"+directory+"/combined/"+title_name+".pdf");
+    save_name = "output/"+directory+"/combined/"+title_name+".pdf";
+    c->SaveAs(save_name.c_str());
   }
 }
 
@@ -426,17 +431,17 @@ void eff(string dir, string sample, string polarisation)
   vector<TH1F*> v_D0_hist_neg = {h_pT_D0_neg, h_phi_D0_neg, h_theta_D0_neg, h_eta_D0_neg};
   vector<TH1F*> v_Dst_hist_neg = {h_pT_Dst_neg, h_phi_Dst_neg, h_theta_Dst_neg, h_eta_Dst_neg};
 
-  sumerr(v_Pi_hist, v_Pi_hist_pos, v_Pi_hist_neg);
-  sumerr(v_SPi_hist, v_SPi_hist_pos, v_SPi_hist_neg);
-  sumerr(v_K_hist, v_K_hist_pos, v_K_hist_neg);
-  sumerr(v_D0_hist, v_D0_hist_pos, v_D0_hist_neg);
-  sumerr(v_Dst_hist, v_Dst_hist_pos, v_Dst_hist_neg);
+  sumhisterr(v_Pi_hist, v_Pi_hist_pos, v_Pi_hist_neg);
+  sumhisterr(v_SPi_hist, v_SPi_hist_pos, v_SPi_hist_neg);
+  sumhisterr(v_K_hist, v_K_hist_pos, v_K_hist_neg);
+  sumhisterr(v_D0_hist, v_D0_hist_pos, v_D0_hist_neg);
+  sumhisterr(v_Dst_hist, v_Dst_hist_pos, v_Dst_hist_neg);
 
-  sumerr(v_Pi_hist_reco, v_Pi_hist_reco_pos, v_Pi_hist_reco_neg);
-  sumerr(v_SPi_hist_reco, v_SPi_hist_reco_pos, v_SPi_hist_reco_neg);
-  sumerr(v_K_hist_reco, v_K_hist_reco_pos, v_K_hist_reco_neg);
-  sumerr(v_D0_hist_reco, v_D0_hist_reco_pos, v_D0_hist_reco_neg);
-  sumerr(v_Dst_hist_reco, v_Dst_hist_reco_pos, v_Dst_hist_reco_neg);
+  sumhisterr(v_Pi_hist_reco, v_Pi_hist_reco_pos, v_Pi_hist_reco_neg);
+  sumhisterr(v_SPi_hist_reco, v_SPi_hist_reco_pos, v_SPi_hist_reco_neg);
+  sumhisterr(v_K_hist_reco, v_K_hist_reco_pos, v_K_hist_reco_neg);
+  sumhisterr(v_D0_hist_reco, v_D0_hist_reco_pos, v_D0_hist_reco_neg);
+  sumhisterr(v_Dst_hist_reco, v_Dst_hist_reco_pos, v_Dst_hist_reco_neg);
 
 
   for(int i = 0; i < nEvents; ++i)
