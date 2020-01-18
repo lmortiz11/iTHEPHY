@@ -1,5 +1,79 @@
 #include "eff.h"
 
+
+void setcolors(vector<TH1F*> v_hist, vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg)
+{
+  int size = v_hist_pos.size();
+  for(int i = 0; i < size; ++i)
+  {
+    v_hist_pos.at(i)->SetLineColor(kRed);
+    v_hist_neg.at(i)->SetLineColor(kAzure);
+    v_hist.at(i)->SetLineColor(kGreen);
+  }
+}
+
+
+void setyaxis(vector<TH1F*> v_hist, vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg)
+{
+  int size = v_hist_pos.size();
+  for(int i = 0; i < size; ++i)
+  {
+    v_hist_pos.at(i)->SetAxisRange(0.,1.,"Y");
+    v_hist_neg.at(i)->SetAxisRange(0.,1.,"Y");
+    v_hist.at(i)->SetAxisRange(0.,1.,"Y");
+  }
+}
+
+
+void sumhisterr(vector<TH1F*> v_hist, vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg)
+{
+  int size = v_hist_pos.size();
+  for(int i = 0; i < size; ++i)
+  {
+    v_hist_pos.at(i)->Sumw2();
+    v_hist_neg.at(i)->Sumw2();
+    v_hist.at(i)->Sumw2();
+  }
+}
+
+
+void sethists(vector<TH1F*> v_hist, vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg)
+{
+  setyaxis(v_hist, v_hist_pos, v_hist_neg);
+  setcolors(v_hist, v_hist_pos, v_hist_neg);
+}
+
+void printhists(vector<TH1F*> v_hist, vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg, string polarisation)
+{
+  int size = v_hist_pos.size();
+  bool up_down = (polarisation == "UP")? true : false;
+  string directory = (up_down == true)? "up_pdf" : "down_pdf";
+  TCanvas *c;
+  string title_name;
+  for(int i = 0; i < size; ++i)
+  {
+    v_hist.at(i)->Draw();
+    v_hist.at(i)->Draw("hist same");
+    title_name = v_hist.at(i)->GetName();
+    c->SaveAs("output/"+directory+"/single/tot/"+title_name+".pdf");
+    v_hist_pos.at(i)->Draw();
+    v_hist_pos.at(i)->Draw("hist same");
+    title_name = v_hist_pos.at(i)->GetName();
+    c->SaveAs("output/"+directory+"/single/pos/"+title_name+".pdf");
+    v_hist_neg.at(i)->Draw();
+    v_hist_neg.at(i)->Draw("hist same");
+    title_name = v_hist_neg.at(i)->GetName();
+    c->SaveAs("output/"+directory+"/single/neg/"+title_name+".pdf");
+
+    v_hist_pos.at(i)->Draw();
+    v_hist_pos.at(i)->Draw("hist same");
+    v_hist_neg.at(i)->Draw("same");
+    v_hist_neg.at(i)->Draw("hist same");
+    title_name = v_hist.at(i)->GetName();
+    c->SaveAs("output/"+directory+"/combined/"+title_name+".pdf");
+  }
+}
+
 vector<double> get_eff(double n_ges, vector<double> v_n_reco)
 {
   vector<double> v_eff = {};
@@ -103,7 +177,7 @@ void hist_divide(vector<TH1F*> v_hist, vector<TH1F*> v_hist_reco)
   }
 }
 
-void eff(string dir, string sample)
+void eff(string dir, string sample, string polarisation)
 {
   string input_name = dir+"/"+sample+".root";
   TChain *ntp = new TChain("ntp");
@@ -314,70 +388,6 @@ void eff(string dir, string sample)
   TH1F *h_theta_Dst_neg = new TH1F("h_theta_Dst_neg", ";#theta;Events", 50, 0.02, 0.2);
 
 
-
-  h_pT_reco_Pi->Sumw2();
-  h_pT_reco_K->Sumw2();
-  h_pT_reco_SPi->Sumw2();
-  h_pT_reco_D0->Sumw2();
-  h_pT_reco_Dst->Sumw2();
-  h_phi_reco_Pi->Sumw2();
-  h_phi_reco_K->Sumw2();
-  h_phi_reco_SPi->Sumw2();
-  h_phi_reco_D0->Sumw2();
-  h_phi_reco_Dst->Sumw2();
-  h_theta_reco_Pi->Sumw2();
-  h_theta_reco_K->Sumw2();
-  h_theta_reco_SPi->Sumw2();
-  h_theta_reco_D0->Sumw2();
-  h_theta_reco_Dst->Sumw2();
-  h_eta_reco_Pi->Sumw2();
-  h_eta_reco_K->Sumw2();
-  h_eta_reco_SPi->Sumw2();
-  h_eta_reco_D0->Sumw2();
-  h_eta_reco_Dst->Sumw2();
-
-  h_pT_reco_Pi_pos->Sumw2();
-  h_pT_reco_K_pos->Sumw2();
-  h_pT_reco_SPi_pos->Sumw2();
-  h_pT_reco_D0_pos->Sumw2();
-  h_pT_reco_Dst_pos->Sumw2();
-  h_phi_reco_Pi_pos->Sumw2();
-  h_phi_reco_K_pos->Sumw2();
-  h_phi_reco_SPi_pos->Sumw2();
-  h_phi_reco_D0_pos->Sumw2();
-  h_phi_reco_Dst_pos->Sumw2();
-  h_theta_reco_Pi_pos->Sumw2();
-  h_theta_reco_K_pos->Sumw2();
-  h_theta_reco_SPi_pos->Sumw2();
-  h_theta_reco_D0_pos->Sumw2();
-  h_theta_reco_Dst_pos->Sumw2();
-  h_eta_reco_Pi_pos->Sumw2();
-  h_eta_reco_K_pos->Sumw2();
-  h_eta_reco_SPi_pos->Sumw2();
-  h_eta_reco_D0_pos->Sumw2();
-  h_eta_reco_Dst_pos->Sumw2();
-
-  h_pT_reco_Pi_neg->Sumw2();
-  h_pT_reco_K_neg->Sumw2();
-  h_pT_reco_SPi_neg->Sumw2();
-  h_pT_reco_D0_neg->Sumw2();
-  h_pT_reco_Dst_neg->Sumw2();
-  h_phi_reco_Pi_neg->Sumw2();
-  h_phi_reco_K_neg->Sumw2();
-  h_phi_reco_SPi_neg->Sumw2();
-  h_phi_reco_D0_neg->Sumw2();
-  h_phi_reco_Dst_neg->Sumw2();
-  h_theta_reco_Pi_neg->Sumw2();
-  h_theta_reco_K_neg->Sumw2();
-  h_theta_reco_SPi_neg->Sumw2();
-  h_theta_reco_D0_neg->Sumw2();
-  h_theta_reco_Dst_neg->Sumw2();
-  h_eta_reco_Pi_neg->Sumw2();
-  h_eta_reco_K_neg->Sumw2();
-  h_eta_reco_SPi_neg->Sumw2();
-  h_eta_reco_D0_neg->Sumw2();
-  h_eta_reco_Dst_neg->Sumw2();
-
   vector<TH1F*> v_Pi_hist_reco = {h_pT_reco_Pi, h_phi_reco_Pi, h_theta_reco_Pi, h_eta_reco_Pi};
   vector<TH1F*> v_SPi_hist_reco = {h_pT_reco_SPi, h_phi_reco_SPi, h_theta_reco_SPi, h_eta_reco_SPi};
   vector<TH1F*> v_K_hist_reco = {h_pT_reco_K, h_phi_reco_K, h_theta_reco_K, h_eta_reco_K};
@@ -415,6 +425,19 @@ void eff(string dir, string sample)
   vector<TH1F*> v_K_hist_neg = {h_pT_K_neg, h_phi_K_neg, h_theta_K_neg, h_eta_K_neg};
   vector<TH1F*> v_D0_hist_neg = {h_pT_D0_neg, h_phi_D0_neg, h_theta_D0_neg, h_eta_D0_neg};
   vector<TH1F*> v_Dst_hist_neg = {h_pT_Dst_neg, h_phi_Dst_neg, h_theta_Dst_neg, h_eta_Dst_neg};
+
+  sumerr(v_Pi_hist, v_Pi_hist_pos, v_Pi_hist_neg);
+  sumerr(v_SPi_hist, v_SPi_hist_pos, v_SPi_hist_neg);
+  sumerr(v_K_hist, v_K_hist_pos, v_K_hist_neg);
+  sumerr(v_D0_hist, v_D0_hist_pos, v_D0_hist_neg);
+  sumerr(v_Dst_hist, v_Dst_hist_pos, v_Dst_hist_neg);
+
+  sumerr(v_Pi_hist_reco, v_Pi_hist_reco_pos, v_Pi_hist_reco_neg);
+  sumerr(v_SPi_hist_reco, v_SPi_hist_reco_pos, v_SPi_hist_reco_neg);
+  sumerr(v_K_hist_reco, v_K_hist_reco_pos, v_K_hist_reco_neg);
+  sumerr(v_D0_hist_reco, v_D0_hist_reco_pos, v_D0_hist_reco_neg);
+  sumerr(v_Dst_hist_reco, v_Dst_hist_reco_pos, v_Dst_hist_reco_neg);
+
 
   for(int i = 0; i < nEvents; ++i)
   {
@@ -635,87 +658,23 @@ void eff(string dir, string sample)
   cout << "D0: " << v_dev.at(3) << " +/- " << v_dev_err.at(3) << " , in sigmas: " << abs(v_dev.at(3)/v_dev_err.at(3)) << endl;
   cout << "Dst: " << v_dev.at(4) << " +/- " << v_dev_err.at(4) << " , in sigmas: " << abs(v_dev.at(4)/v_dev_err.at(4)) << endl;
 
-  TCanvas *c1 = new TCanvas();
 
-  h_pT_reco_Pi->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_K->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_SPi->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_D0->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_Dst->SetAxisRange(0.,1.,"Y");
-
-  h_phi_reco_Pi->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_K->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_SPi->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_D0->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_Dst->SetAxisRange(0.,1.,"Y");
-
-  h_theta_reco_Pi->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_K->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_SPi->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_D0->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_Dst->SetAxisRange(0.,1.,"Y");
-
-  h_eta_reco_Pi->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_K->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_SPi->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_D0->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_Dst->SetAxisRange(0.,1.,"Y");
-
-
-  h_pT_reco_Pi_pos->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_K_pos->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_SPi_pos->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_D0_pos->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_Dst_pos->SetAxisRange(0.,1.,"Y");
-
-  h_phi_reco_Pi_pos->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_K_pos->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_SPi_pos->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_D0_pos->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_Dst_pos->SetAxisRange(0.,1.,"Y");
-
-  h_theta_reco_Pi_pos->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_K_pos->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_SPi_pos->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_D0_pos->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_Dst_pos->SetAxisRange(0.,1.,"Y");
-
-  h_eta_reco_Pi_pos->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_K_pos->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_SPi_pos->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_D0_pos->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_Dst_pos->SetAxisRange(0.,1.,"Y");
-
-
-
-  h_pT_reco_Pi_neg->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_K_neg->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_SPi_neg->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_D0_neg->SetAxisRange(0.,1.,"Y");
-  h_pT_reco_Dst_neg->SetAxisRange(0.,1.,"Y");
-
-  h_phi_reco_Pi_neg->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_K_neg->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_SPi_neg->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_D0_neg->SetAxisRange(0.,1.,"Y");
-  h_phi_reco_Dst_neg->SetAxisRange(0.,1.,"Y");
-
-  h_theta_reco_Pi_neg->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_K_neg->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_SPi_neg->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_D0_neg->SetAxisRange(0.,1.,"Y");
-  h_theta_reco_Dst_neg->SetAxisRange(0.,1.,"Y");
-
-  h_eta_reco_Pi_neg->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_K_neg->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_SPi_neg->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_D0_neg->SetAxisRange(0.,1.,"Y");
-  h_eta_reco_Dst_neg->SetAxisRange(0.,1.,"Y");
-
+  sethists(v_Pi_hist_reco, v_Pi_hist_reco_pos, v_Pi_hist_reco_neg);
+  sethists(v_SPi_hist_reco, v_SPi_hist_reco_pos, v_SPi_hist_reco_neg);
+  sethists(v_K_hist_reco, v_K_hist_reco_pos, v_K_hist_reco_neg);
+  sethists(v_D0_hist_reco, v_D0_hist_reco_pos, v_D0_hist_reco_neg);
+  sethists(v_Dst_hist_reco, v_Dst_hist_reco_pos, v_Dst_hist_reco_neg);
 
 
   gStyle->SetOptStat(0);
 
+  printhists(v_Pi_hist_reco, v_Pi_hist_reco_pos, v_Pi_hist_reco_neg, polarisation);
+  printhists(v_SPi_hist_reco, v_SPi_hist_reco_pos, v_SPi_hist_reco_neg, polarisation);
+  printhists(v_K_hist_reco, v_K_hist_reco_pos, v_K_hist_reco_neg, polarisation);
+  printhists(v_D0_hist_reco, v_D0_hist_reco_pos, v_D0_hist_reco_neg, polarisation);
+  printhists(v_Dst_hist_reco, v_Dst_hist_reco_pos, v_Dst_hist_reco_neg, polarisation);
+
+/***
   h_pT_reco_Pi->Draw();
   h_pT_reco_Pi->Draw("hist same");
   c1->SaveAs("output/up_pdf/tot/h_pT_reco_Pi.pdf");
@@ -914,5 +873,6 @@ void eff(string dir, string sample)
   h_eta_reco_Dst_neg->Draw();
   h_eta_reco_Dst_neg->Draw("hist same");
   c1->SaveAs("output/up_pdf/neg/h_eta_reco_Dst_neg.pdf");
+  ***/
 
 }
