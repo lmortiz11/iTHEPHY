@@ -291,16 +291,16 @@ void eff(string dir, string sample, string polarisation)
   TH1F *h_eta_D0 = new TH1F("h_eta_D0", ";#eta;Events", 50, 2.0, 4.5);
   TH1F *h_eta_Dst = new TH1F("h_eta_Dst", ";#eta;Events", 50, 2.0, 4.5);
 
-  TH1F *h_theta_reco_SPi = new TH1F("h_theta_reco_SPi", ";#theta; reconstructed Events", 50, 0.02, 0.2);
+  TH1F *h_theta_reco_SPi = new TH1F("h_theta_reco_SPi", ";#theta; reconstructed Events", 50, 0.02, 0.24);
   TH1F *h_theta_reco_Pi = new TH1F("h_theta_reco_Pi", ";#theta; reconstructed Events", 50, 0.02, 0.24);
   TH1F *h_theta_reco_K = new TH1F("h_theta_reco_K", ";#theta; reconstructed Events", 50, 0.02, 0.24);
-  TH1F *h_theta_reco_D0 = new TH1F("h_theta_reco_D0", ";#theta; reconstructed Events", 50, 0.02, 0.2);
-  TH1F *h_theta_reco_Dst = new TH1F("h_theta_reco_Dst", ";#theta; reconstructed Events", 50, 0.02, 0.2);
-  TH1F *h_theta_SPi = new TH1F("h_theta_SPi", ";#theta;Events", 50, 0.02, 0.2);
+  TH1F *h_theta_reco_D0 = new TH1F("h_theta_reco_D0", ";#theta; reconstructed Events", 50, 0.02, 0.24);
+  TH1F *h_theta_reco_Dst = new TH1F("h_theta_reco_Dst", ";#theta; reconstructed Events", 50, 0.02, 0.24);
+  TH1F *h_theta_SPi = new TH1F("h_theta_SPi", ";#theta;Events", 50, 0.02, 0.24);
   TH1F *h_theta_Pi = new TH1F("h_theta_Pi", ";#theta;Events", 50, 0.02, 0.24);
   TH1F *h_theta_K = new TH1F("h_theta_K", ";#theta;Events", 50, 0.02, 0.24);
-  TH1F *h_theta_D0 = new TH1F("h_theta_D0", ";#theta;Events", 50, 0.02, 0.2);
-  TH1F *h_theta_Dst = new TH1F("h_theta_Dst", ";#theta;Events", 50, 0.02, 0.2);
+  TH1F *h_theta_D0 = new TH1F("h_theta_D0", ";#theta;Events", 50, 0.02, 0.24);
+  TH1F *h_theta_Dst = new TH1F("h_theta_Dst", ";#theta;Events", 50, 0.02, 0.24);
 
 
   TH1F *h_pT_reco_SPi_pos = new TH1F("h_pT_reco_SPi_pos", ";p_{T}/MeV; reconstructed Events", 35, 100., 800.);
@@ -336,16 +336,16 @@ void eff(string dir, string sample, string polarisation)
   TH1F *h_eta_D0_pos = new TH1F("h_eta_D0_pos", ";#eta;Events", 50, 2.0, 4.5);
   TH1F *h_eta_Dst_pos = new TH1F("h_eta_Dst_pos", ";#eta;Events", 50, 2.0, 4.5);
 
-  TH1F *h_theta_reco_SPi_pos = new TH1F("h_theta_reco_SPi_pos", ";#theta; reconstructed Events", 50, 0.02, 0.2);
+  TH1F *h_theta_reco_SPi_pos = new TH1F("h_theta_reco_SPi_pos", ";#theta; reconstructed Events", 50, 0.02, 0.24);
   TH1F *h_theta_reco_Pi_pos = new TH1F("h_theta_reco_Pi_pos", ";#theta; reconstructed Events", 50, 0.02, 0.24);
   TH1F *h_theta_reco_K_pos = new TH1F("h_theta_reco_K_pos", ";#theta; reconstructed Events", 50, 0.02, 0.24);
-  TH1F *h_theta_reco_D0_pos = new TH1F("h_theta_reco_D0_pos", ";#theta; reconstructed Events", 50, 0.02, 0.2);
-  TH1F *h_theta_reco_Dst_pos = new TH1F("h_theta_reco_Dst_pos", ";#theta; reconstructed Events", 50, 0.02, 0.2);
-  TH1F *h_theta_SPi_pos = new TH1F("h_theta_SPi_pos", ";#theta;Events", 50, 0.02, 0.2);
+  TH1F *h_theta_reco_D0_pos = new TH1F("h_theta_reco_D0_pos", ";#theta; reconstructed Events", 50, 0.02, 0.24);
+  TH1F *h_theta_reco_Dst_pos = new TH1F("h_theta_reco_Dst_pos", ";#theta; reconstructed Events", 50, 0.02, 0.24);
+  TH1F *h_theta_SPi_pos = new TH1F("h_theta_SPi_pos", ";#theta;Events", 50, 0.02, 0.24);
   TH1F *h_theta_Pi_pos = new TH1F("h_theta_Pi_pos", ";#theta;Events", 50, 0.02, 0.24);
   TH1F *h_theta_K_pos = new TH1F("h_theta_K_pos", ";#theta;Events", 50, 0.02, 0.24);
-  TH1F *h_theta_D0_pos = new TH1F("h_theta_D0_pos", ";#theta;Events", 50, 0.02, 0.2);
-  TH1F *h_theta_Dst_pos = new TH1F("h_theta_Dst_pos", ";#theta;Events", 50, 0.02, 0.2);
+  TH1F *h_theta_D0_pos = new TH1F("h_theta_D0_pos", ";#theta;Events", 50, 0.02, 0.24);
+  TH1F *h_theta_Dst_pos = new TH1F("h_theta_Dst_pos", ";#theta;Events", 50, 0.02, 0.24);
 
 
   TH1F *h_pT_reco_SPi_neg = new TH1F("h_pT_reco_SPi_neg", ";p_{T}/MeV; reconstructed Events", 35, 100., 800.);
@@ -381,16 +381,16 @@ void eff(string dir, string sample, string polarisation)
   TH1F *h_eta_D0_neg = new TH1F("h_eta_D0_neg", ";#eta;Events", 50, 2.0, 4.5);
   TH1F *h_eta_Dst_neg = new TH1F("h_eta_Dst_neg", ";#eta;Events", 50, 2.0, 4.5);
 
-  TH1F *h_theta_reco_SPi_neg = new TH1F("h_theta_reco_SPi_neg", ";#theta; reconstructed Events", 50, 0.02, 0.2);
+  TH1F *h_theta_reco_SPi_neg = new TH1F("h_theta_reco_SPi_neg", ";#theta; reconstructed Events", 50, 0.02, 0.24);
   TH1F *h_theta_reco_Pi_neg = new TH1F("h_theta_reco_Pi_neg", ";#theta; reconstructed Events", 50, 0.02, 0.24);
   TH1F *h_theta_reco_K_neg = new TH1F("h_theta_reco_K_neg", ";#theta; reconstructed Events", 50, 0.02, 0.24);
-  TH1F *h_theta_reco_D0_neg = new TH1F("h_theta_reco_D0_neg", ";#theta; reconstructed Events", 50, 0.02, 0.2);
-  TH1F *h_theta_reco_Dst_neg = new TH1F("h_theta_reco_Dst_neg", ";#theta; reconstructed Events", 50, 0.02, 0.2);
-  TH1F *h_theta_SPi_neg = new TH1F("h_theta_SPi_neg", ";#theta;Events", 50, 0.02, 0.2);
+  TH1F *h_theta_reco_D0_neg = new TH1F("h_theta_reco_D0_neg", ";#theta; reconstructed Events", 50, 0.02, 0.24);
+  TH1F *h_theta_reco_Dst_neg = new TH1F("h_theta_reco_Dst_neg", ";#theta; reconstructed Events", 50, 0.02, 0.24);
+  TH1F *h_theta_SPi_neg = new TH1F("h_theta_SPi_neg", ";#theta;Events", 50, 0.02, 0.24);
   TH1F *h_theta_Pi_neg = new TH1F("h_theta_Pi_neg", ";#theta;Events", 50, 0.02, 0.24);
   TH1F *h_theta_K_neg = new TH1F("h_theta_K_neg", ";#theta;Events", 50, 0.02, 0.24);
-  TH1F *h_theta_D0_neg = new TH1F("h_theta_D0_neg", ";#theta;Events", 50, 0.02, 0.2);
-  TH1F *h_theta_Dst_neg = new TH1F("h_theta_Dst_neg", ";#theta;Events", 50, 0.02, 0.2);
+  TH1F *h_theta_D0_neg = new TH1F("h_theta_D0_neg", ";#theta;Events", 50, 0.02, 0.24);
+  TH1F *h_theta_Dst_neg = new TH1F("h_theta_Dst_neg", ";#theta;Events", 50, 0.02, 0.24);
 
 
   vector<TH1F*> v_Pi_hist_reco = {h_pT_reco_Pi, h_phi_reco_Pi, h_theta_reco_Pi, h_eta_reco_Pi};
