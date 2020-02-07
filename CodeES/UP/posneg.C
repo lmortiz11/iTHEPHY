@@ -503,25 +503,35 @@ if (sPi_ID<0)
     cout<<"D0 neg efficiency: "<<eff_D0_neg <<" +- "<< D0_neg_err<<'\n';
     cout<<"D*+ pos efficiency: "<<eff_Dst_pos<<" +- "<< Dst_pos_err<<'\n';
     cout<<"D*+ neg efficiency: "<<eff_Dst_neg <<" +- "<< Dst_neg_err<<'\n';
-
+     
  Double_t prod_effP_D0=eff_P1_pos*eff_P2_pos;
  Double_t err_prod_effP_D0= sqrt(P1_pos_err*P2_pos_err+P1_pos_err*P2_pos_err);
  Double_t prod_effN_D0=eff_P1_neg*eff_P2_neg;
  Double_t err_prod_effN_D0= sqrt(P1_neg_err*P2_neg_err+P1_neg_err*P2_neg_err);
  
-    cout << "effD0 = " << eff_D0_pos <<" +- "<< D0_pos_err<<" = " << prod_effP_D0 << " +- " << err_prod_effP_D0 << endl;
+    cout << "FROM PRODUCT pos effD0 = " << eff_D0_pos <<" +- "<< D0_pos_err<<" = " << prod_effP_D0 << " +- " << err_prod_effP_D0 << endl;
  
-    cout << "effD0 = " << eff_D0_pos <<" +- "<< D0_pos_err<<" = " << prod_effN_D0 << " +- " << err_prod_effN_D0 << endl;
- 
- 
+    cout << " FROM PRODUCT neg effD0 = " << eff_D0_pos <<" +- "<< D0_pos_err<<" = " << prod_effN_D0 << " +- " << err_prod_effN_D0 << endl;
+    
+     
  Double_t prod_effP_Dst=eff_P1_pos*eff_P2_pos;
  Double_t err_prod_effP_Dst= sqrt(P1_neg_err*P2_neg_err+P1_neg_err*P2_neg_err);
  Double_t prod_effN_Dst=eff_P1_neg*eff_P2_neg;
  Double_t err_prod_effN_Dst= sqrt(P1_neg_err*P2_neg_err+P1_neg_err*P2_neg_err);
  
-    cout << "effDst = " << eff_Dst_pos <<" +- "<< Dst_pos_err<<" = " << prod_effP_Dst << " +- " << err_prod_effP_Dst << endl;
+    cout << "FROM PRODUCT pos effDst = " << eff_Dst_pos <<" +- "<< Dst_pos_err<<" = " << prod_effP_Dst << " +- " << err_prod_effP_Dst << endl;
  
-    cout << "effDst = " << eff_Dst_pos <<" +- "<< Dst_pos_err<<" = " << prod_effN_Dst << " +- " << err_prod_effN_Dst << endl;
+    cout << "FROM PRODUCT neg effDst = " << eff_Dst_pos <<" +- "<< Dst_pos_err<<" = " << prod_effN_Dst << " +- " << err_prod_effN_Dst << endl;
+    
+    cout<< "Number of reconstructed events POS " << sPi_pos_rec <<" NEG " << sPi_neg_rec << ", whole events POS " << sPi_pos << " NEG " << sPi_neg << endl;
+    cout<< "Number of reconstructed events POS " << P1_pos_rec <<" NEG " << P1_neg_rec << ", whole events POS " << P1_pos << " NEG " << P1_neg << endl;
+    cout<< "Number of reconstructed events POS " << P2_pos_rec <<" NEG " << P2_neg_rec << ", whole events POS " << P2_pos << " NEG " << P2_neg << endl;
+    cout<< "Number of reconstructed events POS " << D0_pos_rec <<" NEG " << D0_neg_rec << ", whole events POS " << D0_pos << " NEG " << D0_neg << endl;
+    cout<< "Number of reconstructed events POS " << Dst_pos_rec <<" NEG " << Dst_neg_rec << ", whole events POS " << Dst_pos << " NEG " << Dst_neg << endl;
+    
+
+    
+    
  
 sPiphi_rec_pos->Sumw2();
 sPiphi_pos->Sumw2();
