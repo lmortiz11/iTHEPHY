@@ -98,7 +98,7 @@ void printdevhists(vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg, string po
     v_dif_temp.push_back(v_hist_pos.at(i));
     v_dif_temp.at(i)->Add(v_hist_neg.at(i));
     v_dif_temp.at(i)->Divide(v_sum_temp.at(i));
-    v_dif_temp.at(i)->SetAxisRange(-0.01,0.01, "Y");
+    //v_dif_temp.at(i)->SetAxisRange(-0.01,0.01, "Y");
     v_dif_temp.at(i)->Draw();
     title_name = v_hist_pos.at(i)->GetName();
     save_name = "output/"+directory+"/deviation/"+title_name+".pdf";
