@@ -94,7 +94,7 @@ void printdevhists(vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg, string po
     h_dif_temp->Add(v_hist_neg.at(i), -1);
     TH1F *h_sum_temp = v_hist_pos.at(i);
     h_sum_temp->Add(v_hist_neg.at(i));
-    TH1F *h_dev = h_dif_temp;
+    TH1F *h_dev = h_sum_temp;
     //h_dev->Divide(h_sum_temp);
     h_dev->Draw();
     title_name = v_hist_pos.at(i)->GetName();
