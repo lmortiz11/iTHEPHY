@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.23)  3 FEB 2020 00:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.23)  9 FEB 2020 00:52
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -1783,6 +1783,44 @@ Package pdftex.def Info: up_pdf/combined/h_eta_reco_Dst.pdf  used on input line
  [30
 
 ]
+<up_pdf/deviation/h_pt_reco_Dst_pos.pdf, id=3455, 569.12625pt x 385.44pt>
+File: up_pdf/deviation/h_pt_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/deviation/h_pt_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/deviation/h_pt_reco_Dst_pos.pdf  used on input 
+line 401.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/deviation/h_phi_reco_Dst_pos.pdf, id=3456, 569.12625pt x 385.44pt>
+File: up_pdf/deviation/h_phi_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/deviation/h_phi_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/deviation/h_phi_reco_Dst_pos.pdf  used on input
+ line 401.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/deviation/h_theta_reco_Dst_pos.pdf, id=3457, 569.12625pt x 385.44pt>
+File: up_pdf/deviation/h_theta_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/deviation/h_theta_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/deviation/h_theta_reco_Dst_pos.pdf  used on inp
+ut line 401.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+<up_pdf/deviation/h_eta_reco_Dst_pos.pdf, id=3458, 569.12625pt x 385.44pt>
+File: up_pdf/deviation/h_eta_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/deviation/h_eta_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/deviation/h_eta_reco_Dst_pos.pdf  used on input
+ line 401.
+(pdftex.def)             Requested size: 124.4507pt x 84.2795pt.
+ [31
+
+ <./up_pdf/deviation/h_pt_reco_Dst_pos.pdf, page is rotated 90 degrees> <./up_p
+df/deviation/h_phi_reco_Dst_pos.pdf, page is rotated 90 degrees> <./up_pdf/devi
+ation/h_theta_reco_Dst_pos.pdf, page is rotated 90 degrees> <./up_pdf/deviation
+/h_eta_reco_Dst_pos.pdf, page is rotated 90 degrees>]
+File: up_pdf/deviation/h_phi_reco_Dst_pos.pdf Graphic file (type pdf)
+<use up_pdf/deviation/h_phi_reco_Dst_pos.pdf>
+Package pdftex.def Info: up_pdf/deviation/h_phi_reco_Dst_pos.pdf  used on input
+ line 404.
+(pdftex.def)             Requested size: 276.559pt x 187.3087pt.
+ [32
+
+]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -1792,20 +1830,20 @@ Package pdftex.def Info: up_pdf/combined/h_eta_reco_Dst.pdf  used on input line
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 386.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
 
 (C:\Users\Jonah\Desktop\Projekte\iTHEPHY\Slides\build\presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 386.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31033 strings out of 492902
- 622246 string characters out of 3133550
- 658524 words of memory out of 3000000
- 34350 multiletter control sequences out of 15000+200000
+ 31054 strings out of 492902
+ 623117 string characters out of 3133550
+ 658525 words of memory out of 3000000
+ 34366 multiletter control sequences out of 15000+200000
  546309 words of font info for 77 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,70p,799b,729s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1826,9 +1864,9 @@ ts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmtt10.pfb>
 Output written on C:\Users\Jonah\Desktop\Projekte\iTHEPHY\Slides\build\presenta
-tion.pdf (30 pages, 1285078 bytes).
+tion.pdf (32 pages, 1358230 bytes).
 PDF statistics:
- 3523 PDF objects out of 3580 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 343 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3752 PDF objects out of 4296 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 363 words of extra memory for PDF output out of 10000 (max. 10000000)
 
