@@ -95,7 +95,7 @@ void printdevhists(vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg, string po
     TH1F *h_sum_temp = v_hist_pos.at(i);
     h_sum_temp->Add(v_hist_neg.at(i));
     TH1F *h_dev = h_dif_temp;
-    h_dev->Divide(h_sum_temp);
+    //h_dev->Divide(h_sum_temp);
     h_dev->Draw();
     title_name = v_hist_pos.at(i)->GetName();
     save_name = "output/"+directory+"/deviation/"+title_name+".pdf";
