@@ -78,6 +78,35 @@ void printhists(vector<TH1F*> v_hist, vector<TH1F*> v_hist_pos, vector<TH1F*> v_
     c->SaveAs(save_name.c_str());
   }
 }
+void printdevhists(vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg, string polarisation)
+{
+  vector<TH1F*> v_dif_temp;
+  vector<TH1F*> v_sum_temp;
+  int size = v_hist_pos.size();
+  bool up_down = (polarisation == "UP")? true : false;
+  string directory = (up_down == true)? "up_pdf" : "down_pdf";
+  TCanvas *c = new TCanvas();
+  string title_name;
+  string save_name;
+  for (int i = 0; i < size; ++i)
+  {
+    v_hist_pos.at(i)->SetAxisRange(-1.,2.,"Y");
+    v_hist_neg.at(i)->SetAxisRange(-1.,2.,"Y");
+    v_sum_temp.push_back(v_hist_pos.at(i));
+    v_sum_temp.at(i)->Add(v_hist_neg.at(i));
+    v_hist_neg.at(i)->Scale(-1);
+    v_dif_temp.push_back(v_hist_pos.at(i));
+    v_dif_temp.at(i)->Add(v_hist_neg.at(i));
+    v_dif_temp.at(i)->Divide(v_sum_temp.at(i));
+    v_dif_temp.at(i)->SetAxisRange(-0.01,0.01, "Y");
+    v_dif_temp.at(i)->Draw();
+    title_name = v_hist_pos.at(i)->GetName();
+    save_name = "output/"+directory+"/deviation/"+title_name+".pdf";
+    c->SaveAs(save_name.c_str());
+  }
+  v_dif_temp.clear();
+  v_sum_temp.clear();
+}
 
 vector<double> get_eff(double n_ges, vector<double> v_n_reco)
 {
@@ -679,205 +708,12 @@ void eff(string dir, string sample, string polarisation)
   printhists(v_D0_hist_reco, v_D0_hist_reco_pos, v_D0_hist_reco_neg, polarisation);
   printhists(v_Dst_hist_reco, v_Dst_hist_reco_pos, v_Dst_hist_reco_neg, polarisation);
 
-/***
-  h_pT_reco_Pi->Draw();
-  h_pT_reco_Pi->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_pT_reco_Pi.pdf");
-  h_pT_reco_K->Draw();
-  h_pT_reco_K->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_pT_reco_K.pdf");
-  h_pT_reco_SPi->Draw();
-  h_pT_reco_SPi->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_pT_reco_SPi.pdf");
-  h_pT_reco_D0->Draw();
-  h_pT_reco_D0->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_pT_reco_D0.pdf");
-  h_pT_reco_Dst->Draw();
-  h_pT_reco_Dst->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_pT_reco_Dst.pdf");
+  
+  printdevhists(v_Pi_hist_reco_pos, v_Pi_hist_reco_neg, polarisation);
+  printdevhists(v_SPi_hist_reco_pos, v_SPi_hist_reco_neg, polarisation);
+  printdevhists(v_K_hist_reco_pos, v_K_hist_reco_neg, polarisation);
+  printdevhists(v_D0_hist_reco_pos, v_D0_hist_reco_neg, polarisation);
+  printdevhists(v_Dst_hist_reco_pos, v_Dst_hist_reco_neg, polarisation);
 
-  h_phi_reco_Pi->Draw();
-  h_phi_reco_Pi->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_phi_reco_Pi.pdf");
-  h_phi_reco_K->Draw();
-  h_phi_reco_K->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_phi_reco_K.pdf");
-  h_phi_reco_SPi->Draw();
-  h_phi_reco_SPi->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_phi_reco_SPi.pdf");
-  h_phi_reco_D0->Draw();
-  h_phi_reco_D0->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_phi_reco_D0.pdf");
-  h_phi_reco_Dst->Draw();
-  h_phi_reco_Dst->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_phi_reco_Dst.pdf");
-
-  h_theta_reco_Pi->Draw();
-  h_theta_reco_Pi->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_theta_reco_Pi.pdf");
-  h_theta_reco_K->Draw();
-  h_theta_reco_K->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_theta_reco_K.pdf");
-  h_theta_reco_SPi->Draw();
-  h_theta_reco_SPi->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_theta_reco_SPi.pdf");
-  h_theta_reco_D0->Draw();
-  h_theta_reco_D0->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_theta_reco_D0.pdf");
-  h_theta_reco_Dst->Draw();
-  h_theta_reco_Dst->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_theta_reco_Dst.pdf");
-
-  h_eta_reco_Pi->Draw();
-  h_eta_reco_Pi->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_eta_reco_Pi.pdf");
-  h_eta_reco_K->Draw();
-  h_eta_reco_K->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_eta_reco_K.pdf");
-  h_eta_reco_SPi->Draw();
-  h_eta_reco_SPi->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_eta_reco_SPi.pdf");
-  h_eta_reco_D0->Draw();
-  h_eta_reco_D0->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_eta_reco_D0.pdf");
-  h_eta_reco_Dst->Draw();
-  h_eta_reco_Dst->Draw("hist same");
-  c1->SaveAs("output/up_pdf/tot/h_eta_reco_Dst.pdf");
-
-
-
-
-  h_pT_reco_Pi_pos->Draw();
-  h_pT_reco_Pi_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_pT_reco_Pi_pos.pdf");
-  h_pT_reco_K_pos->Draw();
-  h_pT_reco_K_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_pT_reco_K_pos.pdf");
-  h_pT_reco_SPi_pos->Draw();
-  h_pT_reco_SPi_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_pT_reco_SPi_pos.pdf");
-  h_pT_reco_D0_pos->Draw();
-  h_pT_reco_D0_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_pT_reco_D0_pos.pdf");
-  h_pT_reco_Dst_pos->Draw();
-  h_pT_reco_Dst_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_pT_reco_Dst_pos.pdf");
-
-  h_phi_reco_Pi_pos->Draw();
-  h_phi_reco_Pi_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_phi_reco_Pi_pos.pdf");
-  h_phi_reco_K_pos->Draw();
-  h_phi_reco_K_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_phi_reco_K_pos.pdf");
-  h_phi_reco_SPi_pos->Draw();
-  h_phi_reco_SPi_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_phi_reco_SPi_pos.pdf");
-  h_phi_reco_D0_pos->Draw();
-  h_phi_reco_D0_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_phi_reco_D0_pos.pdf");
-  h_phi_reco_Dst_pos->Draw();
-  h_phi_reco_Dst_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_phi_reco_Dst_pos.pdf");
-
-  h_theta_reco_Pi_pos->Draw();
-  h_theta_reco_Pi_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_theta_reco_Pi_pos.pdf");
-  h_theta_reco_K_pos->Draw();
-  h_theta_reco_K_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_theta_reco_K_pos.pdf");
-  h_theta_reco_SPi_pos->Draw();
-  h_theta_reco_SPi_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_theta_reco_SPi_pos.pdf");
-  h_theta_reco_D0_pos->Draw();
-  h_theta_reco_D0_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_theta_reco_D0_pos.pdf");
-  h_theta_reco_Dst_pos->Draw();
-  h_theta_reco_Dst_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_theta_reco_Dst_pos.pdf");
-
-  h_eta_reco_Pi_pos->Draw();
-  h_eta_reco_Pi_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_eta_reco_Pi_pos.pdf");
-  h_eta_reco_K_pos->Draw();
-  h_eta_reco_K_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_eta_reco_K_pos.pdf");
-  h_eta_reco_SPi_pos->Draw();
-  h_eta_reco_SPi_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_eta_reco_SPi_pos.pdf");
-  h_eta_reco_D0_pos->Draw();
-  h_eta_reco_D0_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_eta_reco_D0_pos.pdf");
-  h_eta_reco_Dst_pos->Draw();
-  h_eta_reco_Dst_pos->Draw("hist same");
-  c1->SaveAs("output/up_pdf/pos/h_eta_reco_Dst_pos.pdf");
-
-
-
-
-
-  h_pT_reco_Pi_neg->Draw();
-  h_pT_reco_Pi_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_pT_reco_Pi_neg.pdf");
-  h_pT_reco_K_neg->Draw();
-  h_pT_reco_K_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_pT_reco_K_neg.pdf");
-  h_pT_reco_SPi_neg->Draw();
-  h_pT_reco_SPi_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_pT_reco_SPi_neg.pdf");
-  h_pT_reco_D0_neg->Draw();
-  h_pT_reco_D0_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_pT_reco_D0_neg.pdf");
-  h_pT_reco_Dst_neg->Draw();
-  h_pT_reco_Dst_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_pT_reco_Dst_neg.pdf");
-
-  h_phi_reco_Pi_neg->Draw();
-  h_phi_reco_Pi_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_phi_reco_Pi_neg.pdf");
-  h_phi_reco_K_neg->Draw();
-  h_phi_reco_K_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_phi_reco_K_neg.pdf");
-  h_phi_reco_SPi_neg->Draw();
-  h_phi_reco_SPi_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_phi_reco_SPi_neg.pdf");
-  h_phi_reco_D0_neg->Draw();
-  h_phi_reco_D0_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_phi_reco_D0_neg.pdf");
-  h_phi_reco_Dst_neg->Draw();
-  h_phi_reco_Dst_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_phi_reco_Dst_neg.pdf");
-
-  h_theta_reco_Pi_neg->Draw();
-  h_theta_reco_Pi_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_theta_reco_Pi_neg.pdf");
-  h_theta_reco_K_neg->Draw();
-  h_theta_reco_K_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_theta_reco_K_neg.pdf");
-  h_theta_reco_SPi_neg->Draw();
-  h_theta_reco_SPi_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_theta_reco_SPi_neg.pdf");
-  h_theta_reco_D0_neg->Draw();
-  h_theta_reco_D0_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_theta_reco_D0_neg.pdf");
-  h_theta_reco_Dst_neg->Draw();
-  h_theta_reco_Dst_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_theta_reco_Dst_neg.pdf");
-
-  h_eta_reco_Pi_neg->Draw();
-  h_eta_reco_Pi_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_eta_reco_Pi_neg.pdf");
-  h_eta_reco_K_neg->Draw();
-  h_eta_reco_K_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_eta_reco_K_neg.pdf");
-  h_eta_reco_SPi_neg->Draw();
-  h_eta_reco_SPi_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_eta_reco_SPi_neg.pdf");
-  h_eta_reco_D0_neg->Draw();
-  h_eta_reco_D0_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_eta_reco_D0_neg.pdf");
-  h_eta_reco_Dst_neg->Draw();
-  h_eta_reco_Dst_neg->Draw("hist same");
-  c1->SaveAs("output/up_pdf/neg/h_eta_reco_Dst_neg.pdf");
-  ***/
 
 }
