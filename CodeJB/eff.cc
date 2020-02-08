@@ -80,8 +80,6 @@ void printhists(vector<TH1F*> v_hist, vector<TH1F*> v_hist_pos, vector<TH1F*> v_
 }
 void printdevhists(vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg, string polarisation)
 {
-  vector<TH1F*> v_dif_temp;
-  vector<TH1F*> v_sum_temp;
   int size = v_hist_pos.size();
   bool up_down = (polarisation == "UP")? true : false;
   string directory = (up_down == true)? "up_pdf" : "down_pdf";
@@ -92,19 +90,17 @@ void printdevhists(vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg, string po
   {
     v_hist_pos.at(i)->SetAxisRange(-1.,2.,"Y");
     v_hist_neg.at(i)->SetAxisRange(-1.,2.,"Y");
-    v_sum_temp.push_back(v_hist_pos.at(i));
-    v_sum_temp.at(i)->Add(v_hist_neg.at(i));
-    v_dif_temp.push_back(v_hist_pos.at(i));
-    v_dif_temp.at(i)->Add(v_hist_neg.at(i),-1);
-    v_dif_temp.at(i)->Divide(v_sum_temp.at(i));
-    //v_dif_temp.at(i)->SetAxisRange(-0.01,0.01, "Y");
-    v_dif_temp.at(i)->Draw();
+    TH1F *h_dif_temp = v_hist_pos.at(i);
+    h_dif_temp->Add(v_hist_neg.at(i), -1);
+    TH1F *h_sum_temp = v_hist_pos.at(i);
+    h_sum_temp->Add(v_hist_neg.at(i));
+    TH1F *h_dev = h_dif_temp;
+    h_dev->Divide(h_sum_temp);
+    h_dev->Draw();
     title_name = v_hist_pos.at(i)->GetName();
     save_name = "output/"+directory+"/deviation/"+title_name+".pdf";
     c->SaveAs(save_name.c_str());
   }
-  v_dif_temp.clear();
-  v_sum_temp.clear();
 }
 
 vector<double> get_eff(double n_ges, vector<double> v_n_reco)
