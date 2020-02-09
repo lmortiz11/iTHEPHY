@@ -785,6 +785,8 @@ c1aa->cd(3);
 sPieta_rec_pos->Draw("E");
 c1aa->cd(4);
 sPitheta_rec_pos->Draw("E");
+c1aa ->SaveAs("asymmetriessPi.pdf"); 
+    
 
  TCanvas * c1bb= new TCanvas("c1bb","c1bb",400,10,600,400);
 c1bb->Divide(2,2);
@@ -796,6 +798,8 @@ c1bb->cd(3);
 P1eta_rec_pos->Draw("E");
 c1bb->cd(4);
 P1theta_rec_pos->Draw("E");
+c1bb ->SaveAs("asymmetriesP1.pdf"); 
+    
     
      TCanvas * c1cc= new TCanvas("c1cc","c1cc",400,10,600,400);
 c1cc->Divide(2,2);
@@ -807,6 +811,8 @@ c1cc->cd(3);
 P2eta_rec_pos->Draw("E");
 c1cc->cd(4);
 P2theta_rec_pos->Draw("E");
+c1cc ->SaveAs("asymmetriesP2.pdf"); 
+    
     
      TCanvas * c1dd= new TCanvas("c1dd","c1dd",400,10,600,400);
 c1dd->Divide(2,2);
@@ -818,6 +824,8 @@ c1dd->cd(3);
 D0eta_rec_pos->Draw("E");
 c1dd->cd(4);
 D0theta_rec_pos->Draw("E");
+c1dd->SaveAs("asymmetriesD0.pdf"); 
+    
     
 TCanvas * c1ee= new TCanvas("c1ee","c1ee",400,10,600,400);
 c1ee->Divide(2,2);
@@ -830,6 +838,7 @@ Dsteta_rec_pos->Draw("E");
 c1ee->cd(4);
 Dsttheta_rec_pos->Draw("E");
 
+c1ee ->SaveAs("asymmetriesDST.pdf"); 
     
     
     
@@ -851,6 +860,8 @@ c1a->cd(4);
 h3_sPitheta_pos->Draw("E"); 
 h3_sPitheta_pos->Draw("hist same"); 
  
+c1a->SaveAs("sPi pos.pdf"); 
+    
  
 TCanvas * c2a= new TCanvas("c2a","c2a",400,10,600,400);
 c2a->Divide(2,2);
@@ -869,6 +880,7 @@ c2a->cd(4);
 h3_sPitheta_neg->Draw("E"); 
 h3_sPitheta_neg->Draw("hist same"); 
  
+c2a->SaveAs("sPi neg.pdf"); 
  
  //--------
  
@@ -890,6 +902,8 @@ c1b->cd(4);
 h3_P1theta_pos->Draw("E"); 
 h3_P1theta_pos->Draw("hist same"); 
  
+c1b->SaveAs("P1 pos.pdf"); 
+    
  
 TCanvas * c2b= new TCanvas("c2b","c2b",400,10,600,400);
 c2b->Divide(2,2);
@@ -909,6 +923,8 @@ c2b->cd(4);
 h3_P1theta_neg->Draw("E"); 
 h3_P1theta_neg->Draw("hist same"); 
  
+c2b->SaveAs("P1 neg.pdf"); 
+    
  //-------
    TCanvas * c1c= new TCanvas("c1c","c1c",400,10,600,400);
 c1c->Divide(2,2);
@@ -928,6 +944,9 @@ c1c->cd(4);
 h3_P2theta_pos->Draw("E"); 
 h3_P2theta_pos->Draw("hist same"); 
  
+c1c->SaveAs("P2 pos.pdf"); 
+
+    
 TCanvas * c2c= new TCanvas("c2c","c2c",400,10,600,400);
 c2c->Divide(2,2);
 c2c->cd(1);
@@ -945,6 +964,7 @@ h3_P2pt_neg->Draw("hist same");
 c2c->cd(4);
 h3_P2theta_neg->Draw("E"); 
 h3_P2theta_neg->Draw("hist same"); 
+c2c->SaveAs("P2 neg.pdf"); 
  
  
  //-----
@@ -966,6 +986,7 @@ h3_D0pt_pos->Draw("hist same");
 c1d->cd(4);
 h3_D0theta_pos->Draw("E"); 
 h3_D0theta_pos->Draw("hist same"); 
+c1d->SaveAs("D0 pos.pdf"); 
  
  
 TCanvas * c2d= new TCanvas("c2d","c2d",400,10,600,400);
@@ -986,6 +1007,7 @@ h3_D0pt_neg->Draw("hist same");
 c2d->cd(4);
 h3_D0theta_neg->Draw("E"); 
 h3_D0theta_neg->Draw("hist same"); 
+c2d->SaveAs("D0 neg.pdf"); 
  
  
  //------
@@ -1007,7 +1029,9 @@ c1e->cd(4);
 h3_Dsttheta_pos->Draw("E"); 
 h3_Dsttheta_pos->Draw("hist same"); 
  
- 
+c1e->SaveAs("Dst pos.pdf"); 
+
+    
 TCanvas * c2e= new TCanvas("c2e","c2e",400,10,600,400);
 c2e->Divide(2,2);
 c2e->cd(1);
@@ -1025,7 +1049,8 @@ h3_Dstpt_neg->Draw("hist same");
 c2e->cd(4);
 h3_Dsttheta_neg->Draw("E"); 
 h3_Dsttheta_neg->Draw("hist same"); 
- 
+
+    c2e->SaveAs("Dst neg.pdf"); 
  
  
 }
