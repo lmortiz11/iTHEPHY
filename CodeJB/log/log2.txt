@@ -18,20 +18,26 @@ Reconstructed number of soft pions: 572084, eff.: 0.766145 +/- 0.00048984
 Reconstructed number of D0: 547525, eff.: 0.733255 +/- 0.000511801
 Reconstructed number of D*: 420123, eff.: 0.562636 +/- 0.000574065
 Charge: +
-Reconstructed number of pions: 323475, eff.: 0.866262 +/- 0.000557001
-Reconstructed number of Kaons: 317441, eff.: 0.850103 +/- 0.000584166
-Reconstructed number of soft pions: 284753, eff.: 0.762565 +/- 0.00069633
-Reconstructed number of D0: 272602, eff.: 0.730025 +/- 0.000726499
-Reconstructed number of D*: 208042, eff.: 0.557134 +/- 0.000812869
+Reconstructed number of pions: 323475 of 373456 , eff.: 0.866166 +/- 0.000557139
+Reconstructed number of Kaons: 317441 of 373249  eff.: 0.850481 +/- 0.000583689
+Reconstructed number of soft pions: 284753 of 373456 , eff.: 0.762481 +/- 0.000696377
+Reconstructed number of D0: 272602 of 373456 , eff.: 0.729944 +/- 0.000726527
+Reconstructed number of D*: 208042 of 373456 , eff.: 0.557072 +/- 0.000812835
 Charge: -
-Reconstructed number of pions: 323251, eff.: 0.86595 +/- 0.000557642
-Reconstructed number of Kaons: 314671, eff.: 0.842966 +/- 0.000595496
-Reconstructed number of soft pions: 287331, eff.: 0.769725 +/- 0.000689077
-Reconstructed number of D0: 274923, eff.: 0.736486 +/- 0.000721043
-Reconstructed number of D*: 212081, eff.: 0.568139 +/- 0.000810729
-Deviation:
-Pions: 0.000180029 +/- 0.000788172 , in sigmas: 0.228414
-Kaons: 0.00421581 +/- 0.00083426 , in sigmas: 5.05335
-soft Pions: -0.00467266 +/- 0.000979703 , in sigmas: 4.76947
-D0: -0.0044054 +/- 0.00102362 , in sigmas: 4.30376
-Dst: -0.00978017 +/- 0.00114814 , in sigmas: 8.51825
+Reconstructed number of pions: 323251 of 373249 , eff.: 0.866047 +/- 0.000557504
+Reconstructed number of Kaons: 314671 of 373456 , eff.: 0.842592 +/- 0.00059594
+Reconstructed number of soft pions: 287331 of 373249 , eff.: 0.769811 +/- 0.000689026
+Reconstructed number of D0: 274923 of 373249 , eff.: 0.736567 +/- 0.000721011
+Reconstructed number of D*: 212081 of 373249 , eff.: 0.568202 +/- 0.00081076
+Deviation via efficiencies:
+Pions: 6.91421e-05 +/- 0.000455009 , in sigmas: 0.151958
+Kaons: 0.00465935 +/- 0.000492748 , in sigmas: 9.45584
+soft Pions: -0.00478354 +/- 0.000639371 , in sigmas: 7.48164
+D0: -0.00451629 +/- 0.000697995 , in sigmas: 6.47038
+Dst: -0.00989104 +/- 0.00102032 , in sigmas: 9.69405
+Deviation via total numbers:
+Pions: 0.00034636 +/- 0.00124348 , in sigmas: 0.27854
+Kaons: 0.00438213 +/- 0.00125776 , in sigmas: 3.48407
+soft Pions: -0.00450633 +/- 0.0013221 , in sigmas: 3.40845
+D0: -0.00423908 +/- 0.00135143 , in sigmas: 3.13673
+Dst: -0.00961385 +/- 0.00154274 , in sigmas: 6.23169
