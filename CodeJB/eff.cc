@@ -94,6 +94,7 @@ void printdevhists(vector<TH1F*> v_hist_pos, vector<TH1F*> v_hist_neg, string po
     v_hist_neg.at(i)->Scale(2.);
     v_hist_neg.at(i)->Add(v_hist_pos.at(i));
     v_hist_pos.at(i)->Divide(v_hist_neg.at(i));
+    v_hist_pos.at(i)->SetAxisRange(-0.15, 0.15, "Y");
     v_hist_pos.at(i)->Draw();
     title_name = v_hist_pos.at(i)->GetName();
     save_name = "output/"+directory+"/deviation/"+title_name+".pdf";
@@ -533,44 +534,6 @@ void eff(string dir, string sample, string polarisation)
 
   vector<double> v_dev = deviation(v_eff_pos,v_eff_neg);
   vector<double> v_dev_err = deviation_err(v_eff_pos,v_err_pos,v_eff_neg,v_err_neg);
-
-
-  /*double eff_Pi_ges = nPi_reco/nEvents;
-  double eff_K_ges = nK_reco/nEvents;
-  double eff_Spi_ges = nSPi_reco/nEvents;
-  double eff_D0_ges = nD0_reco/nEvents;
-  double eff_Dst_ges = nDst_reco/nEvents;
-
-  double err_Pi_ges = nEvents*eff_Pi_ges*(1-eff_Pi_ges);
-  double err_K_ges = nEvents*eff_K_ges*(1-eff_K_ges);
-  double err_SPi_ges = nEvents*eff_SPi_ges*(1-eff_SPi_ges);
-  double err_D0_ges = nEvents*eff_D0_ges*(1-eff_D0_ges);
-  double err_Dst_ges = nEvents*eff_Dst_ges*(1-eff_Dst_ges);
-
-  double eff_Pi_pos = nPi_reco_pos/nEvents;
-  double eff_K_pos = nK_reco_pos/nEvents;
-  double eff_Spi_pos = nSPi_reco_pos/nEvents;
-  double eff_D0_pos = nD0_reco_pos/nEvents;
-  double eff_Dst_pos = nDst_reco_pos/nEvents;
-
-  double err_Pi_pos = nEvents*eff_Pi_pos*(1-eff_Pi_pos);
-  double err_K_pos = nEvents*eff_K_pos*(1-eff_K_pos);
-  double err_SPi_pos = nEvents*eff_SPi_pos*(1-eff_SPi_pos);
-  double err_D0_pos = nEvents*eff_D0_pos*(1-eff_D0_pos);
-  double err_Dst_pos = nEvents*eff_Dst_pos*(1-eff_Dst_pos);
-
-  double eff_Pi_neg = nPi_reco_neg/nEvents;
-  double eff_K_neg = nK_reco_neg/nEvents;
-  double eff_Spi_neg = nSPi_reco_neg/nEvents;
-  double eff_D0_neg = nD0_reco_neg/nEvents;
-  double eff_Dst_neg = nDst_reco_neg/nEvents;
-
-  double err_Pi_neg = nEvents*eff_Pi_neg*(1-eff_Pi_neg);
-  double err_K_neg = nEvents*eff_K_neg*(1-eff_K_neg);
-  double err_SPi_neg = nEvents*eff_SPi_neg*(1-eff_SPi_neg);
-  double err_D0_neg = nEvents*eff_D0_neg*(1-eff_D0_neg);
-  double err_Dst_neg = nEvents*eff_Dst_neg*(1-eff_Dst_neg);*/
-
 
   hist_divide(v_Pi_hist,v_Pi_hist_reco);
   hist_divide(v_K_hist,v_K_hist_reco);
