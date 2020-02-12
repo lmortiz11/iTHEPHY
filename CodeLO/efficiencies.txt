@@ -1,0 +1,29 @@
+Pion: 0.44
+K: 5.08
+D0= -4.78
+D*=-1.66
+
+Pion Efficieny: 0.866086+-0.00044785
+Soft Pion Efficieny: 0.765371+-0.00055727
+Kaon Efficiency: 0.846657+-0.000473833
+D0 Efficiency: 0.73332+-0.000581542
+Dst Efficiency: 0.562344+-0.000652389
+-------------Positive-----------
+Positive Pion  Eff:0.866468+-0.000633262
+Positive Soft Pion  Eff:0.767791+-0.000786097
+Positive kaon  Eff:0.85095+-0.000661625
+Positive D0  Eff:0.729814+-0.000826709
+Positive Dst  Eff:0.561404+-0.000923815
+------Negative--------------
+Negative Pion  Eff:0.865705+-0.000633446
+Negative Soft Pion  Eff:0.766204+-0.000787963
+Negative kaon  Eff:0.842345+-0.000678444
+ NegativeD0  Eff:0.736811+-0.0008181
+289742
+Negative Dst  Eff:0.56328+-0.000921421
+------desviations------
+pion deviation : 0.000440934+-0.000895698
+Soft pion deviation : 0.00103485+-0.00111303
+Kaon deviation : 0.00508195+-0.00094778
+D0 deviation : -0.00477065+-0.00116314
+Dst deviation : -0.00166855+-0.00130479
